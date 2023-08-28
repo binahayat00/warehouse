@@ -3,44 +3,37 @@
     <div class="my-bg">
     </div>
         <div class="fore-ground">
-<!--        <div class="my-position">-->
-<!--            <span><img src="/img/ardakan.png"></span>-->
-<!--            <span class="details-font">-->
-<!--            						گروه کارخانجات شیشه اردکان-->
-<!--            					</span>-->
-<!--            <span class="details-font">ARDAKAN FLOAT GLASS CO</span>-->
-<!--        </div>-->
 
         <div class="limiter">
             <div class="container-login100">
                 <div class="wrap-login100">
                     <div class="login100-form-title">
-                        <span><img src="/images/ardakan.png"></span>
+                        <span><img src="/images/logo.png"></span>
                         <span class="login100-form-title-1">
-    						سامانه جامع شیشه اردکان
+                            Warehouse System
     					</span>
                     </div>
 
                     <form v-on:submit.prevent="submitLogin" class="login100-form validate-form">
                         <div class="wrap-input100 validate-input m-b-26 mb-3" data-validate="Username is required">
-                            <label class="label-input100 text-right mb-0">نام کاربری:</label>
+                            <label class="label-input100 text-right mb-0">User name:</label>
                             <input v-model="code" class="input100" type="text" name="username"
-                                   placeholder="نام کاربری خود را وارد کنید">
+                                   placeholder="Enter your user name:">
                         </div>
 
                         <div class="wrap-input100 validate-input m-b-18 mb-3" data-validate="Password is required">
-                            <label class="label-input100 text-right mb-0">رمز عبور:</label>
+                            <label class="label-input100 text-right mb-0">Password:</label>
                             <input v-model="password" class="input100" type="password" name="pass"
-                                   placeholder="رمز عبور خود را وارد کنید">
+                                   placeholder="Enter your password:">
                         </div>
 
                         <div class="container-login100-form-btn mt-4">
                             <button class="login100-form-btn">
-                                ورود
+                                Enter
                             </button>
                         </div>
-                        <a href="https://salary.afgc.ir:2061/forget" class="text-primary pt-3">
-                            فراموشی رمز عبور</a>
+                        <a href="#" class="text-primary pt-3">
+                            Forget password</a>
 
                     </form>
                 </div>
@@ -84,20 +77,17 @@ export default {
                 this.loginError = true
                 console.log(error)
                 if (error.response.status == '422') {
-                    // $('form span').text("نام کاربری یا رمز عبور اشتباه است")
                     this.allerrors = error.response.data;
                     navigator.vibrate(500)
-                    alert("نام کاربری یا رمز عبور اشتباه است")
+                    alert("The user name or password is incorrect!")
                 }
                 if (error.response.data.error == 'Unauthorized') {
                     navigator.vibrate(500)
-                    alert("نام کاربری یا رمز عبور اشتباه است")
-                    // $('form span').text("نام کاربری یا رمز عبور اشتباه است")
+                    alert("The user name or password is incorrect!")
                 }
                else if (!error.response.success) {
                     navigator.vibrate(500)
-                    alert("نام کاربری یا رمز عبور اشتباه است")
-                    // $('form span').text("نام کاربری یا رمز عبور اشتباه است")
+                    alert("The user name or password is incorrect!")
                 }
 
             });

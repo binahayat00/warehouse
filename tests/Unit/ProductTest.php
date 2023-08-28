@@ -63,4 +63,8 @@ class ProductTest extends TestCase
     //     parent::tearDown();
     // }
 
+    public function true_is_true(){
+        $this->assertTrue(true);
+    }
+
 }

@@ -119,7 +119,7 @@ iframe {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url("/images/bg2.jpg");
+    background-image: url("/images/warehouse-background.jpg");
     background-size: cover;
     filter: blur(5px);
 }
@@ -127,7 +127,7 @@ iframe {
     backdrop-filter: blur(5px);
 }
 body{
-    /*background-image: url("/img/bg2.jpg");*/
+    /*background-image: url("/img/warehouse-background.jpg");*/
     /*background-size: cover;*/
     /*-webkit-backdrop-filter: blur(5px);*/
     /*backdrop-filter: blur(5px);*/
@@ -174,7 +174,7 @@ body{
 /*==================================================================
 [ Title form ]*/
 .login100-form-title {
-    background-image: url("/images/bg4.jpg");
+    background-image: url("/images/warehouse-background.jpg");
   width: 100%;
   position: relative;
   z-index: 1;
