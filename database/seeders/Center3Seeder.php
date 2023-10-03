@@ -18,7 +18,7 @@ class Center3Seeder extends Seeder
             array(
                 array(
                     'rayvarz_id' => 0,
-                    'name' => 'تست',
+                    'name' => 'test',
                     'created_at' => now(),
                     'updated_at' => now(),
                 ),

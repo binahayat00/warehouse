@@ -17,13 +17,13 @@ class UnitSeeder extends Seeder
         DB::table('units')->insert(array(
             array(
                 'id' => 1,
-                'name' => 'برنامه نویسی',
+                'name' => 'Programming',
                 'created_at' => now(),
                 'updated_at' => now(),
             ),
                 array(
                     'id' => 2,
-                    'name' => 'تولید',
+                    'name' => 'Production',
                     'created_at' => now(),
                     'updated_at' => now(),
                 )

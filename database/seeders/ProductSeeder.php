@@ -17,10 +17,10 @@ class ProductSeeder extends Seeder
         DB::table('products')->insert(array(
             array(
                 'id' => 1,
-                'name' => "محصول شماره یک",
+                'name' => "Product number one",
                 'Attributes' => '1',
                 'worn' => '1',
-                'descriptions' => 'محصول شکستنی است',
+                'descriptions' => 'The product is breakable',
                 'file_id' => '1',
                 'category_id' => '1',
                 'rayvarz_id' => '1100',
@@ -30,10 +30,10 @@ class ProductSeeder extends Seeder
             ),
             array(
                 'id' => 2,
-                'name' => "محصول شماره دو",
+                'name' => "Product number two",
                 'Attributes' => '2',
                 'worn' => '1',
-                'descriptions' => 'محصول شکستنی است',
+                'descriptions' => 'The product is breakable',
                 'file_id' => '1',
                 'category_id' => '1',
                 'rayvarz_id' => '1101',
@@ -43,10 +43,10 @@ class ProductSeeder extends Seeder
             ),
             array(
                 'id' => 3,
-                'name' => "محصول شماره سه",
+                'name' => "Product number three",
                 'Attributes' => '3',
                 'worn' => '1',
-                'descriptions' => 'محصول شکستنی است',
+                'descriptions' => 'The product is breakable',
                 'file_id' => '1',
                 'category_id' => '1',
                 'rayvarz_id' => '1102',

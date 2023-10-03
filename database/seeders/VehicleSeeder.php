@@ -16,16 +16,16 @@ class VehicleSeeder extends Seeder
     {
         DB::table('vehicles')->insert(array(
             array(
-                'name' => 'موتور',
+                'name' => 'MotorCycle',
                 'number' => "24/3645",
-                'description' => 'مدل 87 - رنگ قرمز',
+                'description' => '2019 - Color:Red',
                 'created_at' => now(),
                 'updated_at' => now(),
             ),
             array(
-                'name' => 'ماشین',
-                'number' => "1234567",
-                'description' => 'مدل 99 - رنگ سفید',
+                'name' => 'Car',
+                'number' => "12BB567",
+                'description' => '2018 - Color:White',
                 'created_at' => now(),
                 'updated_at' => now(),
             ),

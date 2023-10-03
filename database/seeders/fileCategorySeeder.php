@@ -18,21 +18,21 @@ class FileCategorySeeder extends Seeder
         DB::table('files_categories')->insert(array(
             array(
                 'id' => 1,
-                'name' => "جزییات درخواست",
+                'name' => "Request details",
                 'link' => 'public/requestDetails',
                 'created_at' => now(),
                 'updated_at' => now(),
             ),
             array(
                 'id' => 2,
-                'name' => 'جزییات خرید',
+                'name' => 'Purchase details',
                 'link' => 'public/buyDetails',
                 'created_at' => now(),
                 'updated_at' => now(),
             ),
             array(
                 'id' => 3,
-                'name' => "دسته بندی نشده",
+                'name' => "Uncategorized",
                 'link' => 'public/uncategories',
                 'created_at' => now(),
                 'updated_at' => now(),

@@ -17,19 +17,19 @@ class ConfirmSeeder extends Seeder
         DB::table('confirms')->insert(array(
             array(
                 'id' => 1,
-                'name' => 'تایید خرید',
+                'name' => 'Purchase confirmation',
                 'created_at' => now(),
                 'updated_at' => now(),
             ),
             array(
                 'id' => 2,
-                'name' => 'تایید تحویل',
+                'name' => 'Delivery confirmation',
                 'created_at' => now(),
                 'updated_at' => now(),
             ),
                 array(
                     'id' => 3,
-                    'name' => 'تایید فنی',
+                    'name' => 'Technical confirmation',
                     'created_at' => now(),
                     'updated_at' => now(),
                 )
