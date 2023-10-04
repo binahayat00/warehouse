@@ -5,40 +5,40 @@
                 <div class="modal-dialog text-right" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">افزودن کاربر جدید</h5>
+                            <h5 class="modal-title">Add new user</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                                 <i class="tim-icons icon-simple-remove"></i>
                             </button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label class="control-label">نام</label>
+                                <label class="control-label">Name</label>
                                 <input v-on:keyup="toggleBodyClass()"  :class="['form-control',allerrors.name ? 'is-invalid' : '']" v-model="newUser.name" type="text" class="form-control"
                                        >
                                 <span v-if="allerrors.name" :class="['label ']">@{{ allerrors.name[0] }}</span>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label">فامیل</label>
+                                <label class="control-label">Last name</label>
                                 <input v-on:keyup="toggleBodyClass()"  :class="['form-control',allerrors.family ? 'is-invalid' : '']" v-model="newUser.family" type="text" class="form-control"
                                 >
                                 <span v-if="allerrors.family" :class="['label ']">@{{ allerrors.family[0] }}</span>
                             </div>
                             <div   class="form-group">
-                                <label class="control-label">کد پرسنلی</label>
+                                <label class="control-label">Personnel code</label>
                                 <input v-on:keyup="toggleBodyClass()" maxlength="4" :class="['form-control',allerrors.code ? 'is-invalid' : '']" v-model="newUser.code" type="text" class="form-control"
                                 >
                                 <span v-if="allerrors.code" :class="['label ']">@{{ allerrors.code[0] }}</span>
                             </div>
                             <div class="form-group">
-                                <label class="control-label">واحد</label>
+                                <label class="control-label">Unit</label>
                                 <multiselect v-model="newUser.unit_id" track-by="name" label="name"
-                                    placeholder="انتخاب" :options="units" :searchable="true"
+                                    placeholder="Select" :options="units" :searchable="true"
                                     :allow-empty="false" :showLabels="false">
                                 </multiselect>
                             </div>
                             <div class="form-group">
-                                <label class="control-label">نوع کاربر</label>
+                                <label class="control-label">Type of user</label>
                                 <select  :class="['form-control',allerrors.roles ? 'is-invalid' : '']" id="role_create" v-model="newUser.roles" class="form-control">
                                     <option> </option>
                                     <option v-for="(role ,index) in roles" :value="role.id">{{role.name}}</option>}}
@@ -47,21 +47,21 @@
 
                             </div>
                             <div class="form-group">
-                            <label class="control-label">گذرواژه</label>
+                            <label class="control-label">Password</label>
                             <input v-on:keyup="toggleBodyClass()" :class="['form-control',allerrors.password ? 'is-invalid' : '']" v-model="newUser.password" type="password" class="form-control"
                             >
                                 <span v-if="allerrors.password" :class="['label ']">@{{ allerrors.password[0] }}</span>
                         </div>
                             <div class="form-group">
-                                <label class="control-label">تکرار رمز عبور</label>
+                                <label class="control-label">Repeat the password</label>
                                 <input v-on:keyup="toggleBodyClass()" :class="['form-control',allerrors.password_confirmation ? 'is-invalid' : '']" v-model="newUser.password_confirmation" type="password" class="form-control"
                                 >
                                 <span v-if="allerrors.password_confirmation" :class="['label ']">@{{ allerrors.password_confirmation[0] }}</span>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button @click="createNewUser()" class="btn btn-primary">ایجاد کاربر</button>
-                            <button type="button" class="btn btn-secondary"  data-dismiss="modal">لغو</button>
+                            <button @click="createNewUser()" class="btn btn-primary">Add user</button>
+                            <button type="button" class="btn btn-secondary"  data-dismiss="modal">Cancel</button>
                         </div>
                     </div>
                 </div>
@@ -69,13 +69,13 @@
 
                     <div class="text-right">
                         <button data-toggle="modal" data-target="#user"
-                                class="btn cyan_color">افرودن کاربر جدید
+                                class="btn cyan_color">Add new user
                         </button>
                         <div class="search-box mr-5">
-                            <h5 id="text_search" class="d-inline-flex">جستجو:</h5>
+                            <h5 id="text_search" class="d-inline-flex">Search:</h5>
                             <button class="btn-search"><i class="fas fa-search"></i></button>
                             <input type="text" class="input-search" v-model="searchQuery"
-                                   placeholder="جستجو...">
+                                   placeholder="Search...">
                         </div>
                     </div>
                     <div class="card">
@@ -84,12 +84,12 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>نام</th>
-                                    <th>نام خانوادگی</th>
-                                    <th>کد پرسنلی</th>
-                                    <th>نام واحد</th>
-                                    <th>نوع کاربر</th>
-                                    <th>عملیات</th>
+                                    <th>Name</th>
+                                    <th>Last name</th>
+                                    <th>Personnel code</th>
+                                    <th>Unit name</th>
+                                    <th>Type of user</th>
+                                    <th>Actions</th>
 
                                 </tr>
                                 </thead>
@@ -137,13 +137,13 @@
                                         <div class="view">
                                            <span
                                                class="badge badge-info even-larger-badge"
-                                               @click="editUser(user)">ویرایش</span>
-                                            <button v-if="user.active==1" value="غیرفعال" type="button" class="badge badge-danger" @click="userStatus(0,user.personnel_code,$event)">غیرفعال کردن</button>
-                                            <button v-if="user.active!=1" value="فعال" type="button" class="badge badge-success" @click="userStatus(1,user.personnel_code,$event)">فعال کردن</button>
+                                               @click="editUser(user)">Edit</span>
+                                            <button v-if="user.active==1" value="Inactivate" type="button" class="badge badge-danger" @click="userStatus(0,user.personnel_code,$event)">To deactivate</button>
+                                            <button v-if="user.active!=1" value="Activate" type="button" class="badge badge-success" @click="userStatus(1,user.personnel_code,$event)">To activate</button>
                                         </div>
                                         <div class="edit">
                                         <span @click="updateUser(user)"
-                                            class="badge badge-warning even-larger-badge">بروزرسانی</span></div>
+                                            class="badge badge-warning even-larger-badge">Update</span></div>
                                     </td>
                                 </tr>
 
@@ -167,13 +167,13 @@ export default {
             searchQuery: null,
             editMode: false,
             editedUser: null,
-            users: {}, //لیست کاربران
+            users: {},
             user2: {
                 name:'',
                 family:'',
                 code:'',
                 roles:''
-            },//کاربر انتخاب شده برای ویرایش
+            },//selected users for edit
             newUser:{
                 name:'',
                 family:'',
@@ -213,8 +213,8 @@ export default {
          if($("select option:selected").text() == '') {
              Swal.fire({
                  icon: 'error',
-                 title: 'خطا',
-                 text: 'نقش کاربری را انتخاب کنید',
+                 title: 'Error',
+                 text: 'Please choose the role of user',
              })
              return false
          }
@@ -239,7 +239,7 @@ export default {
                 this.allerrors = error.response.data
                 Swal.fire({
                     icon: 'error',
-                    title: 'خطا . . .',
+                    title: 'Error . . .',
                     text: error.response.data.message
                 })
 
@@ -258,7 +258,7 @@ export default {
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
-                        title: 'کاربر جدید ایجاد شد',
+                        title: 'New user added!',
                         showConfirmButton: false,
                         timer: 1500
                     })
@@ -269,7 +269,7 @@ export default {
                     if (error.response.data.status == '406') {
                         Swal.fire({
                             icon: 'error',
-                            title: 'خطا . . .',
+                            title: 'Error . . .',
                             text: error.response.data.message
                         })
                     }
@@ -302,11 +302,11 @@ export default {
                 position: 'center',
                 heightAuto: false,
                 icon: 'question',
-                title: "آیا از " + event.target.value + " کردن پرسنل مطمئن هستید؟",
+                title: "Are you sure you want to " + event.target.value + " the personnel?",
                 showConfirmButton: true,
                 showCancelButton: true,
-                confirmButtonText: "بله",
-                cancelButtonText: "انصراف",
+                confirmButtonText: "Yes",
+                cancelButtonText: "Opt out",
                 confirmButtonColor: "#58c03e"
 
             }).then((response) => {
@@ -325,7 +325,7 @@ export default {
 
                         })
                         .catch((response) => {
-                            alert("عملیات با خطا مواجه شد");
+                            alert("The operation failed");
                             console.log(response)
                         });
                 }
@@ -443,25 +443,25 @@ span {
     }
 
     #table_personels td:nth-of-type(1):before {
-        content: "ردیف";
+        content: "Row";
     }
 
     #table_personels td:nth-of-type(2):before {
-        content: "نام";
+        content: "Name";
     }
 
     #table_personels td:nth-of-type(3):before {
-        content: "نام خانوادگی";
+        content: "Last name";
     }
 
     #table_personels td:nth-of-type(4):before {
-        content: "کد پرسنلی";
+        content: "Personnel code";
     }
     #table_personels td:nth-of-type(5):before {
-        content: "نوع کاربر";
+        content: "Type of user";
     }
     #table_personels td:nth-of-type(6):before {
-        content: "عملیات";
+        content: "Actions";
     }
 
    }

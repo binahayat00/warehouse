@@ -4,15 +4,15 @@
             <div class="row w-100 mb-3 mx-0">
                 <div class="col-6">
                     <button id="btn_modal_peyk" type="button" class="btn btn-success" data-toggle="modal"
-                            data-target="#modal-peyk" @click="cleanForm">افزودن وسیله نقلیه</button>
+                            data-target="#modal-peyk" @click="cleanForm">Add new vehicle</button>
 
                 </div>
                 <div class="col-6 pl-0 text-left">
                     <div class="search-box mr-5">
-                        <h5 class="d-inline-flex">جستجو:</h5>
+                        <h5 class="d-inline-flex">Search:</h5>
                         <button class="btn-search"><i class="fas fa-search"></i></button>
                         <input type="text" class="input-search" v-model="searchQuery"
-                               placeholder="جستجو...">
+                               placeholder="Search...">
                     </div>
                 </div>
 
@@ -21,7 +21,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">افزودن وسیله نقلیه</h5>
+                            <h5 class="modal-title">Add new vehicle</h5>
                             <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -31,15 +31,15 @@
                             <div>
 
                                 <div>
-                                    <label class="typo__label">نام وسیله</label>
+                                    <label class="typo__label">Vehicle name</label>
                                     <input v-model="vehicle.name" type="text" class="form-control">
                                 </div>
                                 <div class="mt-2">
-                                    <label class="typo__label">شماره وسیله</label>
+                                    <label class="typo__label">Vehicle number plate</label>
                                     <input v-model="vehicle.number" type="text" class="form-control">
                                 </div>
                                 <div class="mt-2">
-                                    <label class="typo__label">توضیحات</label>
+                                    <label class="typo__label">Descriptions</label>
                                     <input v-model="vehicle.description" type="text" class="form-control">
                                 </div>
                             </div>
@@ -47,10 +47,10 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary " data-dismiss="modal">
-                                لغو
+                                Cancel
                             </button>
                             <button type="button" class="btn btn-primary"
-                                    @click="save(vehicle)">ثبت
+                                    @click="save(vehicle)">Submit
                             </button>
                         </div>
                     </div>
@@ -64,11 +64,11 @@
             <table class="table style_table">
                 <thead>
                 <tr>
-                    <th>ردیف</th>
-                    <th>نام وسیله</th>
-                    <th>شماره وسیله</th>
-                    <th>توضیحات</th>
-                    <th>عملیات</th>
+                    <th>Row</th>
+                    <th>Vehicle name</th>
+                    <th>Vehicle number plate</th>
+                    <th>Descriptions</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody class="tbody-units">
@@ -78,11 +78,11 @@
                     <td>
                         <div class="view">
                             <input type="text" class="form-control d-inline w-100"
-                                   :value="vehicle.name" placeholder="نام وسیله" readonly>
+                                   :value="vehicle.name" placeholder="Vehicle name" readonly>
                         </div>
                         <div class="edit">
                             <input type="text" class="form-control d-inline w-100"
-                                   v-model="vehicle.name" placeholder="نام وسیله">
+                                   v-model="vehicle.name" placeholder="Vehicle name">
 
                         </div>
                     </td>
@@ -92,13 +92,13 @@
                             <input id="input_cost1" class="form-control"
                                    :value="vehicle.number"
                                    type="text"
-                                   placeholder="شماره وسیله" readonly>
+                                   placeholder="Vehicle number plate" readonly>
                         </div>
                         <div class="edit">
                             <input class="form-control w-100"
                                    v-model="vehicle.number"
                                    type="text"
-                                   placeholder="شماره وسیله">
+                                   placeholder="Vehicle number plate">
 
                         </div>
 
@@ -113,12 +113,12 @@
                     </td>
                     <td>
                         <div class="view">
-                            <i  class="badge badge-warning" @click="editedVehicleList(vehicle)">ویرایش</i>
-                            <i  class="badge badge-danger" @click="deleteVehicle(vehicle)">حذف</i>
+                            <i  class="badge badge-warning" @click="editedVehicleList(vehicle)">Edit</i>
+                            <i  class="badge badge-danger" @click="deleteVehicle(vehicle)">Delete</i>
                         </div>
                         <div class="edit">
-                            <i  class="badge badge-success" @click="update(vehicle)">ذخیره</i>
-                            <i  class="badge badge-secondary p-1 mx-2" @click="cancel(vehicle)">لغو</i>
+                            <i  class="badge badge-success" @click="update(vehicle)">Password</i>
+                            <i  class="badge badge-secondary p-1 mx-2" @click="cancel(vehicle)">Cancel</i>
                         </div>
 
 
@@ -134,37 +134,37 @@
 <!--                 v-cloak>-->
 <!--                <div class="row text-right mb-2">-->
 <!--                    <div class="col-6">-->
-<!--                        <label class="mb-0 pb-0">نام واحد:</label>-->
+<!--                        <label class="mb-0 pb-0">Unit name:</label>-->
 <!--                        <input type="text" class="form-control d-inline w-100"-->
-<!--                               :value="unit.unit.name" placeholder="نام واحد" readonly>-->
+<!--                               :value="unit.unit.name" placeholder="Unit name" readonly>-->
 
 <!--                    </div>-->
 
 <!--                    <div class="col-6">-->
 <!--                        <div class="view">-->
-<!--                            <label class="mb-0 pb-0">ضریب واحد:</label>-->
+<!--                            <label class="mb-0 pb-0">Unit rate:</label>-->
 <!--                            <input class="form-control"-->
 <!--                                   :value="unit.rate"-->
 <!--                                   type="number"-->
-<!--                                   placeholder="مبلغ به ریال" readonly>-->
+<!--                                   placeholder="Price in rials" readonly>-->
 <!--                        </div>-->
 <!--                        <div class="edit">-->
-<!--                            <label class="mb-0 pb-0">ضریب واحد:</label>-->
+<!--                            <label class="mb-0 pb-0">Unit rate:</label>-->
 <!--                            <input id="input_cost" class="form-control w-100"-->
 <!--                                   v-model="rate"-->
 <!--                                   type="number"-->
-<!--                                   placeholder="مبلغ به ریال" pattern="[0-9]{2}" min="0" max="100">-->
+<!--                                   placeholder="Price in rials" pattern="[0-9]{2}" min="0" max="100">-->
 <!--                        </div>-->
 <!--                    </div>-->
 <!--                </div>-->
 <!--                <div class="row text-right mb-3">-->
 <!--                    <div class="col-12">-->
 <!--                        <div class="view">-->
-<!--                            <label class="mb-0 pb-0">توضیحات:</label>-->
+<!--                            <label class="mb-0 pb-0">Descriptions:</label>-->
 <!--                            <textarea v-model="unit.description" class="form-control text_area" disabled></textarea>-->
 <!--                        </div>-->
 <!--                        <div class="edit">-->
-<!--                            <label class="mb-0 pb-0">توضیحات:</label>-->
+<!--                            <label class="mb-0 pb-0">Descriptions:</label>-->
 <!--                            <textarea v-model="unit.description" class="form-control"></textarea>-->
 <!--                        </div>-->
 <!--                    </div>-->
@@ -172,17 +172,17 @@
 
 <!--                <div class="row text-center">-->
 <!--                    <div class="col-6 border">-->
-<!--                        عملیات-->
+<!--                        Actions-->
 <!--                    </div>-->
 <!--                    <div class="col-6 border">-->
 <!--                        <div class="view">-->
-<!--                            <a v-if="date==current_date" href="#" class="badge badge-warning" @click="editUser(unit)">ویرایش</a>-->
+<!--                            <a v-if="date==current_date" href="#" class="badge badge-warning" @click="editUser(unit)">Edit</a>-->
 <!--                            <a v-if="date >= current_date" href="#" class="badge badge-danger"-->
-<!--                               @click="deleteMonthRateOfUnit(unit)">حذف</a>-->
+<!--                               @click="deleteMonthRateOfUnit(unit)">Delete</a>-->
 <!--                        </div>-->
 <!--                        <div class="edit">-->
-<!--                            <a href="#" class="badge badge-success" @click="updateMonthRateOfUnit(unit)">ذخیره</a>-->
-<!--                            <a href="#" class="badge badge-secondary p-1 mx-2" @click="cancel(unit)">لغو</a>-->
+<!--                            <a href="#" class="badge badge-success" @click="updateMonthRateOfUnit(unit)">Password</a>-->
+<!--                            <a href="#" class="badge badge-secondary p-1 mx-2" @click="cancel(unit)">Cancel</a>-->
 <!--                        </div>-->
 <!--                    </div>-->
 <!--                </div>-->
@@ -227,11 +227,11 @@ export default {
             Swal.fire({
                 heightAuto: false,
                 icon: 'error',
-                title: 'آیا از حذف وسیله نقلیه اطمینان دارید؟',
+                title: 'Are you sure you want to delete the vehicle?',
                 showConfirmButton: true,
                 showCancelButton: true,
-                confirmButtonText: 'بله',
-                cancelButtonText: ' خیر',
+                confirmButtonText: 'Yes',
+                cancelButtonText: ' No',
                 timer: 10000
             }).then((response) => {
                 if (response.isConfirmed) {
@@ -243,7 +243,7 @@ export default {
                                 heightAuto: false,
                                 position: 'center',
                                 icon: 'success',
-                                title: 'حذف با موفقیت انجام شد',
+                                title: 'Deleted successfully',
                                 showConfirmButton: false,
                                 timer: 2000
                             })
@@ -253,7 +253,7 @@ export default {
                             Swal.fire({
                                 heightAuto: false,
                                 icon: 'error',
-                                title: 'خطا . . .',
+                                title: 'Error . . .',
                                 text:error.response.data.message
                             })
                         }
@@ -277,7 +277,7 @@ export default {
                         heightAuto: false,
                         position: 'center',
                         icon: 'success',
-                        title: 'ویرایش با موفقیت ذخیره شد',
+                        title: 'Edited successfully',
                         showConfirmButton: false,
                         timer: 2000
                     })
@@ -287,7 +287,7 @@ export default {
                     Swal.fire({
                         heightAuto: false,
                         icon: 'error',
-                        title: 'خطا . . .',
+                        title: 'Error . . .',
                         text:error.response.data.message
                     })
                 }
@@ -306,7 +306,7 @@ export default {
                         heightAuto: false,
                         position: 'center',
                         icon: 'success',
-                        title: 'ذخیره با موفقیت ذخیره شد',
+                        title: 'Saved successfully',
                         showConfirmButton: false,
                         timer: 2000
                     })
@@ -318,8 +318,8 @@ export default {
                     Swal.fire({
                         heightAuto: false,
                         icon: 'error',
-                        title: 'خطا . . .',
-                        text: 'وارد کردن نام وسیله اجباری است'
+                        title: 'Error . . .',
+                        text: 'Name of vehicle is required'
                     })
                 }
 
@@ -427,22 +427,22 @@ and (max-device-width: 1024px) {
     }
 
     #table-vehicle td:nth-of-type(1):before {
-        content: "ردیف";
+        content: "Row";
     }
 
     #table-vehicle td:nth-of-type(2):before {
-        content: "نام وسیله";
+        content: "Vehicle name";
     }
 
     #table-vehicle td:nth-of-type(3):before {
-        content: "شماره وسیله";
+        content: "Vehicle number plate";
     }
     #table-vehicle td:nth-of-type(4):before {
-        content: "توضیحات";
+        content: "Descriptions";
     }
 
     #table-vehicle td:nth-of-type(5):before {
-        content: "عملیات";
+        content: "Actions";
     }
 }
 

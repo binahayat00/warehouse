@@ -7,7 +7,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">افزودن تائیدیه</h5>
+                        <h5 class="modal-title">Add confirmation</h5>
                         <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -15,29 +15,29 @@
 
                     <div class="modal-body form-group text-right">
                         <div>
-                            <label>نام:</label>
+                            <label>Name:</label>
 
                             <multiselect v-if="users!=''" v-model="user_temp.user_id"
                                          :options="users.map(type => type.id)"
                                          :custom-label="opt => users.find(x => x.id == opt).first_name+' '+users.find(x => x.id == opt).last_name+' '+users.find(x => x.id == opt).personnel_code"
-                                         :showLabels="false" placeholder="نام کابر"></multiselect>
+                                         :showLabels="false" placeholder="User name"></multiselect>
 
                         </div>
 
                         <div class="mt-4">
-                            <label>نام تائیدیه:</label>
+                            <label>Confirmation name:</label>
                             <multiselect v-if="confirms!=''" v-model="user_temp.confirm_id"
                                          :options="confirms.map(type => type.id)"
                                          :custom-label="opt => confirms.find(x => x.id == opt).name" :showLabels="false"
-                                         placeholder="نام تائیدیه"></multiselect>
+                                         placeholder="Confirmation name"></multiselect>
                         </div>
 
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary " data-dismiss="modal">
-                            لغو
+                            Cancel
                         </button>
-                        <button type="button" class="btn btn-primary" @click="saveUserConfirm(user_temp)">ثبت
+                        <button type="button" class="btn btn-primary" @click="saveUserConfirm(user_temp)">Submit
                         </button>
                     </div>
                 </div>
@@ -51,9 +51,9 @@
             <div class="col-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">تائیدیه اشخاص</h3>
+                        <h3 class="box-title">Confirmation of People</h3>
                         <button type="button" class="btn btn-sm btn-success float-left" data-toggle="modal"
-                                data-target="#modal-userConfirm">افزودن
+                                data-target="#modal-userConfirm">Add
                         </button>
                     </div>
 
@@ -62,10 +62,10 @@
                             <thead>
                             <tr>
                                 <th style="width: 10px">#</th>
-                                <th>نام</th>
-                                <th>نام خانوادگی</th>
-                                <th>نام تائید</th>
-                                <th>عملیات</th>
+                                <th>Name</th>
+                                <th>Last name</th>
+                                <th>Confirmation name</th>
+                                <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -83,8 +83,8 @@
                                     {{ user_confirm.confirm.name }}
                                 </td>
                                 <td>
-                                    <i class="badge badge-info">غیرفعال</i>
-                                    <i class="badge badge-danger">حذف</i>
+                                    <i class="badge badge-info">Inactive</i>
+                                    <i class="badge badge-danger">Delete</i>
                                 </td>
                             </tr>
 
@@ -140,7 +140,7 @@ export default {
                         heightAuto: false,
                         position: 'center',
                         icon: 'success',
-                        title: 'ذخیره با موفقیت انجام شد',
+                        title: 'Saved successfully',
                         showConfirmButton: false,
                         timer: 2000
                     })
@@ -150,8 +150,8 @@ export default {
                     Swal.fire({
                         heightAuto: false,
                         icon: 'error',
-                        title: 'خطا . . .',
-                        text: 'وارد کردن نام تائید اجباری است'
+                        title: 'Error . . .',
+                        text: 'Confirmation name is required'
                     })
                 }
 
@@ -251,23 +251,23 @@ and (max-device-width: 1024px) {
     }
 
     #user_confirm td:nth-of-type(1):before {
-        content: "ردیف";
+        content: "Row";
     }
 
     #user_confirm td:nth-of-type(2):before {
-        content: "نام";
+        content: "Name";
     }
 
     #user_confirm td:nth-of-type(3):before {
-        content: "نام خانوادگی";
+        content: "Last name";
     }
 
     #user_confirm td:nth-of-type(4):before {
-        content: "نام تائید";
+        content: "Confirmation name";
     }
 
     #user_confirm td:nth-of-type(5):before {
-        content: "عملیات";
+        content: "Actions";
     }
 }
 </style>

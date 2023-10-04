@@ -2,12 +2,12 @@
     <div class="containe  r1 p-5 p-md-5 pt-4 height-100 w-100">
 
 
-        <!--  مودال ارسال به پیک //////////////////////////////-->
+        <!-- Send by courier Modal//////////////////////////////-->
         <div class="modal" tabindex="-1" id="modal_peyk">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">ارسال به پیک</h5>
+                        <h5 class="modal-title">Send by courier</h5>
                         <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -17,17 +17,17 @@
                             <div class="col-6 d-flex align-items-center">
                                 <input v-model="peyk_temp.type_send" type="radio" name="select_send"
                                        class="option-input radio ml-2" value="manual">
-                                <label class="my-auto"> انتخاب دستی </label>
+                                <label class="my-auto"> Manual selection </label>
                             </div>
                             <div class="col-6 d-flex align-items-center">
                                 <input v-model="peyk_temp.type_send" type="radio" name="select_send"
                                        class="option-input radio ml-2" value="auto">
-                                <label class="my-auto"> انتخاب اتوماتیک </label>
+                                <label class="my-auto"> Automatic selection </label>
                             </div>
                             <div v-if="peyk_temp.type_send=='manual'" class="col-10 mt-3">
                                 <multiselect v-model="peyk_id" :options="peyks.map(type => type.id)"
                                              :custom-label="opt => peyks.find(x => x.id == opt).first_name+' '+peyks.find(x => x.id == opt).last_name+' '+peyks.find(x => x.id == opt).personnel_code"
-                                             :showLabels="false" placeholder="نام پیک" @input="SetObj"></multiselect>
+                                             :showLabels="false" placeholder="Courier name" @input="SetObj"></multiselect>
 
                             </div>
 
@@ -36,16 +36,16 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                            لغو
+                            Cancel
                         </button>
-                        <button type="button" class="btn btn-primary" @click="sendPeyk">ارسال</button>
+                        <button type="button" class="btn btn-primary" @click="sendPeyk">Send</button>
                     </div>
                 </div>
             </div>
         </div>
 
 
-        <!--    مودال پرینت    ////////////////////////////////-->
+        <!--    The print modal    ////////////////////////////////-->
         <div id="printMe" dir="rtl">
             <div class="modal p-2" tabindex="-1" id="modal-print" role="dialog" aria-labelledby="modal-print"
                  aria-hidden="true">
@@ -61,17 +61,17 @@
                                     <div class="img_print">
                                         <span><img src="/images/ardakan.png"></span>
                                         <span class="img-font">
-                                                    						گروه کارخانجات شیشه اردکان
+                                                    						Warehouse Software
                                                     					</span>
-                                        <span class="img-font">ARDAKAN FLOAT GLASS CO</span>
+                                        <span class="img-font">Warehouse Software</span>
                                     </div>
 
                                 </div>
                                 <div class="col-4">
-                                    <h2 class="print-head">رسید تحویل</h2>
+                                    <h2 class="print-head">Delivery receipt</h2>
                                 </div>
                                 <div class="col-4 text-center">
-                                    <h5 class="inline">تاریخ:</h5>
+                                    <h5 class="inline">Date:</h5>
                                     <h5 v-if="request_all!=''" class="inline">
                                         {{ convertDate(request_all[request_id].created_at) }}</h5>
                                     <h5 v-if="request_all!=''" class="d-block">
@@ -89,42 +89,42 @@
                                     <thead>
                                     <tr>
                                         <th>
-                                            ردیف
+                                            Row
                                         </th>
-                                        <th>نام کالا</th>
-                                        <th>تعداد</th>
-                                        <th>واحد درخواست کننده</th>
-                                        <th>مرکز هزینه</th>
-                                        <th>وضعیت تائید</th>
-                                        <th>توضیحات</th>
+                                        <th>Products name</th>
+                                        <th>Count</th>
+                                        <th>Requested unit</th>
+                                        <th>Cost center</th>
+                                        <th>Confirmation status</th>
+                                        <th>Descriptions</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <template v-if="request_all!=''">
                                         <tr v-for="(print,index) in request_all[this.request_id].request_detail"
                                             :key="index">
-                                            <td label="ردیف">
+                                            <td label="Row">
                                                 {{ index + 1 }}
                                             </td>
-                                            <td label="نام کالا">
+                                            <td label="Products name">
                                                 {{ print.product.name }}
                                             </td>
-                                            <td label="تعداد">
+                                            <td label="Count">
                                                 {{ print.amount }}
                                             </td>
-                                            <td label="واحد درخواست کننده">
+                                            <td label="Requested unit">
                                                 {{ request_all[request_id].unit.name }}
                                             </td>
-                                            <td label="مرکز هزینه">
+                                            <td label="Cost center">
                                                 <label v-if="print.center"> {{ print.center.name }}</label>
 
                                             </td>
-                                            <td label="وضعیت تائید">
-                                                <i v-if="print.confirmed==null">در انتظار تائید</i>
-                                                <i v-if="print.confirmed==0">عدم تائید</i>
-                                                <i v-if="print.confirmed==1" >تائید</i>
+                                            <td label="Confirmation status">
+                                                <i v-if="print.confirmed==null">Awaiting confirmation</i>
+                                                <i v-if="print.confirmed==0">Not approved</i>
+                                                <i v-if="print.confirmed==1" >approved</i>
                                             </td>
-                                            <td label="توضیحات">
+                                            <td label="Descriptions">
                                                 {{ print.descriptions }}
                                             </td>
                                         </tr>
@@ -135,7 +135,7 @@
                             </div>
 
                             <div class="row text-right p-3">
-                                <p class="inline">آدرس تحویل:</p>
+                                <p class="inline">Delivery address:</p>
                                 <p class="inline"></p>
                             </div>
 
@@ -143,21 +143,21 @@
                                 <div class="col-4 border">
 
                                     <div class="signature">
-                                        <p>مسئول انبار</p>
+                                        <p>Warehouse manager</p>
                                     </div>
                                 </div>
 
                                 <div class="col-4 border">
 
                                     <div class="signature">
-                                        <p>مسئول پیک</p>
+                                        <p>Courier in charge</p>
                                     </div>
                                 </div>
 
                                 <div class="col-4 border">
 
                                     <div class="signature">
-                                        <p>دریافت کننده</p>
+                                        <p>Receiver</p>
                                     </div>
                                 </div>
 
@@ -165,9 +165,9 @@
                         </div>
                         <div class="modal-footer">
                             <button v-print="printObj" type="button" id="btnPrint"
-                                    class="btn btn-primary">چاپ
+                                    class="btn btn-primary">Print
                             </button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -175,12 +175,12 @@
         </div>
 
 
-        <!-- مودال نمایش جزئیات   ///////////////////////////////////////-->
+        <!-- Show details Modal   ///////////////////////////////////////-->
         <div class="modal" tabindex="-1" id="modal-details">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header float-left text-left">
-                        <!--                        <h5 class="modal-title">نمایش جزئیات</h5>-->
+                        <!--                        <h5 class="modal-title">Show details</h5>-->
                         <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -189,56 +189,54 @@
                         <table id="table-information" class="table table-striped table-bordered text-center style_table">
                             <thead>
                             <tr>
-                                <th colspan="10"><h4>نمایش جزئیات</h4></th>
+                                <th colspan="10"><h4>Show details</h4></th>
 
                             </tr>
                             <tr>
-                                <th>ردیف</th>
-                                <th>نام کالا</th>
-                                <!--                                <th>مشخصات کالا</th>-->
-                                <th>تعداد</th>
-                                <th>واحد درخواست کننده</th>
-                                <th>مرکز هزینه</th>
-                                <th>انبار</th>
-                                <th>وضعیت درخواست</th>
-                                <th>نمایش تائیدیه ها</th>
-                                <th>توضیحات</th>
-                                <th>فایل</th>
+                                <th>Row</th>
+                                <th>Products name</th>
+                                <!--                                <th>Products specification</th>-->
+                                <th>Count</th>
+                                <th>Requested unit</th>
+                                <th>Cost center</th>
+                                <th>Warehouse</th>
+                                <th>Request Status</th>
+                                <th>Show confirmations</th>
+                                <th>Descriptions</th>
+                                <th>File</th>
                             </tr>
                             </thead>
                             <tbody>
                             <template v-if="request_all!=''">
                                 <tr v-if="request_all[request_id].request_detail!=''"
                                     v-for="(details,index) in request_all[request_id].request_detail" :key="index">
-                                    <td label="ردیف">{{ index + 1 }}</td>
-                                    <td label="نام کالا">{{ details.product.name }}</td>
-                                    <!--                                    <td>بزرگ</td>-->
-                                    <td label="تعداد">{{ details.amount }}</td>
-                                    <td label="واحد درخواست کننده">{{ request_all[request_id].unit.name }}</td>
-                                    <td label="مرکز هزینه">
+                                    <td label="Row">{{ index + 1 }}</td>
+                                    <td label="Products name">{{ details.product.name }}</td>
+                                    <td label="Count">{{ details.amount }}</td>
+                                    <td label="Requested unit">{{ request_all[request_id].unit.name }}</td>
+                                    <td label="Cost center">
                                         <label v-if="details.center">
                                             {{ details.center.name}}
                                         </label>
 
                                     </td>
-                                    <td label="انبار">{{ details.warehouse.name }}</td>
-                                    <td label="وضعیت درخواست"><i v-if="details.confirmed==null" class="badge badge-warning">در انتظار
-                                        تائید</i>
-                                        <i v-if="details.confirmed==0" class="badge badge-danger">عدم تائید</i>
-                                        <i v-if="details.confirmed==1" class="badge badge-success">تائید</i></td>
+                                    <td label="Warehouse">{{ details.warehouse.name }}</td>
+                                    <td label="Request Status"><i v-if="details.confirmed==null" class="badge badge-warning">Awaiting confirmation</i>
+                                        <i v-if="details.confirmed==0" class="badge badge-danger">Not approved</i>
+                                        <i v-if="details.confirmed==1" class="badge badge-success">Approved</i></td>
 
-                                    <td label="نمایش تائیدیه ها">
+                                    <td label="Show confirmations">
                                         <i class="fa fa-info-circle fa-2x" data-toggle="modal"
                                            data-target="#show_confirm" @click="getLoadConfirm(details.id)"></i>
                                     </td>
-                                    <td label="توضیحات">
+                                    <td label="Descriptions">
                                         <textarea class="form-control" rows="4" cols="50" disabled>{{details.descriptions}}</textarea>
 
                                     </td>
-                                    <td label="فایل">
+                                    <td label="File">
                                         <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
                                                 data-target="#modal_file" @click="showFile(details)"
-                                                :disabled="disable_btn(details)">نمایش
+                                                :disabled="disable_btn(details)">show
                                         </button>
                                     </td>
                                 </tr>
@@ -250,7 +248,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">
-                            بستن
+                            Close
                         </button>
                     </div>
                 </div>
@@ -260,29 +258,29 @@
         <!--        /////////////////////////////////////////////////////////////-->
 
 
-        <!--     مودال ارجاع درخواست  //////////////////////////////  -->
+        <!--    Referring the request Modal  //////////////////////////////  -->
         <div class="modal" tabindex="-1" id="reference">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">ارجاع درخواست</h5>
+                        <h5 class="modal-title">Referring the request</h5>
                         <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body form-group text-right">
-                        <label>انتخاب نوع تائیدیه</label>
+                        <label>Choose the type of confirmation</label>
                         <multiselect v-model="reference_temp" track-by="name"
-                                     placeholder="انتخاب" :options="option_reference" :searchable="true"
+                                     placeholder="Select" :options="option_reference" :searchable="true"
                                      :custom-label="nameWithLang"
                                      :showLabels="false" @input="pushArrayReference">
                         </multiselect>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                            لغو
+                            Cancel
                         </button>
-                        <button type="button" class="btn btn-primary" @click="sendReference">ارسال</button>
+                        <button type="button" class="btn btn-primary" @click="sendReference">Send</button>
                     </div>
                 </div>
             </div>
@@ -294,7 +292,7 @@
             <div class="modal-dialog d-flex" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">لیست فایل ها</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Files list</h5>
                     </div>
                     <div class="modal-body">
 
@@ -303,46 +301,46 @@
                                 <thead>
                                 <tr>
                                     <th>
-                                        ردیف
+                                        Row
                                     </th>
                                     <th>
-                                        نام فایل
+                                       File name
                                     </th>
                                     <th>
-                                        توضیحات
+                                        Descriptions
                                     </th>
                                     <th>
-                                        پیش نمایش
+                                       Preshow
                                     </th>
                                     <th>
-                                        دانلود
+                                        Download
                                     </th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr v-if="file_array!=null" v-for="(file,index) in file_array" :key="index">
-                                    <td label="ردیف">
+                                    <td label="Row">
                                         {{ index + 1 }}
                                     </td>
-                                    <td label="نام فایل">
+                                    <td label="File name">
                                         {{ file.file.name }}
                                     </td>
-                                    <td label="توضیحات">
+                                    <td label="Descriptions">
                                         {{ file.file.description }}
                                     </td>
-                                    <td label="پیش نمایش">
+                                    <td label="Preshow">
 
                                         <div class="preview">
 
                                             <a :href="'/file-show?fileId='+ file.file_id" target="_blank">
                                                 <img class="size_img" :src="'/file-show?fileId='+ file.file_id"
-                                                     alt="باز کردن"/>
+                                                     alt="Open"/>
                                             </a>
                                         </div>
                                     </td>
-                                    <td label="دانلود">
+                                    <td label="Download">
                                         <a :href="'/file-download?fileId='+ file.file_id"
-                                           class="btn btn-sm btn-primary">دانلود</a>
+                                           class="btn btn-sm btn-primary">Download</a>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -351,7 +349,7 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -363,7 +361,7 @@
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">نمایش تائیدیه ها</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Show confirmations</h5>
                         <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -374,51 +372,50 @@
                                 <thead>
                                 <tr>
                                     <th>
-                                        ردیف
+                                        Row
                                     </th>
                                     <th>
-                                        نام تائید کننده
+                                        Name of the approver
                                     </th>
                                     <th>
-                                        نام تائیدیه
+                                        Confirmation name
                                     </th>
                                     <th>
-                                        وضعیت تائید
+                                        Confirmation status
                                     </th>
                                     <th>
-                                        توضیحات
+                                        Descriptions
                                     </th>
                                     <th>
-                                        تاریخ
+                                        Date
                                     </th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <template v-if="details_confirm!=''">
                                     <tr v-for="(confirm,index) in details_confirm" :key="index">
-                                        <td label="ردیف">
+                                        <td label="Row">
                                             {{ index + 1 }}
                                         </td>
-                                        <td label="نام تائید کننده" v-if="confirm.user!=null">
+                                        <td label="Name of the approver" v-if="confirm.user!=null">
                                             {{ confirm.user.first_name }} {{ confirm.user.last_name }}
                                         </td>
-                                        <td label="نام تائید کننده" v-if="confirm.user==null">
-                                            نا معلوم
+                                        <td label="Name of the approver" v-if="confirm.user==null">
+                                            Unknown
                                         </td>
-                                        <td label="نام تائیدیه" v-if="confirm.confirm.name!=null">
+                                        <td label="Confirmation name" v-if="confirm.confirm.name!=null">
                                             {{ confirm.confirm.name }}
                                         </td>
-                                        <td label="وضعیت تائید">
-                                            <i v-if="confirm.confirmed==null" class="badge badge-warning">در انتظار
-                                                تائید</i>
-                                            <i v-if="confirm.confirmed==0" class="badge badge-danger">عدم تائید</i>
-                                            <i v-if="confirm.confirmed==1" class="badge badge-success">تائید</i>
+                                        <td label="Confirmation status">
+                                            <i v-if="confirm.confirmed==null" class="badge badge-warning">Awaiting confirmation</i>
+                                            <i v-if="confirm.confirmed==0" class="badge badge-danger">Not approved</i>
+                                            <i v-if="confirm.confirmed==1" class="badge badge-success">approved</i>
                                         </td>
-                                        <td label="توضیحات">
+                                        <td label="Descriptions">
                                             <textarea class="form-control" rows="4" cols="50" disabled>{{confirm.description}}</textarea>
 
                                         </td>
-                                        <td label="تاریخ">
+                                        <td label="Date">
                                             {{ confirm.updated_at }}
                                         </td>
                                     </tr>
@@ -428,7 +425,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -436,18 +433,18 @@
 
         <div>
             <div class="radio">
-                <input v-model="searchQuery" label="کارتابل انبار" type="radio" name="filter" value="1" checked>
-                <input v-model="searchQuery" label="کارتابل پیک" type="radio" name="filter" value="3">
-                <input v-model="searchQuery" label="تحویل مامور پیک" type="radio" name="filter" value="4">
-                <input v-model="searchQuery" label="همه" type="radio" name="filter" value="">
+                <input v-model="searchQuery" label="Cartable warehouse" type="radio" name="filter" value="1" checked>
+                <input v-model="searchQuery" label="Cartable Courier" type="radio" name="filter" value="3">
+                <input v-model="searchQuery" label="Courier delivery" type="radio" name="filter" value="4">
+                <input v-model="searchQuery" label="All" type="radio" name="filter" value="">
             </div>
             <div>
-                <h4 class="mb-4  my-font-size">کارتابل انبار</h4>
+                <h4 class="mb-4  my-font-size">Cartable warehouse</h4>
                 <div class="search-box mr-5">
-                    <h5 class="d-inline-flex">جستجو:</h5>
+                    <h5 class="d-inline-flex">Search:</h5>
                     <button class="btn-search"><i class="fas fa-search"></i></button>
                     <input type="text" class="input-search" v-model="searchQuery2"
-                           placeholder="جستجو...">
+                           placeholder="Search...">
                 </div>
             </div>
         </div>
@@ -455,51 +452,51 @@
             <table id="table_status" class="table table-bordered style_table">
                 <thead>
                 <tr>
-                    <th>ردیف</th>
-                    <th>واحد درخواست کننده</th>
-                    <th>شماره درخواست</th>
-                    <th>تاریخ</th>
-                    <th>وضعیت تائید</th>
-                    <th>مرحله درخواست</th>
-                    <th>توضیحات</th>
-                    <th>ارجاع</th>
-                    <th>ارسال به پیک</th>
-                    <th>پرینت رسید تحویل</th>
-                    <th>مشاهده جزئیات</th>
-                    <th v-if="searchQuery==1 || searchQuery==2">عملیات</th>
+                    <th>Row</th>
+                    <th>Requested unit</th>
+                    <th>Request number</th>
+                    <th>Date</th>
+                    <th>Confirmation status</th>
+                    <th>Request stage</th>
+                    <th>Descriptions</th>
+                    <th>referral</th>
+                    <th>Send by courier</th>
+                    <th>Delivery receipt print</th>
+                    <th>Show details</th>
+                    <th v-if="searchQuery==1 || searchQuery==2">Actions</th>
                 </tr>
                 </thead>
                 <tbody id="tbody_status">
                 <tr v-if="request_all!=''" v-for="(request,index) in resultQuery" :key="index">
-                    <td label="ردیف">{{ index + 1 }}</td>
-                    <td label="واحد درخواست کننده">{{ request.unit.name }}</td>
-                    <td label="شماره درخواست">{{ request.request_number }}</td>
-                    <td label="تاریخ">
+                    <td label="Row">{{ index + 1 }}</td>
+                    <td label="Requested unit">{{ request.unit.name }}</td>
+                    <td label="Request number">{{ request.request_number }}</td>
+                    <td label="Date">
                         {{ convertDate(request.created_at) }}
                     </td>
-                    <td label="وضعیت تائید">
-                        <i v-if="request.confirmed==null" class="badge badge-warning">در انتظار تائید</i>
-                        <i v-if="request.confirmed==0" class="badge badge-danger">عدم تائید</i>
-                        <i v-if="request.confirmed==1" class="badge badge-success">تائید</i>
+                    <td label="Confirmation status">
+                        <i v-if="request.confirmed==null" class="badge badge-warning">Awaiting confirmation</i>
+                        <i v-if="request.confirmed==0" class="badge badge-danger">Not approved</i>
+                        <i v-if="request.confirmed==1" class="badge badge-success">approved</i>
                     </td>
 
-                    <td label="مرحله درخواست">
+                    <td label="Request stage">
                         <i class="badge badge-info"
                            :class="{ 'badge-danger': request.status.id==5 , 'badge-warning': request.status.id==1}">{{
                                 request.status.name
                             }}</i>
                     </td>
-                    <td label="توضیحات">
+                    <td label="Descriptions">
                         <textarea class="form-control" disabled>{{request.descriptions}}</textarea>
                     </td>
-                    <td label="ارجاع">
+                    <td label="referral">
                         <button type="button" class="btn btn-primary btn-table" data-toggle="modal"
                                 data-target="#reference" @click="sendAll(request.id)"
                                 :disabled="request.status.id!=1 && request.status.id!=2">
                             <i class="fas fa-share-square"></i>
                         </button>
                     </td>
-                    <td label="ارسال به پیک">
+                    <td label="Send by courier">
                         <button v-if="request.request_detail[0].delivery==''" type="button"
                                 class="btn btn-primary btn-table" @click="sendDelivery(request.id)"
                                 :disabled="!request.confirmed || request.status.id!=1 && request.status.id!=2">
@@ -511,25 +508,25 @@
                             }}</label>
 
                     </td>
-                    <td label="پرینت رسید تحویل">
+                    <td label="Delivery receipt print">
                         <button type="button" class="btn btn-primary btn-table" data-toggle="modal"
                                 data-target="#modal-print" @click="request_info(request.id)">
                             <i class="fas fa-print"></i>
                         </button>
 
                     </td>
-                    <td label="مشاهده جزئیات">
+                    <td label="Show details">
 
                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                                data-target="#modal-details" @click="request_info(request.id)"> نمایش جزئیات
+                                data-target="#modal-details" @click="request_info(request.id)"> Show details
                         </button>
                     </td>
-                    <td label="عملیات" v-if="searchQuery==1 || searchQuery==2">
+                    <td label="Actions" v-if="searchQuery==1 || searchQuery==2">
                         <div>
-                            <button type="button" class="btn btn-sm btn-danger inline-block" @click="cancel(request.id)"> لغو
+                            <button type="button" class="btn btn-sm btn-danger inline-block" @click="cancel(request.id)"> Cancel
                             </button>
                             <router-link :to="{name:'edit_request',params:{id:request.id}}" class="btn btn-sm btn-warning inline-block mb-1 pr-2 py-1">
-                                <span>ویرایش</span>
+                                <span>Edit</span>
                             </router-link>
                         </div>
 
@@ -599,7 +596,7 @@ export default {
                             heightAuto: false,
                             position: 'center',
                             icon: 'success',
-                            title: 'ارسال با موفقیت ذخیره شد',
+                            title: 'Saved succussfully',
                             showConfirmButton: false,
                             timer: 2000
                         })
@@ -609,7 +606,7 @@ export default {
                         Swal.fire({
                             heightAuto: false,
                             icon: 'error',
-                            title: 'خطا . . .',
+                            title: 'Error . . .',
                             text: error.response.data.message
                         })
                     }
@@ -640,7 +637,7 @@ export default {
                         heightAuto: false,
                         position: 'center',
                         icon: 'success',
-                        title: 'ثبت با موفقیت ذخیره شد',
+                        title: 'Saved successfully',
                         showConfirmButton: false,
                         timer: 2000
                     })
@@ -650,7 +647,7 @@ export default {
                     Swal.fire({
                         heightAuto: false,
                         icon: 'error',
-                        title: 'خطا . . .',
+                        title: 'Error . . .',
                         text: error.response.data.message
                     })
                 }
@@ -692,8 +689,8 @@ export default {
                 Swal.fire({
                     heightAuto: false,
                     icon: 'error',
-                    title: 'خطا . . .',
-                    text: "لطفا اول یک نوع تائیدیه انتخاب کنید"
+                    title: 'Error . . .',
+                    text: "Please select a confirmation type first"
                 })
             } else {
                 axios.post('api/requestDetailsConfirms/store', this.reference_array).then((response) => {
@@ -714,7 +711,7 @@ export default {
                         Swal.fire({
                             heightAuto: false,
                             icon: 'error',
-                            title: 'خطا . . .',
+                            title: 'Error . . .',
                             text: error.response.data.message
                         })
                     }
@@ -743,7 +740,7 @@ export default {
                         heightAuto: false,
                         position: 'center',
                         icon: 'success',
-                        title: 'ذخیره با موفقیت ذخیره شد',
+                        title: 'Saved successfully',
                         showConfirmButton: false,
                         timer: 2000
                     })
@@ -753,7 +750,7 @@ export default {
                     Swal.fire({
                         heightAuto: false,
                         icon: 'error',
-                        title: 'خطا . . .',
+                        title: 'Error . . .',
                         text: error.response.data.message
                     })
                 }
@@ -769,13 +766,13 @@ export default {
         },
         sendDelivery(requestID) {
             Swal.fire({
-                title: 'آیا از ارسال به پیک اطمینان دارید؟',
-                text: "تائید ارسال به منزله تائید انبار از موجودی می باشد",
+                title: 'Are you sure about sending by courier?',
+                text: "Confirmation of sending means warehouse confirmation of inventory",
                 icon: 'warning',
                 confirmButtonColor: '#28a745',
                 showCancelButton: true,
-                confirmButtonText: 'تایید',
-                cancelButtonText: 'لغو'
+                confirmButtonText: 'Confirmation',
+                cancelButtonText: 'Cancel'
             }).then((result) => {
                 if (result.isConfirmed) {
                     axios.put('api/requests/statusRequestAndItsRequestDetails/3', {requestId: requestID}
@@ -786,7 +783,7 @@ export default {
                                 heightAuto: false,
                                 position: 'center',
                                 icon: 'success',
-                                title: 'ارسال با موفقیت انجام شد',
+                                title: 'Submitted successfully',
                                 showConfirmButton: false,
                                 timer: 2000
                             })
@@ -796,7 +793,7 @@ export default {
                             Swal.fire({
                                 heightAuto: false,
                                 icon: 'error',
-                                title: 'خطا . . .',
+                                title: 'Error . . .',
                                 text: error.response.data.message
                             })
                         }
@@ -816,12 +813,12 @@ export default {
         },
         cancel(request_id) {
             Swal.fire({
-                title: 'آیا از لغو درخواست اطمینان دارید؟',
+                title: 'Are you sure you want to cancel?',
                 icon: 'question',
                 confirmButtonColor: '#ea3f3f',
                 showCancelButton: true,
-                confirmButtonText: 'بله',
-                cancelButtonText: 'بستن'
+                confirmButtonText: 'Yes',
+                cancelButtonText: 'Close'
             }).then((result) => {
                 if (result.isConfirmed) {
                     axios.put('api/requests/statusRequestAndItsRequestDetails/5', {requestId: request_id}
@@ -832,7 +829,7 @@ export default {
                                 heightAuto: false,
                                 position: 'center',
                                 icon: 'success',
-                                title: 'لغو با موفقیت انجام شد',
+                                title: 'Canceled succussfully',
                                 showConfirmButton: false,
                                 timer: 2000
                             })
@@ -842,7 +839,7 @@ export default {
                             Swal.fire({
                                 heightAuto: false,
                                 icon: 'error',
-                                title: 'خطا . . .',
+                                title: 'Error . . .',
                                 text: error.response.data.message
                             })
                         }

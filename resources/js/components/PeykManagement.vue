@@ -4,16 +4,16 @@
                 <div class="row w-100 mb-3 mx-0">
                     <div class="col-6">
                         <button id="btn_modal_peyk" type="button" class="btn btn-success" data-toggle="modal"
-                                data-target="#modal-peyk" @click="cleanForm">افزودن پیک
+                                data-target="#modal-peyk" @click="cleanForm">Add courier
                         </button>
 
                     </div>
                     <div class="col-6 pl-0 text-left">
                         <div class="search-box mr-5">
-                            <h5 class="d-inline-flex">جستجو:</h5>
+                            <h5 class="d-inline-flex">Search:</h5>
                             <button class="btn-search"><i class="fas fa-search"></i></button>
                             <input type="text" class="input-search" v-model="searchQuery"
-                                   placeholder="جستجو...">
+                                   placeholder="Search...">
                         </div>
                     </div>
 
@@ -22,7 +22,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">افزودن پیک</h5>
+                                <h5 class="modal-title">Add courier</h5>
                                 <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -30,28 +30,28 @@
 
                             <div class="modal-body form-group text-right">
                                 <div>
-                                    <label>نام:</label>
+                                    <label>Name:</label>
 
                                     <multiselect v-model="peyk_rel.user_id" :options="users"
                                                  :custom-label="name_family"
-                                                 :showLabels="false" placeholder="نام پیک"></multiselect>
+                                                 :showLabels="false" placeholder="Courier name"></multiselect>
 
                                 </div>
 
                                 <div class="mt-4">
-                                    <label>نام وسیله:</label>
+                                    <label>Vehicle name:</label>
                                     <multiselect v-model="peyk_rel.vehicle_id"
                                                  :options="vehicle_list"
                                                  :custom-label="nameWithLang"
-                                                 :showLabels="false" placeholder="نام وسیله"></multiselect>
+                                                 :showLabels="false" placeholder="Vehicle name"></multiselect>
                                 </div>
 
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary " data-dismiss="modal">
-                                    لغو
+                                    Cancel
                                 </button>
-                                <button type="button" class="btn btn-primary" @click="save(peyk_rel)">ثبت
+                                <button type="button" class="btn btn-primary" @click="save(peyk_rel)">Submit
                                 </button>
                             </div>
                         </div>
@@ -63,48 +63,48 @@
                 <table id="delivery" class="table">
                     <thead>
                     <tr>
-                        <th>ردیف</th>
-                        <th>نام</th>
-                        <th>نام خانوادگی</th>
-                        <th>کد پرسنلی</th>
-                        <th>نام وسیله</th>
-                        <th>شماره وسیله</th>
-                        <th>عملیات</th>
+                        <th>Row</th>
+                        <th>Name</th>
+                        <th>Last name</th>
+                        <th>Personnel code</th>
+                        <th>Vehicle name</th>
+                        <th>Vehicle number plate</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody class="tbody-units">
                     <tr v-for='(peyk, index) in resultQuery' :key="index" :class="{editing: peyk == editedPeyk}"
                         v-cloak>
-                        <td label="ردیف">{{ index + 1 }}</td>
-                        <td label="نام">
+                        <td label="Row">{{ index + 1 }}</td>
+                        <td label="Name">
                             <input type="text" class="form-control text-center d-inline w-100"
-                                   :value="peyk.user.first_name" placeholder="نام" readonly>
+                                   :value="peyk.user.first_name" placeholder="Name" readonly>
                         </td>
-                        <td label="نام خانوادگی">
+                        <td label="Last name">
                                 <input type="text" class="form-control text-center d-inline w-100"
-                                       :value="peyk.user.last_name" placeholder="نام خانوادگی" readonly>
+                                       :value="peyk.user.last_name" placeholder="Last name" readonly>
 
                         </td>
-                        <td label="کد پرسنلی">
+                        <td label="Personnel code">
 
                                 <input type="text" :value="peyk.user.personnel_code" class="form-control text-center"
                                        readonly>
 
                         </td>
-                        <td label="نام وسیله">
+                        <td label="Vehicle name">
 
                                 <input type="text" class="form-control d-inline w-100 text-center"
-                                       :value="peyk.vehicle.name" placeholder="نام وسیله" readonly>
+                                       :value="peyk.vehicle.name" placeholder="Vehicle name" readonly>
 
                         </td>
-                        <td label="شماره وسیله">
+                        <td label="Vehicle number plate">
                             <input type="text" class="form-control d-inline w-100 text-center"
-                                   :value="peyk.vehicle.number" placeholder="شماره وسیله" readonly>
+                                   :value="peyk.vehicle.number" placeholder="Vehicle number plate" readonly>
                         </td>
-                        <td label="عملیات">
+                        <td label="Actions">
 
                                 <a class="badge badge-danger"
-                                   @click="">حذف</a>
+                                   @click="">Delete</a>
 
                         </td>
                     </tr>
@@ -168,7 +168,7 @@ export default {
                         heightAuto: false,
                         position: 'center',
                         icon: 'success',
-                        title: 'ذخیره با موفقیت ذخیره شد',
+                        title: 'Saved successfully',
                         showConfirmButton: false,
                         timer: 2000
                     })
@@ -178,7 +178,7 @@ export default {
                     Swal.fire({
                         heightAuto: false,
                         icon: 'error',
-                        title: 'خطا . . .',
+                        title: 'Error . . .',
                         text:error.response.data.message
                     })
                 }

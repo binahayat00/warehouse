@@ -19,7 +19,7 @@
                     <a data-toggle="collapse" href="#dashboard" aria-expanded="true">
                         <div>
                             <i class="fas fa-edit pl-2"></i>
-                            <span>عملیات درخواست ها</span>
+                            <span>Requests actions</span>
                             <i class="fa fa-angle-left float-left mt-1 pr-4"></i>
                         </div>
 
@@ -28,15 +28,15 @@
                     <div class="collapse mt-2" id="dashboard">
                                 <router-link to="/request" class="mb-1 pr-2 py-1 d-block">
                                     <i class="fa fa-circle"></i>
-                                    <span>درخواست کالا</span>
+                                    <span>Request goods</span>
                                 </router-link>
                                 <router-link to="/status" class="mb-1 pr-2 py-1 d-block">
                                     <i class="fa fa-circle"></i>
-                                    <span>درخواست های انتظار تائید</span>
+                                    <span>Awaiting confirmation requests</span>
                                 </router-link>
                         <router-link to="/myrequest" class="mb-1 pr-2 py-1 d-block">
                             <i class="fa fa-circle"></i>
-                            <span>درخواست های من</span>
+                            <span>My requests</span>
                         </router-link>
                     </div>
                 </li>
@@ -44,31 +44,31 @@
                     <a data-toggle="collapse" href="#business" aria-expanded="true">
                         <div>
                             <i class="fas fa-chart-bar pl-2"></i>
-                            <span>عملیات بازرگانی</span>
+                            <span>Business operations</span>
                             <i class="fa fa-angle-left float-left mt-1 pr-4"></i>
                         </div>
                     </a>
                     <div class="collapse mt-2" id="business">
                         <router-link to="/business" class="mb-1 pr-2 py-1 d-block">
                             <i class="fa fa-circle"></i>
-                            <span>مشاهده درخواست خرید</span>
+                            <span>View purchase request</span>
                         </router-link>
                         <router-link to="/status" class="mb-1 pr-2 py-1 d-block">
                             <i class="fa fa-circle"></i>
-                            <span>آرشیو درخواست ها</span>
+                            <span>Archive of requests</span>
                         </router-link>
                     </div>
                 </li>
                 <li class="my-0 py-2">
                     <router-link to="/store" class="mb-1 pr-2 py-1 d-block">
-                        <span>کارتابل انبار</span>
+                        <span>Cartable warehouse</span>
                     </router-link>
                 </li>
                 <li class="my-0">
                     <a data-toggle="collapse" href="#peyk" aria-expanded="true">
                         <div>
                             <i class="fas fa-chart-bar pl-2"></i>
-                            <span>عملیات پیک</span>
+                            <span>Courier actions</span>
                             <i class="fa fa-angle-left float-left mt-1 pr-4"></i>
                         </div>
 
@@ -76,19 +76,19 @@
                     <div class="collapse mt-2" id="peyk">
                         <router-link to="/peyk_management" class="mb-1 pr-2 py-1 d-block">
                             <i class="fa fa-circle"></i>
-                            <span>معرفی پیک</span>
+                            <span>Introducing the courier</span>
                         </router-link>
                         <router-link to="/vehicle" class="mb-1 pr-2 py-1 d-block">
                             <i class="fa fa-circle"></i>
-                            <span>معرفی وسیله</span>
+                            <span>Introducing the vehicle</span>
                         </router-link>
                         <router-link to="/receive_request_peyk" class="mb-1 pr-2 py-1 d-block">
                             <i class="fa fa-circle"></i>
-                            <span>درخواست های در انتظار تحویل</span>
+                            <span>Requests pending delivery</span>
                         </router-link>
                         <router-link to="/Archive" class="mb-1 pr-2 py-1 d-block">
                             <i class="fa fa-circle"></i>
-                            <span>آرشیو</span>
+                            <span>Archive</span>
                         </router-link>
                     </div>
                 </li>
@@ -97,7 +97,7 @@
                     <a data-toggle="collapse" href="#confirm" aria-expanded="true">
                         <div>
                             <i class="fas fa-chart-bar pl-2"></i>
-                            <span>تائیدیه ها</span>
+                            <span>Confirmations</span>
                             <i class="fa fa-angle-left float-left mt-1 pr-4"></i>
                         </div>
 
@@ -105,35 +105,35 @@
                     <div class="collapse mt-2" id="confirm">
                         <router-link to="/new_confirm" class="mb-1 pr-2 py-1 d-block">
                             <i class="fa fa-circle"></i>
-                            <span>تائیدیه های جدید</span>
+                            <span>New confirmations</span>
                         </router-link>
                         <router-link to="/confirm_user" class="mb-1 pr-2 py-1 d-block">
                             <i class="fa fa-circle"></i>
-                            <span>اختصاص تائیدیه به کاربران</span>
+                            <span>Assign confirmation to users</span>
                         </router-link>
                         <router-link to="/dgdgrgr" class="mb-1 pr-2 py-1 d-block">
                             <i class="fa fa-circle"></i>
-                            <span>تائیدیه محصولات</span>
+                            <span>Products confirmation</span>
                         </router-link>
                         <router-link to="/sdf" class="mb-1 pr-2 py-1 d-block">
                             <i class="fa fa-circle"></i>
-                            <span>تائیدیه دسته بندی ها</span>
+                            <span>Confirmation of categoryies</span>
                         </router-link>
                     </div>
                 </li>
 
                 <li class="my-0 py-2">
                         <router-link to="/user" class="mb-1 pr-2 py-1 d-block">
-                            <span>مدیریت کاربران</span>
+                            <span>User management</span>
                         </router-link>
                 </li>
                 <li class="my-0 py-2">
                     <router-link to="/permission" class="mb-1 pr-2 py-1 d-block">
-                        <span>دسترسی ها</span>
+                        <span>Permissions</span>
                     </router-link>
                 </li>
 
-               <a id="exit" tag="li" @click="logout" class="fas fa-door-open"><span>خروج</span></a>
+               <a id="exit" tag="li" @click="logout" class="fas fa-door-open"><span>Exit</span></a>
 
             </ul>
 
@@ -147,19 +147,11 @@ export default {
     data() {
         return {
             myActive: false,
-            // isAuth: false
             user:''
         }
     },
     methods : {
         logout() {
-            // if(confirm("آیا مایل به خروج از برنامه می باشید ؟")) {
-            //     localStorage.removeItem('token')
-            //     localStorage.removeItem('expire')
-            //     store.commit('logoutUser')
-            //     window.location.href = '/';
-            //     //this.$router.push({ name: 'login' })
-            // }
 
         },
         loadUser(){

@@ -5,22 +5,22 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">افزودن دسترسی</h5>
+                        <h5 class="modal-title">Add permission</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                             <i class="tim-icons icon-simple-remove"></i>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label class="control-label">کاربر</label>
+                            <label class="control-label">User</label>
                             <select v-model="role_name" id="user" class="form-control">
                                 <option v-for="role in roles">{{ role.name }}</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label class="control-label">دسترسی</label>
+                            <label class="control-label">Permission</label>
 
-                            <multiselect v-model="value" track-by="name" label="name" placeholder="انتخاب"
+                            <multiselect v-model="value" track-by="name" label="name" placeholder="Select"
                                          :options="permissions" :searchable="true" :allow-empty="false"
                                          :multiple="true">
                             </multiselect>
@@ -30,8 +30,8 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button @click="assignPermissionToRole()" class="btn btn-primary">افزودن دسترسی</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">لغو</button>
+                        <button @click="assignPermissionToRole()" class="btn btn-primary">Add permission</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
             </div>
@@ -39,14 +39,14 @@
 
         <div class="text-right">
             <button data-toggle="modal" data-target="#permission"
-                    class="btn cyan_color">افزودن مجوز دسترسی
+                    class="btn cyan_color">Add permission
             </button>
         </div>
         <table class="table border my_size style_table">
             <thead>
             <tr>
-                <th>نوع کاربر</th>
-                <th style="width: 70%">دسترسی ها</th>
+                <th>Type of user</th>
+                <th style="width: 70%">Permissions</th>
 
             </tr>
             </thead>
@@ -116,7 +116,7 @@ export default {
                 if (error.response.data.status == '406') {
                     Swal.fire({
                         icon: 'error',
-                        title: 'خطا . . .',
+                        title: 'Error . . .',
                         text: error.response.data.message
                     })
                 }
@@ -194,11 +194,11 @@ export default {
     }
 
     table td:nth-of-type(1):before {
-        content: "نوع کاربر";
+        content: "Type of user";
     }
 
     table td:nth-of-type(2):before {
-        content: "دسترسی ها";
+        content: "Permissions";
     }
 
 }

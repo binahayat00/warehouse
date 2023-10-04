@@ -2,44 +2,44 @@
     <div class="containe  r1 p-5 p-md-5 pt-4 height-100 w-100">
 
         <div class="radio">
-            <input v-model="searchQuery" label="در انتظار تائید" type="radio" name="filter" value="null" checked>
-            <input v-model="searchQuery" label="آرشیو" type="radio" id="send" name="filter" value="">
+            <input v-model="searchQuery" label="Awaiting confirmation" type="radio" name="filter" value="null" checked>
+            <input v-model="searchQuery" label="Archive" type="radio" id="send" name="filter" value="">
         </div>
-        <h4 class="mb-4 my-font-size">وضعیت درخواست</h4>
+        <h4 class="mb-4 my-font-size">Request Status</h4>
         <div class="text-center scroll">
             <table id="table_status" class="table table-bordered style_table">
                 <thead>
                 <tr>
-                    <th>ردیف</th>
-                    <th>واحد درخواست کننده</th>
-                    <th>شماره درخواست</th>
-                    <th>تاریخ</th>
-                    <th>وضعیت درخواست</th>
-                    <th>توضیحات</th>
-                    <th>مشاهده جزئیات</th>
+                    <th>Row</th>
+                    <th>Requested unit</th>
+                    <th>Request number</th>
+                    <th>Date</th>
+                    <th>Request Status</th>
+                    <th>Descriptions</th>
+                    <th>Show details</th>
                 </tr>
                 </thead>
                 <tbody id="tbody_status">
                 <tr v-if="request_all!=null" v-for="(request,index) in resultQuery" :key="index">
-                    <td label="ردیف">{{ index + 1 }}</td>
-                    <td label="واحد درخواست کننده">{{ request.unit.name }}</td>
-                    <td label="شماره درخواست">
+                    <td label="Row">{{ index + 1 }}</td>
+                    <td label="Requested unit">{{ request.unit.name }}</td>
+                    <td label="Request number">
                         <label>{{request.request_number}}</label>
                     </td>
-                    <td label="تاریخ">{{convertDate(request.created_at)}}</td>
+                    <td label="Date">{{convertDate(request.created_at)}}</td>
 
-                    <td label="وضعیت درخواست">
-                        <i v-if="request.confirmed==null" class="badge badge-warning">در انتظار تائید</i>
-                        <i v-if="request.confirmed==0" class="badge badge-danger">عدم تائید</i>
-                        <i v-if="request.confirmed==1" class="badge badge-success">تائید</i>
+                    <td label="Request Status">
+                        <i v-if="request.confirmed==null" class="badge badge-warning">Awaiting confirmation</i>
+                        <i v-if="request.confirmed==0" class="badge badge-danger">Not approved</i>
+                        <i v-if="request.confirmed==1" class="badge badge-success">approved</i>
                     </td>
-                    <td label="توضیحات">
+                    <td label="Descriptions">
                         <textarea class="form-control" disabled>{{request.description}}</textarea>
                     </td>
-                    <td label="مشاهده جزئیات">
+                    <td label="Show details">
 
                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                                data-target="#modal-details" @click="request_info2(request.id)"> نمایش جزئیات
+                                data-target="#modal-details" @click="request_info2(request.id)"> Show details
                         </button>
                     </td>
                 </tr>
@@ -52,12 +52,12 @@
 
 
 
-        <!-- مودال نمایش جزئیات   ///////////////////////////////////////-->
+        <!-- Show details Modal   ///////////////////////////////////////-->
         <div class="modal" id="modal-details" aria-labelledby="modal-details">
             <div class="modal-dialog modal-xl" role="dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">نمایش جزئیات</h5>
+                        <h5 class="modal-title">Show details</h5>
                         <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -66,20 +66,19 @@
                         <table id="table-information" class="table  table-bordered style_table">
                             <thead class="text-center">
                             <tr>
-                                <th colspan="100"><h4>نمایش جزئیات</h4></th>
+                                <th colspan="100"><h4>Show details</h4></th>
 
                             </tr>
                             <tr>
 
-                                <th>ردیف</th>
-                                <th>نام کالا</th>
-<!--                                <th data-label="مشخصات کالا">مشخصات کالا</th>-->
-                                <th>تعداد</th>
-                                <th>واحد درخواست کننده</th>
-                                <th>مرکز هزینه</th>
-                                <th>انبار</th>
-                                <th>وضعیت درخواست</th>
-                                <th>نمایش تائیدیه ها</th>
+                                <th>Row</th>
+                                <th>Products name</th>
+                                <th>Count</th>
+                                <th>Requested unit</th>
+                                <th>Cost center</th>
+                                <th>Warehouse</th>
+                                <th>Request Status</th>
+                                <th>Show confirmations</th>
                                 <template v-for="(confirm,index) in user_confirm">
                                     <th class="text-nowrap">
                                         {{ confirm.confirm.name }}
@@ -94,8 +93,8 @@
 
                                     </th>
                                 </template>
-                                <th data-label="ارجاع">
-                                    ارجاع
+                                <th data-label="referral">
+                                    referral
                                 </th>
 
                             </tr>
@@ -104,21 +103,19 @@
                             <template v-if="request_all!=''">
                                 <tr v-if="request_all[request_id].request_detail!=''"
                                     v-for="(details,index) in request_all[request_id].request_detail" :key="index">
-                                    <td label="ردیف">{{ index + 1 }}</td>
-                                    <td label="نام کالا">{{ details.product.name }}</td>
-<!--                                    <td>بزرگ</td>-->
-                                    <td label="تعداد">{{ details.amount }}</td>
-                                    <td label="واحد درخواست کننده">{{ request_all[request_id].unit.name }}</td>
-                                    <td label="مرکز هزینه">
+                                    <td label="Row">{{ index + 1 }}</td>
+                                    <td label="Products name">{{ details.product.name }}</td>
+                                    <td label="Count">{{ details.amount }}</td>
+                                    <td label="Requested unit">{{ request_all[request_id].unit.name }}</td>
+                                    <td label="Cost center">
 
                                         <label v-if="details.center">{{ details.center.name}}</label>
                                     </td>
-                                    <td label="انبار">{{ details.warehouse.name }}</td>
-                                    <td label="وضعیت درخواست"><i v-if="details.confirmed==null" class="badge badge-warning">در انتظار
-                                        تائید</i>
-                                        <i v-if="details.confirmed==0" class="badge badge-danger">عدم تائید</i>
-                                        <i v-if="details.confirmed==1" class="badge badge-success">تائید</i></td>
-                                    <td label="نمایش تائیدیه ها">
+                                    <td label="Warehouse">{{ details.warehouse.name }}</td>
+                                    <td label="Request Status"><i v-if="details.confirmed==null" class="badge badge-warning">Awaiting confirmation</i>
+                                        <i v-if="details.confirmed==0" class="badge badge-danger">Not approved</i>
+                                        <i v-if="details.confirmed==1" class="badge badge-success">approved</i></td>
+                                    <td label="Show confirmations">
                                         <i class="fa fa-info-circle fa-2x" data-toggle="modal"
                                            data-target="#show_confirm" @click="getLoadConfirm(details.id)"></i>
                                     </td>
@@ -134,7 +131,7 @@
                                                             class="option-not ml-2" :value="0"
                                                             @click="enterDescription(findModel(details,confirm.confirm.id))">
                                                         <b></b>
-                                                        <small>عدم تائید</small>
+                                                        <small>Not approved</small>
                                                     </label>
                                                 </div>
                                                 <div v-if="findInRequestDetails(details,confirm.confirm.id)"
@@ -145,14 +142,14 @@
                                                             type="radio" :name="'select_send'+index+num"
                                                             class="option-input ml-2" :value="1">
                                                         <b></b>
-                                                        <small>تائید</small>
+                                                        <small>approved</small>
                                                     </label>
                                                 </div>
 
                                             </div>
                                         </td>
                                     </template>
-                                    <td label="ارجاع">
+                                    <td label="referral">
                                         <button type="button" class="btn btn-primary" data-toggle="modal"
                                                 data-target="#reference" @click="request_info(details.id)">
                                             <i class="fas fa-share-square"></i>
@@ -168,10 +165,10 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">
-                            بستن
+                            Close
                         </button>
                         <button type="button" class="btn btn-success" @click="saveConfirme">
-                            ثبت تائید
+                            Submit confirmation
                         </button>
                     </div>
                 </div>
@@ -180,13 +177,13 @@
 
         <!--        /////////////////////////////////////////////////////////////-->
 
-        <!-- مودال نمایش تائیدیه ها   ///////////////////////////// -->
+        <!-- Show confirmations Modal   ///////////////////////////// -->
         <div class="modal fade" id="show_confirm" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">نمایش تائیدیه ها</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Show confirmations</h5>
                         <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -197,51 +194,50 @@
                                 <thead>
                                 <tr>
                                     <th>
-                                        ردیف
+                                        Row
                                     </th>
                                     <th>
-                                        نام تائید کننده
+                                        Name of the approver
                                     </th>
                                     <th>
-                                        نام تائیدیه
+                                        Confirmation name
                                     </th>
                                     <th>
-                                        وضعیت تائید
+                                        Confirmation status
                                     </th>
                                     <th>
-                                        توضیحات
+                                        Descriptions
                                     </th>
                                     <th>
-                                        تاریخ
+                                        Date
                                     </th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <template v-if="details_confirm!=''">
                                     <tr v-for="(confirm,index) in details_confirm" :key="index">
-                                        <td label="ردیف">
+                                        <td label="Row">
                                             {{ index + 1 }}
                                         </td>
-                                        <td label="نام تائید کننده" v-if="confirm.user!=null">
+                                        <td label="Name of the approver" v-if="confirm.user!=null">
                                             {{ confirm.user.first_name }} {{ confirm.user.last_name }}
                                         </td>
-                                        <td label="نام تائید کننده" v-if="confirm.user==null">
-                                            نا معلوم
+                                        <td label="Name of the approver" v-if="confirm.user==null">
+                                            Unknown
                                         </td>
-                                        <td label="نام تائیدیه" v-if="confirm.confirm.name!=null">
+                                        <td label="Confirmation name" v-if="confirm.confirm.name!=null">
                                             {{ confirm.confirm.name }}
                                         </td>
-                                        <td label="وضعیت تائید">
-                                            <i v-if="confirm.confirmed==null" class="badge badge-warning">در انتظار
-                                                تائید</i>
-                                            <i v-if="confirm.confirmed==0" class="badge badge-danger">عدم تائید</i>
-                                            <i v-if="confirm.confirmed==1" class="badge badge-success">تائید</i>
+                                        <td label="Confirmation status">
+                                            <i v-if="confirm.confirmed==null" class="badge badge-warning">Awaiting confirmation</i>
+                                            <i v-if="confirm.confirmed==0" class="badge badge-danger">Not approved</i>
+                                            <i v-if="confirm.confirmed==1" class="badge badge-success">Approved</i>
                                         </td>
-                                        <td label="توضیحات">
+                                        <td label="Descriptions">
                                             <textarea class="form-control" rows="4" cols="50" disabled>{{confirm.description}}</textarea>
 
                                         </td>
-                                        <td label="تاریخ">
+                                        <td label="Date">
                                             {{ confirm.updated_at }}
                                         </td>
                                     </tr>
@@ -251,35 +247,35 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
 
 
-        <!--     مودال ارجاع درخواست  //////////////////////////////  -->
+        <!--    Referring the request Modal  //////////////////////////////  -->
         <div class="modal fade" id="reference">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">ارجاع درخواست</h5>
+                        <h5 class="modal-title">Referring the request</h5>
                         <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body form-group text-right">
-                        <label>انتخاب نوع تائیدیه</label>
+                        <label>Choose the type of confirmation</label>
                         <multiselect v-model="reference_temp" track-by="name"
-                                     placeholder="انتخاب" :options="option_reference" :searchable="true"  :custom-label="nameWithLang"
+                                     placeholder="Select" :options="option_reference" :searchable="true"  :custom-label="nameWithLang"
                                      :showLabels="false" @input="pushArrayReference">
                         </multiselect>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                            لغو
+                            Cancel
                         </button>
-                        <button type="button" class="btn btn-primary" @click="sendReference">ارسال</button>
+                        <button type="button" class="btn btn-primary" @click="sendReference">Send</button>
                     </div>
                 </div>
             </div>
@@ -423,7 +419,7 @@ export default {
                         heightAuto: false,
                         position: 'center',
                         icon: 'success',
-                        title: 'ثبت با موفقیت ذخیره شد',
+                        title: 'Saved successfully',
                         showConfirmButton: false,
                         timer: 2000
                     })
@@ -433,7 +429,7 @@ export default {
                     Swal.fire({
                         heightAuto: false,
                         icon: 'error',
-                        title: 'خطا . . .',
+                        title: 'Error . . .',
                         text: error.response.data.message
                     })
                 }
@@ -446,12 +442,12 @@ export default {
         enterDescription(i) {
             Swal.fire({
                 icon: 'error',
-                title: "لطفا علت عدم تائید را شرح دهید:",
+                title: "Please explain the reason for the disapproval",
                 input: 'text',
                 inputValue: this.confirm_temp[i].description,
                 showCancelButton: true,
-                confirmButtonText: 'ثبت',
-                cancelButtonText: 'لغو'
+                confirmButtonText: 'Submit',
+                cancelButtonText: 'Cancel'
             }).then((result) => {
                 if (result.isConfirmed) {
                     if(result.value!='') {
@@ -473,12 +469,12 @@ export default {
         enterDescriptionForAll(confirmID,index) {
             Swal.fire({
                 icon: 'error',
-                title: "لطفا علت عدم تائید را شرح دهید:",
+                title: "Please explain the reason for the disapproval",
                 input: 'text',
                 inputValue: '',
                 showCancelButton: true,
-                confirmButtonText: 'ثبت',
-                cancelButtonText: 'لغو'
+                confirmButtonText: 'Submit',
+                cancelButtonText: 'Cancel'
             }).then((result) => {
                 if (result.isConfirmed) {
                     if(result.value!='') {
@@ -528,10 +524,8 @@ export default {
                 if (!error.response.success) {
                     Swal.fire({
                         icon: 'error',
-                        // title: error.response.message,
                         text: error.response.data.message
                     })
-                    // this.$data.loader = false
 
                 }
             })
@@ -562,7 +556,6 @@ export default {
                     const confirm = String(item.confirmed).includes('true')+String(item.confirmed).includes('false');
                     return confirm
                 });
-                // return this.request_all;
             }
         }
     },

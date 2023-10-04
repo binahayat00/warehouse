@@ -7,7 +7,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">افزودن تائیدیه</h5>
+                        <h5 class="modal-title">Add confirmation</h5>
                         <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -15,7 +15,7 @@
 
                     <div class="modal-body form-group text-right">
                         <div>
-                            <label>نام تائیدیه:</label>
+                            <label>Confirmation name:</label>
 
                             <input v-model="confirm_val" type="text" class="form-control">
                         </div>
@@ -23,9 +23,9 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary " data-dismiss="modal">
-                            لغو
+                            Cancel
                         </button>
-                        <button type="button" class="btn btn-primary" @click="save_confirm(confirm_val)">ثبت
+                        <button type="button" class="btn btn-primary" @click="save_confirm(confirm_val)">Submit
                         </button>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">افزودن تائیدیه</h5>
+                        <h5 class="modal-title">Add confirmation</h5>
                         <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -45,30 +45,30 @@
 
                     <div class="modal-body form-group text-right">
                         <div>
-                            <label>نام محصول:</label>
+                            <label>Product name:</label>
 
                             <multiselect v-if="products!=''" v-model="product_temp.product_id"
                                          :options="products"
                                          :custom-label="nameWithLang"
                                          :showLabels="false"
-                                         placeholder="نام محصول"></multiselect>
+                                         placeholder="Product name"></multiselect>
 
                         </div>
 
                         <div class="mt-4">
-                            <label>نام تائیدیه:</label>
+                            <label>Confirmation name:</label>
                             <multiselect v-if="confirms!=''" v-model="product_temp.confirm_id"
                                          :options="confirms.map(type => type.id)"
                                          :custom-label="opt => confirms.find(x => x.id == opt).name" :showLabels="false"
-                                         placeholder="نام تائیدیه"></multiselect>
+                                         placeholder="Confirmation name"></multiselect>
                         </div>
 
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary " data-dismiss="modal">
-                            لغو
+                            Cancel
                         </button>
-                        <button type="button" class="btn btn-primary" @click="saveProduct(product_temp)">ثبت
+                        <button type="button" class="btn btn-primary" @click="saveProduct(product_temp)">Submit
                         </button>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">افزودن تائیدیه</h5>
+                        <h5 class="modal-title">Add confirmation</h5>
                         <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -88,29 +88,29 @@
 
                     <div class="modal-body form-group text-right">
                         <div>
-                            <label>نام دسته بندی:</label>
+                            <label>Category name:</label>
 
                             <multiselect v-if="categoris!=''" v-model="category_temp.category_id"
                                          :options="categoris.map(type => type.id)"
                                          :custom-label="opt => categoris.find(x => x.id == opt).name"
-                                         :showLabels="false" placeholder="نام دسته بندی"></multiselect>
+                                         :showLabels="false" placeholder="Category name"></multiselect>
 
                         </div>
 
                         <div class="mt-4">
-                            <label>نام تائیدیه:</label>
+                            <label>Confirmation name:</label>
                             <multiselect v-if="confirms!=''" v-model="category_temp.confirm_id"
                                          :options="confirms.map(type => type.id)"
                                          :custom-label="opt => confirms.find(x => x.id == opt).name" :showLabels="false"
-                                         placeholder="نام تائیدیه"></multiselect>
+                                         placeholder="Confirmation name"></multiselect>
                         </div>
 
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary " data-dismiss="modal">
-                            لغو
+                            Cancel
                         </button>
-                        <button type="button" class="btn btn-primary" @click="saveCategories(category_temp)">ثبت
+                        <button type="button" class="btn btn-primary" @click="saveCategories(category_temp)">Submit
                         </button>
                     </div>
                 </div>
@@ -122,9 +122,9 @@
             <div class="col-sm col-md-4">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">تعریف تائیدیه جدید</h3>
+                        <h3 class="box-title">Add new confirmation</h3>
                         <button type="button" class="btn btn-sm btn-success float-left" data-toggle="modal"
-                                data-target="#modal-confirm">افزودن
+                                data-target="#modal-confirm">Add
                         </button>
                     </div>
 
@@ -133,8 +133,8 @@
                             <thead>
                             <tr>
                                 <th style="width: 10px">#</th>
-                                <th>نام تائید</th>
-                                <th>عملیات</th>
+                                <th>Confirmation name</th>
+                                <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -146,8 +146,8 @@
                                     {{ confirm.name }}
                                 </td>
                                 <td>
-                                    <i class="badge badge-info">غیرفعال</i>
-                                    <i class="badge badge-danger">حذف</i>
+                                    <i class="badge badge-info">Inactive</i>
+                                    <i class="badge badge-danger">Delete</i>
                                 </td>
                             </tr>
 
@@ -161,9 +161,9 @@
             <div class="col-sm col-md-4">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">تائیدیه محصولات</h3>
+                        <h3 class="box-title">Products confirmation</h3>
                         <button type="button" class="btn btn-sm btn-success float-left" data-toggle="modal"
-                                data-target="#modal-product">افزودن
+                                data-target="#modal-product">Add
                         </button>
                     </div>
 
@@ -173,9 +173,9 @@
                             <thead>
                             <tr>
                                 <th style="width: 10px">#</th>
-                                <th>نام محصول</th>
-                                <th>نام تائید</th>
-                                <th>عملیات</th>
+                                <th>Product name</th>
+                                <th>Confirmation name</th>
+                                <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -192,8 +192,8 @@
                                 </td>
 
                                 <td>
-                                    <i class="badge badge-info">غیرفعال</i>
-                                    <i class="badge badge-danger">حذف</i>
+                                    <i class="badge badge-info">Inactive</i>
+                                    <i class="badge badge-danger">Delete</i>
                                 </td>
                             </tr>
 
@@ -206,9 +206,9 @@
             <div class="col-sm col-md-4">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">تائیدیه دسته بندی</h3>
+                        <h3 class="box-title">Confirmation of category</h3>
                         <button type="button" class="btn btn-sm btn-success float-left" data-toggle="modal"
-                                data-target="#modal-categoris">افزودن
+                                data-target="#modal-categoris">Add
                         </button>
                     </div>
 
@@ -217,9 +217,9 @@
                             <thead>
                             <tr>
                                 <th style="width: 10px">#</th>
-                                <th>نام دسته بندی</th>
-                                <th>نام تائید</th>
-                                <th>عملیات</th>
+                                <th>Category name</th>
+                                <th>Confirmation name</th>
+                                <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -236,8 +236,8 @@
                                 </td>
 
                                 <td>
-                                    <i class="badge badge-info">غیرفعال</i>
-                                    <i class="badge badge-danger">حذف</i>
+                                    <i class="badge badge-info">Inactive</i>
+                                    <i class="badge badge-danger">Delete</i>
                                 </td>
                             </tr>
 
@@ -311,7 +311,7 @@ export default {
                         heightAuto: false,
                         position: 'center',
                         icon: 'success',
-                        title: 'ذخیره با موفقیت انجام شد',
+                        title: 'Saved successfully',
                         showConfirmButton: false,
                         timer: 2000
                     })
@@ -322,7 +322,7 @@ export default {
                     Swal.fire({
                         heightAuto: false,
                         icon: 'error',
-                        title: 'خطا . . .',
+                        title: 'Error . . .',
                         text: error.response.data.message
                     })
                 }
@@ -344,7 +344,7 @@ export default {
                         heightAuto: false,
                         position: 'center',
                         icon: 'success',
-                        title: 'ذخیره با موفقیت انجام شد',
+                        title: 'Saved successfully',
                         showConfirmButton: false,
                         timer: 2000
                     })
@@ -354,7 +354,7 @@ export default {
                     Swal.fire({
                         heightAuto: false,
                         icon: 'error',
-                        title: 'خطا . . .',
+                        title: 'Error . . .',
                         text: error.response.data.message
                     })
                 }
@@ -376,7 +376,7 @@ export default {
                         heightAuto: false,
                         position: 'center',
                         icon: 'success',
-                        title: 'ذخیره با موفقیت انجام شد',
+                        title: 'Saved successfully',
                         showConfirmButton: false,
                         timer: 2000
                     })
@@ -386,7 +386,7 @@ export default {
                     Swal.fire({
                         heightAuto: false,
                         icon: 'error',
-                        title: 'خطا . . .',
+                        title: 'Error . . .',
                         text: error.response.data.message
                     })
                 }
@@ -493,44 +493,44 @@ and (max-device-width: 1024px) {
     }
 
     #confirm td:nth-of-type(1):before {
-        content: "ردیف";
+        content: "Row";
     }
 
     #confirm td:nth-of-type(2):before {
-        content: "نام تائید";
+        content: "Confirmation name";
     }
 
     #confirm td:nth-of-type(3):before {
-        content: "عملیات";
+        content: "Actions";
     }
 
     #products td:nth-of-type(1):before {
-        content: "ردیف";
+        content: "Row";
     }
 
     #products td:nth-of-type(2):before {
-        content: "نام محصول";
+        content: "Product name";
     }
     #products td:nth-of-type(3):before {
-        content: "نام تائید";
+        content: "Confirmation name";
     }
 
     #products td:nth-of-type(4):before {
-        content: "عملیات";
+        content: "Actions";
     }
     #categoris td:nth-of-type(1):before {
-        content: "ردیف";
+        content: "Row";
     }
 
     #categoris td:nth-of-type(2):before {
-        content: "نام دسته بندی";
+        content: "Category name";
     }
     #categoris td:nth-of-type(3):before {
-        content: "نام تائید";
+        content: "Confirmation name";
     }
 
     #categoris td:nth-of-type(4):before {
-        content: "عملیات";
+        content: "Actions";
     }
 }
 </style>

@@ -9,32 +9,32 @@
                 <div class="modal-dialog d-flex" role="document">
                     <div class="modal-content w-auto">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">لیست فایل ها</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Files list</h5>
                         </div>
                         <div class="modal-body">
 
                             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#add_file"
                                     @click="cleanForm">
-                                افزودن فایل
+                                Add file
                             </button>
                             <div>
                                 <table class="table table-bordered">
                                     <thead>
                                     <tr>
                                         <th>
-                                            ردیف
+                                            Row
                                         </th>
                                         <th>
-                                            نام فایل
+                                           File name
                                         </th>
                                         <th>
-                                            توضیحات
+                                            Descriptions
                                         </th>
                                         <th>
-                                            پیش نمایش
+                                           Preshow
                                         </th>
                                         <th>
-                                            حذف
+                                            Delete
                                         </th>
 
                                     </tr>
@@ -56,7 +56,7 @@
 
                                                 <a :href="'/file-show?fileId='+ file.id" target="_blank">
                                                     <img class="size_img" :src="'/file-show?fileId='+ file.id"
-                                                         alt="باز کردن"/>
+                                                         alt="Open"/>
                                                 </a>
                                             </div>
                                         </td>
@@ -70,7 +70,7 @@
 
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                 <div class="modal-dialog " role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel2">افزودن فایل</h5>
+                            <h5 class="modal-title" id="exampleModalLabel2">Add file</h5>
                             <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -91,19 +91,19 @@
                             <div class="text-group row mr-1">
                                 <label class="input-group-btn">
                     <span class="btn btn-primary" style="border-radius: 0 5px 5px 0">
-                        انتخاب فایل <input id="file" type="file" style="display: none" v-on:change="onFileChange">
+                        Choose file <input id="file" type="file" style="display: none" v-on:change="onFileChange">
                     </span>
                                 </label>
                                 <input :value="name_file" id="text_input" class="form-control"
                                        style="width: 250px;border-radius: 0;border: 1px solid darkgray" readonly>
                             </div>
                             <div class="col mt-2">
-                                <label>نام:</label>
+                                <label>Name:</label>
                                 <input v-model="file_title" type="text" class="form-control" maxlength="30">
                             </div>
 
                             <div class="col">
-                                <label>توضیحات:</label>
+                                <label>Descriptions:</label>
                                 <input v-model="file_description" type="text" class="form-control" maxlength="60">
                             </div>
                         </div>
@@ -111,9 +111,9 @@
                             <img id="img_preview" v-if="url" :src="url" onclick="this.requestFullscreen()"/>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">لغو</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                             <button type="button" class="btn btn-success btb_submit" @click="formSubmit"
-                                    enctype="multipart/form-data">ارسال
+                                    enctype="multipart/form-data">Send
                             </button>
                         </div>
                     </div>
@@ -129,16 +129,16 @@
                         <tr>
                             <th width="12%">
                                 <img src="images/ardakan.png">
-                                <p class="img_title">گروه کارخانجات شیشه اردکان</p>
-                                <p class="img_title2">ARDAKAN FLOAT GLASS CO</p>
+                                <p class="img_title">Warehouse Software</p>
+                                <p class="img_title2">Warehouse Software</p>
                             </th>
                             <th width="60%">
-                                <p class="tablesubject mx-auto">درخواست کالا از انبار</p>
+                                <p class="tablesubject mx-auto">Request product from warehouse</p>
                             </th>
                             <th width="15%" class="my-auto">
                                 <div class="row flex-column">
                                     <h5 class="text_form">
-                                        تاریخ :
+                                        Date :
                                     </h5>
                                     <h5 class="text_form">
                                         {{ date }}
@@ -162,7 +162,7 @@
                                 <div class="row">
                                     <div class="col-3 d-flex justify-content-center">
                                         <h6 class="my-auto">
-                                            نام انبار:
+                                            Warehouse name:
                                         </h6>
                                     </div>
                                     <div v-if="warehouses!=null" class="col-9">
@@ -177,7 +177,7 @@
                                 <div class="row">
                                     <div class="col-3 d-flex justify-content-center">
                                         <h6 class="my-auto">
-                                            توضیحات:
+                                            Descriptions:
                                         </h6>
                                     </div>
                                     <div class="col-9 d-flex justify-content-center">
@@ -195,15 +195,15 @@
                         <table class="table table-bordered">
                             <thead>
                             <tr class="text-nowrap">
-                                <th>ردیف</th>
-                                <th width="18%">شرح کالا</th>
-                                <th>مشخصات فنی</th>
-                                <th width="2%">مقدار درخواستی</th>
-                                <th width="14%">مرکز هزینه</th>
-                                <th width="20px">وضعیت داغی</th>
-                                <th width="2%">تعداد داغی</th>
-                                <th>بارگذاری فایل</th>
-                                <th>توضیحات</th>
+                                <th>Row</th>
+                                <th width="18%">Product description</th>
+                                <th>Technical specifications</th>
+                                <th width="2%">Amount required</th>
+                                <th width="14%">Cost center</th>
+                                <th width="20px">Obsolete condition</th>
+                                <th width="2%">Count Obsolete </th>
+                                <th>Load file</th>
+                                <th>Descriptions</th>
                                 <th><i id="addrow" class="fa fa-plus add " @click="addRow"> </i></th>
                             </tr>
                             </thead>
@@ -217,7 +217,7 @@
                                         <multiselect :id="'product'+index" v-model="myform.product_id"
                                                      :options="products_array"
                                                      :custom-label="nameWithLang"
-                                                     :showLabels="false" placeholder="نام کالا"
+                                                     :showLabels="false" placeholder="Products name"
                                                      @input="send_itemDataId(myform.product_id,index)"></multiselect>
                                         <div :class="'circle'+index">
                                             <div :class="'check'+index"></div>
@@ -229,13 +229,13 @@
                                     <button type="button" class="btn btn-primary btn_config" data-bs-toggle="modal"
                                             :disabled="true"
                                             data-bs-target="#modal-config" @click="getApiAttribute(myform.product_id)">
-                                        به زودی در شناسنامه کالا
+                                        Soon in the ID of the goods
                                     </button>
                                     <div class="modal" tabindex="-1" id="modal-config">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title">مشخصات فنی</h5>
+                                                    <h5 class="modal-title">Technical specifications</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                                 </div>
@@ -267,9 +267,9 @@
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
                                                             data-bs-dismiss="modal">
-                                                        لغو
+                                                        Cancel
                                                     </button>
-                                                    <button type="button" class="btn btn-primary">تائید</button>
+                                                    <button type="button" class="btn btn-primary">approved</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -280,16 +280,16 @@
                                     <input :id="'count'+index" v-model="myform.amount" type="number"
                                            name="counter"
                                            class="form-control"
-                                           placeholder="تعداد" data-toggle="tooltip" data-placement="top"
+                                           placeholder="Count" data-toggle="tooltip" data-placement="top"
                                            @change="check_amount(myform.amount,myform.amount_rayvarz,index)"
-                                           :title="'تعدادمجاز: '+myform.amount_rayvarz" @click="tooltip" required>
+                                           :title="'Allowed Count: '+myform.amount_rayvarz" @click="tooltip" required>
                                 </td>
 
                                 <td class="py-0">
                                     <multiselect v-if="center" :id="'center'+index" v-model="myform.center_id"
                                                  :options="center"
                                                  :custom-label="nameWithcode"
-                                                 :showLabels="false" placeholder="مرکز هزینه"></multiselect>
+                                                 :showLabels="false" placeholder="Cost center"></multiselect>
                                 </td>
                                 <td class=" py-2 ">
                                     <div class="checkbox-custom">
@@ -299,7 +299,7 @@
                                                 type="radio"
                                                 class="option-not ml-2" :value="false">
                                             <b></b>
-                                            <small>ندارد</small>
+                                            <small>have not</small>
                                         </label>
                                     </div>
                                     <div class="checkbox-custom">
@@ -309,7 +309,7 @@
                                                 type="radio"
                                                 class="option-input ml-2" :value="true">
                                             <b></b>
-                                            <small>دارد</small>
+                                            <small>have</small>
                                         </label>
                                     </div>
 
@@ -319,17 +319,17 @@
                                     <input v-if="myform.worn" v-model="myform.worn_amount" type="number" name="counter2"
                                            class="form-control"
                                            @change="() => { if(myform.worn_amount > 100) { myform.worn_amount = 100 } else if(myform.worn_amount <1) {myform.worn_amount = 1}}"
-                                           placeholder="تعداد">
+                                           placeholder="Count">
                                     <input v-if="myform.worn==false" type="number"
                                            name="counter2"
                                            class="form-control notactive-lable"
-                                           placeholder="تعداد" readonly>
+                                           placeholder="Count" readonly>
                                 </td>
 
                                 <td class="py-0">
                                     <div class="form-group m-0" id="file-group">
                                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                data-target="#modal_file" @click="my_index=index">فایل پیوست
+                                                data-target="#modal_file" @click="my_index=index">Attached file
                                         </button>
                                     </div>
                                 </td>
@@ -357,7 +357,7 @@
                         <table id="table-request-mobile" class="table table-bordered border-0 height-100">
                             <thead>
                             <tr>
-                                <th colspan="3">درخواست کالا از انبار</th>
+                                <th colspan="3">Request product from warehouse</th>
 
                             </tr>
                             <tr>
@@ -377,7 +377,7 @@
                                 <th colspan="2">
                                     <div>
                                                         <span style="font-size: 13px">
-                                                            تاریخ :
+                                                            Date :
                                                         </span>
                                         <span style="font-size: 14px">
                                                             {{ date }}
@@ -391,7 +391,7 @@
                                     <div class="row">
                                         <div class="col-3 d-flex justify-content-center">
                                             <h6 class="my-auto">
-                                                انبار:
+                                                Warehouse:
                                             </h6>
                                         </div>
                                         <div v-if="warehouses!=null" class="col-9 p-1">
@@ -409,7 +409,7 @@
                                     <div class="row">
                                         <div class="col-3 d-flex justify-content-center">
                                             <h6 class="my-auto">
-                                                توضیحات:
+                                                Descriptions:
                                             </h6>
                                         </div>
                                         <div class="col-9 d-flex justify-content-center">
@@ -424,7 +424,7 @@
                                     <div class="row">
                                         <div class="col-6 d-flex justify-content-center">
                                             <h6 class="my-auto">
-                                                افزودن سطر جدید:
+                                                Add new row:
                                             </h6>
                                         </div>
                                         <div class="col-6 d-flex justify-content-center">
@@ -440,14 +440,14 @@
                             <div v-for="(myform, index) in requestDetails" :key="index">
 
                                 <tr>
-                                    <th class="wid-30">نام کالا</th>
+                                    <th class="wid-30">Products name</th>
                                     <td class="wid-70">
                                         <div class="d-flex justify-content-center">
 
                                             <multiselect :id="'product'+index" v-model="myform.product_id"
                                                          :options="products_array"
                                                          :custom-label="nameWithLang"
-                                                         :showLabels="false" placeholder="نام کالا"
+                                                         :showLabels="false" placeholder="Products name"
                                                          @input="send_itemDataId(myform.product_id,index)"></multiselect>
                                             <div :class="'circle'+index">
                                                 <div :class="'check'+index"></div>
@@ -456,77 +456,77 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>مشخصات فنی</th>
+                                    <th>Technical specifications</th>
                                     <td>
                                         <button type="button" class="btn btn-primary btn_config" data-bs-toggle="modal"
                                                 :disabled="true"
                                                 data-bs-target="#modal-config"
                                                 @click="getApiAttribute(myform.product_id)">
-                                            به زودی در شناسنامه کالا
+                                            Soon in the ID of the goods
                                         </button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>مقدار درخواستی</th>
+                                    <th>Amount required</th>
                                     <td>
                                         <input :id="'count'+index" v-model="myform.amount" type="number"
                                                name="counter"
                                                class="form-control"
-                                               placeholder="تعداد" data-toggle="tooltip" data-placement="top"
+                                               placeholder="Count" data-toggle="tooltip" data-placement="top"
                                                @change="check_amount(myform.amount,myform.amount_rayvarz,index)"
-                                               :title="'تعدادمجاز: '+myform.amount_rayvarz" @click="tooltip" required>
+                                               :title="'Allowed Count: '+myform.amount_rayvarz" @click="tooltip" required>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>مرکز هزینه</th>
+                                    <th>Cost center</th>
                                     <td>
                                         <multiselect v-if="center" :id="'center'+index" v-model="myform.center_id"
                                                      :options="center"
                                                      :custom-label="nameWithcode"
-                                                     :showLabels="false" placeholder="مرکز هزینه"></multiselect>
+                                                     :showLabels="false" placeholder="Cost center"></multiselect>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>وضعیت داغی</th>
+                                    <th>Obsolete condition</th>
                                     <td class="text-right">
 
                                         <div class="inline">
                                             <input type="radio" id="noitem" v-model="myform.worn" :value="false">
-                                            <label for="noitem">ندارد</label>
+                                            <label for="noitem">have not</label>
                                         </div>
                                         <div class=" inline">
                                             <input type="radio" id="okitem" v-model="myform.worn" :value="true">
-                                            <label for="okitem">دارد</label>
+                                            <label for="okitem">have</label>
                                         </div>
 
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>تعداد داغی</th>
+                                    <th>Obsolete Count</th>
                                     <td>
                                         <input v-if="myform.worn" v-model="myform.worn_amount" type="number"
                                                name="counter2"
                                                class="form-control"
                                                @change="() => { if(myform.worn_amount > 100) { myform.worn_amount = 100 } else if(myform.worn_amount <1) {myform.worn_amount = 1}}"
-                                               placeholder="تعداد">
+                                               placeholder="Count">
                                         <input v-if="myform.worn==false" type="number"
                                                name="counter2"
                                                class="form-control notactive-lable"
-                                               placeholder="تعداد" readonly>
+                                               placeholder="Count" readonly>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <th>بارگذاری فایل</th>
+                                    <th>Load file</th>
                                     <td>
                                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                data-target="#modal_file" @click="my_index=index">فایل پیوست
+                                                data-target="#modal_file" @click="my_index=index">Attached file
                                         </button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        توضیحات
+                                        Descriptions
                                     </td>
                                     <td>
                                 <textarea v-model="myform.descriptions" class="form-control"
@@ -558,7 +558,7 @@
                 <!--                          end mobile modal-->
 
                 <div class="col text-left">
-                    <button type="button" class="btn btn-success submit" @click="checkValidation">ثبت ویرایش</button>
+                    <button type="button" class="btn btn-success submit" @click="checkValidation">Submit the edit</button>
                 </div>
 
             </form>
@@ -652,17 +652,17 @@ export default {
         deleteRow(index) {
 
             if (this.requestDetails.length <= 1) {
-                alert("تعداد سطر نمی تواند خالی باشد")
+                alert("The row can not be empty")
             } else {
                 Swal.fire({
                     position: 'center',
                     heightAuto: false,
                     icon: 'question',
-                    title: "آیا ردیف حذف شود؟",
+                    title: "Do you want to delete the row?",
                     showConfirmButton: true,
                     showCancelButton: true,
-                    confirmButtonText: "بله",
-                    cancelButtonText: "انصراف",
+                    confirmButtonText: "Yes",
+                    cancelButtonText: "Opt out",
                     confirmButtonColor: "#d33"
 
                 }).then((response) => {
@@ -695,7 +695,7 @@ export default {
                         heightAuto: false,
                         position: 'center',
                         icon: 'success',
-                        title: 'فایل با موفقیت بارگذاری شد',
+                        title: 'File uploaded successfully ',
                         showConfirmButton: false,
                         timer: 2000
                     })
@@ -767,12 +767,12 @@ export default {
                 $("#product" + i).parent().addClass("border");
                 if (this.requestDetails[i].product_id == null) {
                     $("#product" + i).parent().removeClass("border");
-                    this.errors.product = "وارد کردن نام کالا اجباری است"
+                    this.errors.product = "Entering the Product name is mandatory"
                     $("#product" + i).parent().css("border", "2px solid red");
                 }
                 if (this.requestDetails[i].amount == '') {
                     $("#count" + i).removeClass("border");
-                    this.errors.amount = "وارد کردن تعداد اجباری است"
+                    this.errors.amount = "Entering the amount is mandatory"
                     $("#count" + i).css("border", "2px solid red");
                 }
             }
@@ -801,9 +801,9 @@ export default {
                         heightAuto: false,
                         position: 'center',
                         icon: 'success',
-                        title: 'درخواست با موفقیت ارسال شد',
-                        html: 'کد تحویل شما: ' + response.data.data.requestData.validated_code + '<br>' +
-                            '<small>دادن این کد به مامور پیک الزامی می باشد</small>'
+                        title: 'Request sent successfully',
+                        html: 'Your delivery code: ' + response.data.data.requestData.validated_code + '<br>' +
+                            '<small>It is mandatory to give this code to the courier</small>'
                         ,
                         showConfirmButton: true,
                     })
@@ -922,11 +922,11 @@ export default {
                 position: 'center',
                 heightAuto: false,
                 icon: 'question',
-                title: "آیا ردیف حذف شود؟",
+                title: "Do you want to delete the row?",
                 showConfirmButton: true,
                 showCancelButton: true,
-                confirmButtonText: "بله",
-                cancelButtonText: "انصراف",
+                confirmButtonText: "Yes",
+                cancelButtonText: "Opt out",
                 confirmButtonColor: "#d33"
 
             }).then((response) => {
@@ -944,7 +944,7 @@ export default {
                             })
                         })
                         .catch((response) => {
-                            alert("حذف با خطا مواجه شد");
+                            alert("Deletion failed");
                             console.log(response)
                         });
                 }
@@ -975,7 +975,7 @@ export default {
                         Swal.fire({
                             heightAuto: false,
                             icon: 'error',
-                            title: 'خطا . . .',
+                            title: 'Error . . .',
                             text: error.response.data.message
                         })
                     }
@@ -1011,11 +1011,11 @@ export default {
                             position: 'center',
                             icon: 'error',
                             title: response.data.message,
-                            text: "آیا ادامه می دهید؟",
+                            text: "Do you continue?",
                             showConfirmButton: true,
                             showCancelButton: true,
-                            confirmButtonText: "بله",
-                            cancelButtonText: "انصراف",
+                            confirmButtonText: "Yes",
+                            cancelButtonText: "Opt out",
                             confirmButtonColor: "#51a139"
                         }).then((response) => {
                             if (response.isConfirmed) {
@@ -1040,7 +1040,7 @@ export default {
                         Swal.fire({
                             heightAuto: false,
                             icon: 'error',
-                            title: 'خطا . . .',
+                            title: 'Error . . .',
                             text: error.response.message
                         })
                     }
@@ -1066,8 +1066,8 @@ export default {
                 Swal.fire({
                     heightAuto: false,
                     icon: 'error',
-                    title: 'خطا . . .',
-                    text: "لطفا تا بررسی موجودی کالا صبر کنید"
+                    title: 'Error . . .',
+                    text: "Please wait until the inventory is checked"
                 })
             } else {
                 if (this.requestDetails[index].product_id) {
@@ -1076,12 +1076,12 @@ export default {
                         Swal.fire({
                             heightAuto: false,
                             icon: 'error',
-                            title: "مقدار درخواستی بیشتر از موجودی کالا می باشد",
-                            text: "آیا ادامه می دهید؟",
+                            title: "The requested amount is more than the stock",
+                            text: "Do you continue?",
                             showConfirmButton: true,
                             showCancelButton: true,
-                            confirmButtonText: "بله",
-                            cancelButtonText: "انصراف",
+                            confirmButtonText: "Yes",
+                            cancelButtonText: "Opt out",
                             confirmButtonColor: "#51a139"
                         }).then((response) => {
                             if (response.isConfirmed) {
@@ -1099,8 +1099,8 @@ export default {
                     Swal.fire({
                         heightAuto: false,
                         icon: 'error',
-                        title: 'خطا . . .',
-                        text: "لطفا اول یک کالا انتخاب کنید"
+                        title: 'Error . . .',
+                        text: "Please select a product"
                     })
                 }
             }

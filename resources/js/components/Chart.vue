@@ -145,12 +145,12 @@ export default {
 
             bardata: [
                 {
-                    name: 'آمار تحویل',
+                    name: 'Delivery statistics',
                     data: []
                 }
                 ,
                 {
-                    name: 'آمار رزرو غذا',
+                    name: 'Food reservation statistics',
                     data: []
                 }
 
