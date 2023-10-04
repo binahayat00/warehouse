@@ -2472,7 +2472,7 @@ __webpack_require__.r(__webpack_exports__);
             heightAuto: false,
             position: 'center',
             icon: 'success',
-            title: 'ذخیره با موفقیت ذخیره شد',
+            title: 'Saved successfully',
             showConfirmButton: false,
             timer: 2000
           });
@@ -2482,7 +2482,7 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
+            title: 'Error . . .',
             text: error.response.data.message
           });
         }
@@ -2523,10 +2523,10 @@ __webpack_require__.r(__webpack_exports__);
       delivery_array: [],
       reserve_array: [],
       bardata: [{
-        name: 'آمار تحویل',
+        name: 'Delivery statistics',
         data: []
       }, {
-        name: 'آمار رزرو غذا',
+        name: 'Food reservation statistics',
         data: []
       }],
       barOptions: {
@@ -2746,7 +2746,7 @@ __webpack_require__.r(__webpack_exports__);
             heightAuto: false,
             position: 'center',
             icon: 'success',
-            title: 'ذخیره با موفقیت انجام شد',
+            title: 'Saved successfully',
             showConfirmButton: false,
             timer: 2000
           });
@@ -2756,8 +2756,8 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
-            text: 'وارد کردن نام تائید اجباری است'
+            title: 'Error . . .',
+            text: 'Confirmation name is required'
           });
         }
       });
@@ -2861,8 +2861,8 @@ __webpack_require__.r(__webpack_exports__);
         sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
           heightAuto: false,
           icon: 'error',
-          title: 'خطا . . .',
-          text: "لطفا نوع ارسال را انتخاب کنید"
+          title: 'Error . . .',
+          text: "Please select a delivery type"
         });
       } else {
         axios.put('api/requestdetails/updateDeliveryId', this.temp_request).then(function (response) {
@@ -2878,7 +2878,7 @@ __webpack_require__.r(__webpack_exports__);
               heightAuto: false,
               position: 'center',
               icon: 'success',
-              title: 'ارسال با موفقیت ذخیره شد',
+              title: 'Saved succussfully',
               showConfirmButton: false,
               timer: 2000
             });
@@ -2888,7 +2888,7 @@ __webpack_require__.r(__webpack_exports__);
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               heightAuto: false,
               icon: 'error',
-              title: 'خطا . . .',
+              title: 'Error . . .',
               text: error.response.data.message
             });
           }
@@ -2919,7 +2919,7 @@ __webpack_require__.r(__webpack_exports__);
             heightAuto: false,
             position: 'center',
             icon: 'success',
-            title: 'ثبت با موفقیت ذخیره شد',
+            title: 'Saved successfully',
             showConfirmButton: false,
             timer: 2000
           });
@@ -2929,7 +2929,7 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
+            title: 'Error . . .',
             text: error.response.data.message
           });
         }
@@ -3004,7 +3004,7 @@ __webpack_require__.r(__webpack_exports__);
     //             Swal.fire({
     //                 heightAuto: false,
     //                 icon: 'error',
-    //                 title: 'خطا . . .',
+    //                 title: 'Error . . .',
     //                 text: error.response.data.message
     //             })
     //         }
@@ -3033,7 +3033,7 @@ __webpack_require__.r(__webpack_exports__);
             heightAuto: false,
             position: 'center',
             icon: 'success',
-            title: 'ذخیره با موفقیت ذخیره شد',
+            title: 'Saved successfully',
             showConfirmButton: false,
             timer: 2000
           });
@@ -3043,7 +3043,7 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
+            title: 'Error . . .',
             text: error.response.data.message
           });
         }
@@ -3196,17 +3196,17 @@ __webpack_require__.r(__webpack_exports__);
     deleteRow: function deleteRow(index) {
       var _this = this;
       if (this.requestDetails.length <= 1) {
-        alert("تعداد سطر نمی تواند خالی باشد");
+        alert("The row can not be empty");
       } else {
         sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
           position: 'center',
           heightAuto: false,
           icon: 'question',
-          title: "آیا ردیف حذف شود؟",
+          title: "Do you want to delete the row?",
           showConfirmButton: true,
           showCancelButton: true,
-          confirmButtonText: "بله",
-          cancelButtonText: "انصراف",
+          confirmButtonText: "Yes",
+          cancelButtonText: "Opt out",
           confirmButtonColor: "#d33"
         }).then(function (response) {
           if (response.isConfirmed) {
@@ -3234,7 +3234,7 @@ __webpack_require__.r(__webpack_exports__);
           heightAuto: false,
           position: 'center',
           icon: 'success',
-          title: 'فایل با موفقیت بارگذاری شد',
+          title: 'File uploaded successfully ',
           showConfirmButton: false,
           timer: 2000
         });
@@ -3303,12 +3303,12 @@ __webpack_require__.r(__webpack_exports__);
         $("#product" + i).parent().addClass("border");
         if (this.requestDetails[i].product_id == null) {
           $("#product" + i).parent().removeClass("border");
-          this.errors.product = "وارد کردن نام کالا اجباری است";
+          this.errors.product = "Entering the Product name is mandatory";
           $("#product" + i).parent().css("border", "2px solid red");
         }
         if (this.requestDetails[i].amount == '') {
           $("#count" + i).removeClass("border");
-          this.errors.amount = "وارد کردن تعداد اجباری است";
+          this.errors.amount = "Entering the amount is mandatory";
           $("#count" + i).css("border", "2px solid red");
         }
       }
@@ -3335,8 +3335,8 @@ __webpack_require__.r(__webpack_exports__);
           heightAuto: false,
           position: 'center',
           icon: 'success',
-          title: 'درخواست با موفقیت ارسال شد',
-          html: 'کد تحویل شما: ' + response.data.data.requestData.validated_code + '<br>' + '<small>دادن این کد به مامور پیک الزامی می باشد</small>',
+          title: 'Request sent successfully',
+          html: 'Your delivery code: ' + response.data.data.requestData.validated_code + '<br>' + '<small>It is mandatory to give this code to the courier</small>',
           showConfirmButton: true
         });
         _this4.requestDetails = [{
@@ -3458,11 +3458,11 @@ __webpack_require__.r(__webpack_exports__);
         position: 'center',
         heightAuto: false,
         icon: 'question',
-        title: "آیا ردیف حذف شود؟",
+        title: "Do you want to delete the row?",
         showConfirmButton: true,
         showCancelButton: true,
-        confirmButtonText: "بله",
-        cancelButtonText: "انصراف",
+        confirmButtonText: "Yes",
+        cancelButtonText: "Opt out",
         confirmButtonColor: "#d33"
       }).then(function (response) {
         if (response.isConfirmed) {
@@ -3477,7 +3477,7 @@ __webpack_require__.r(__webpack_exports__);
               timer: 2000
             });
           })["catch"](function (response) {
-            alert("حذف با خطا مواجه شد");
+            alert("Deletion failed");
             console.log(response);
           });
         }
@@ -3505,7 +3505,7 @@ __webpack_require__.r(__webpack_exports__);
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               heightAuto: false,
               icon: 'error',
-              title: 'خطا . . .',
+              title: 'Error . . .',
               text: error.response.data.message
             });
           }
@@ -3537,11 +3537,11 @@ __webpack_require__.r(__webpack_exports__);
               position: 'center',
               icon: 'error',
               title: response.data.message,
-              text: "آیا ادامه می دهید؟",
+              text: "Do you continue?",
               showConfirmButton: true,
               showCancelButton: true,
-              confirmButtonText: "بله",
-              cancelButtonText: "انصراف",
+              confirmButtonText: "Yes",
+              cancelButtonText: "Opt out",
               confirmButtonColor: "#51a139"
             }).then(function (response) {
               if (response.isConfirmed) {
@@ -3564,7 +3564,7 @@ __webpack_require__.r(__webpack_exports__);
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               heightAuto: false,
               icon: 'error',
-              title: 'خطا . . .',
+              title: 'Error . . .',
               text: error.response.message
             });
           }
@@ -3596,8 +3596,8 @@ __webpack_require__.r(__webpack_exports__);
         sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
           heightAuto: false,
           icon: 'error',
-          title: 'خطا . . .',
-          text: "لطفا تا بررسی موجودی کالا صبر کنید"
+          title: 'Error . . .',
+          text: "Please wait until the inventory is checked"
         });
       } else {
         if (this.requestDetails[index].product_id) {
@@ -3606,12 +3606,12 @@ __webpack_require__.r(__webpack_exports__);
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               heightAuto: false,
               icon: 'error',
-              title: "مقدار درخواستی بیشتر از موجودی کالا می باشد",
-              text: "آیا ادامه می دهید؟",
+              title: "The requested amount is more than the stock",
+              text: "Do you continue?",
               showConfirmButton: true,
               showCancelButton: true,
-              confirmButtonText: "بله",
-              cancelButtonText: "انصراف",
+              confirmButtonText: "Yes",
+              cancelButtonText: "Opt out",
               confirmButtonColor: "#51a139"
             }).then(function (response) {
               if (response.isConfirmed) {} else {
@@ -3626,8 +3626,8 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
-            text: "لطفا اول یک کالا انتخاب کنید"
+            title: 'Error . . .',
+            text: "Please select a product"
           });
         }
       }
@@ -3691,7 +3691,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     logout: function logout() {
-      if (confirm("آیا مایل به خروج از برنامه می باشید ؟")) {
+      if (confirm("Do you want to exit the program?")) {
         localStorage.removeItem('access_token');
         localStorage.removeItem('token_expire');
         _storeLogin__WEBPACK_IMPORTED_MODULE_0__["default"].commit('logoutUser');
@@ -3775,7 +3775,7 @@ __webpack_require__.r(__webpack_exports__);
             heightAuto: false,
             position: 'center',
             icon: 'success',
-            title: 'ذخیره با موفقیت ذخیره شد',
+            title: 'Saved successfully',
             showConfirmButton: false,
             timer: 2000
           });
@@ -3785,7 +3785,7 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
+            title: 'Error . . .',
             text: error.response.data.message
           });
         }
@@ -4024,7 +4024,7 @@ __webpack_require__.r(__webpack_exports__);
             heightAuto: false,
             position: 'center',
             icon: 'success',
-            title: 'ذخیره با موفقیت انجام شد',
+            title: 'Saved successfully',
             showConfirmButton: false,
             timer: 2000
           });
@@ -4034,7 +4034,7 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
+            title: 'Error . . .',
             text: error.response.data.message
           });
         }
@@ -4058,7 +4058,7 @@ __webpack_require__.r(__webpack_exports__);
             heightAuto: false,
             position: 'center',
             icon: 'success',
-            title: 'ذخیره با موفقیت انجام شد',
+            title: 'Saved successfully',
             showConfirmButton: false,
             timer: 2000
           });
@@ -4068,7 +4068,7 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
+            title: 'Error . . .',
             text: error.response.data.message
           });
         }
@@ -4092,7 +4092,7 @@ __webpack_require__.r(__webpack_exports__);
             heightAuto: false,
             position: 'center',
             icon: 'success',
-            title: 'ذخیره با موفقیت انجام شد',
+            title: 'Saved successfully',
             showConfirmButton: false,
             timer: 2000
           });
@@ -4102,7 +4102,7 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
+            title: 'Error . . .',
             text: error.response.data.message
           });
         }
@@ -4196,7 +4196,7 @@ __webpack_require__.r(__webpack_exports__);
         if (error.response.data.status == '406') {
           sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
             icon: 'error',
-            title: 'خطا . . .',
+            title: 'Error . . .',
             text: error.response.data.message
           });
         }
@@ -4304,7 +4304,7 @@ __webpack_require__.r(__webpack_exports__);
             heightAuto: false,
             position: 'center',
             icon: 'success',
-            title: 'ذخیره با موفقیت ذخیره شد',
+            title: 'Saved successfully',
             showConfirmButton: false,
             timer: 2000
           });
@@ -4314,7 +4314,7 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
+            title: 'Error . . .',
             text: error.response.data.message
           });
         }
@@ -4429,7 +4429,7 @@ __webpack_require__.r(__webpack_exports__);
             heightAuto: false,
             position: 'center',
             icon: 'success',
-            title: 'ذخیره با موفقیت ذخیره شد',
+            title: 'Saved successfully',
             showConfirmButton: false,
             timer: 2000
           });
@@ -4439,7 +4439,7 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
+            title: 'Error . . .',
             text: error.response.data.message
           });
         }
@@ -4456,12 +4456,12 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
       sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
         icon: 'info',
-        title: "لطفا کد تائید را وارد کنید:",
+        title: "Please enter  the confirmation code:",
         input: 'text',
         inputValue: '',
         showCancelButton: true,
-        confirmButtonText: 'ثبت',
-        cancelButtonText: 'لغو'
+        confirmButtonText: 'Submit',
+        cancelButtonText: 'Cancel'
       }).then(function (result) {
         if (result.isConfirmed) {
           if (result.value != '') {
@@ -4477,7 +4477,7 @@ __webpack_require__.r(__webpack_exports__);
                   heightAuto: false,
                   position: 'center',
                   icon: 'success',
-                  title: 'تحویل داده شد',
+                  title: 'delivered',
                   showConfirmButton: false,
                   timer: 2000
                 });
@@ -4486,7 +4486,7 @@ __webpack_require__.r(__webpack_exports__);
                   heightAuto: false,
                   position: 'center',
                   icon: 'error',
-                  title: 'کد تحویل اشتباه است',
+                  title: 'Delivery code is incorrect!',
                   showConfirmButton: false,
                   timer: 2000
                 });
@@ -4497,7 +4497,7 @@ __webpack_require__.r(__webpack_exports__);
                   heightAuto: false,
                   position: 'center',
                   icon: 'error',
-                  title: 'کد تحویل اشتباه است',
+                  title: 'Delivery code is incorrect!',
                   showConfirmButton: false,
                   timer: 2000
                 });
@@ -4519,7 +4519,7 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
+            title: 'Error . . .',
             text: error.response.data.message
           });
         }
@@ -4637,9 +4637,6 @@ __webpack_require__.r(__webpack_exports__);
         files: []
       });
       var y = $("#table-request-mobile tbody").scrollTop();
-      // $("#table-request-mobile tbody").scrollTop(y + 300); // scroll down 150px
-      // $('#table-request-mobile tbody').animate({ scrollTop: y+550 },'slow');
-
       $('#table-request-mobile tbody').animate({
         scrollTop: 4000 + y
       }, 1500);
@@ -4647,17 +4644,17 @@ __webpack_require__.r(__webpack_exports__);
     deleteRow: function deleteRow(index) {
       var _this = this;
       if (this.requestDetails.length <= 1) {
-        alert("تعداد سطر نمی تواند خالی باشد");
+        alert("The row can not be empty");
       } else {
         sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
           position: 'center',
           heightAuto: false,
           icon: 'question',
-          title: "آیا ردیف حذف شود؟",
+          title: "Do you want to delete the row?",
           showConfirmButton: true,
           showCancelButton: true,
-          confirmButtonText: "بله",
-          cancelButtonText: "انصراف",
+          confirmButtonText: "Yes",
+          cancelButtonText: "Opt out",
           confirmButtonColor: "#d33"
         }).then(function (response) {
           if (response.isConfirmed) {
@@ -4671,10 +4668,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
       e.preventDefault();
       var currentObj = this;
-      // this.loader = true;
       var formData = new FormData();
-      // formData.append('request', this.request);
-      // formData.append('file',this.file);
       formData.append('file', this.file);
       formData.append('description', this.file_description);
       formData.append('name', this.file_title);
@@ -4685,7 +4679,7 @@ __webpack_require__.r(__webpack_exports__);
           heightAuto: false,
           position: 'center',
           icon: 'success',
-          title: 'فایل با موفقیت بارگذاری شد',
+          title: 'File uploaded successfully ',
           showConfirmButton: false,
           timer: 2000
         });
@@ -4754,12 +4748,12 @@ __webpack_require__.r(__webpack_exports__);
         $("#product" + i).parent().addClass("border");
         if (this.requestDetails[i].product_id == null) {
           $("#product" + i).parent().removeClass("border");
-          this.errors.product = "وارد کردن نام کالا اجباری است";
+          this.errors.product = "Entering the Product name is mandatory";
           $("#product" + i).parent().css("border", "2px solid red");
         }
         if (this.requestDetails[i].amount == '') {
           $("#count" + i).removeClass("border");
-          this.errors.amount = "وارد کردن تعداد اجباری است";
+          this.errors.amount = "Entering the amount is mandatory";
           $("#count" + i).css("border", "2px solid red");
         }
       }
@@ -4786,8 +4780,8 @@ __webpack_require__.r(__webpack_exports__);
           heightAuto: false,
           position: 'center',
           icon: 'success',
-          title: 'درخواست با موفقیت ارسال شد',
-          html: 'کد تحویل شما: ' + response.data.data.requestData.validated_code + '<br>' + '<small>دادن این کد به مامور پیک الزامی می باشد</small>',
+          title: 'Request sent successfully',
+          html: 'Your delivery code: ' + response.data.data.requestData.validated_code + '<br>' + '<small>It is mandatory to give this code to the courier</small>',
           showConfirmButton: true
         });
         _this4.requestDetails = [{
@@ -4855,11 +4849,11 @@ __webpack_require__.r(__webpack_exports__);
         position: 'center',
         heightAuto: false,
         icon: 'question',
-        title: "آیا ردیف حذف شود؟",
+        title: "Do you want to delete the row?",
         showConfirmButton: true,
         showCancelButton: true,
-        confirmButtonText: "بله",
-        cancelButtonText: "انصراف",
+        confirmButtonText: "Yes",
+        cancelButtonText: "Opt out",
         confirmButtonColor: "#d33"
       }).then(function (response) {
         if (response.isConfirmed) {
@@ -4874,7 +4868,7 @@ __webpack_require__.r(__webpack_exports__);
               timer: 2000
             });
           })["catch"](function (response) {
-            alert("حذف با خطا مواجه شد");
+            alert("Deletion failed");
             console.log(response);
           });
         }
@@ -4902,7 +4896,7 @@ __webpack_require__.r(__webpack_exports__);
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               heightAuto: false,
               icon: 'error',
-              title: 'خطا . . .',
+              title: 'Error . . .',
               text: error.response.data.message
             });
           }
@@ -4934,11 +4928,11 @@ __webpack_require__.r(__webpack_exports__);
               position: 'center',
               icon: 'error',
               title: response.data.message,
-              text: "آیا ادامه می دهید؟",
+              text: "Do you continue?",
               showConfirmButton: true,
               showCancelButton: true,
-              confirmButtonText: "بله",
-              cancelButtonText: "انصراف",
+              confirmButtonText: "Yes",
+              cancelButtonText: "Opt out",
               confirmButtonColor: "#51a139"
             }).then(function (response) {
               if (response.isConfirmed) {
@@ -4961,7 +4955,7 @@ __webpack_require__.r(__webpack_exports__);
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               heightAuto: false,
               icon: 'error',
-              title: 'خطا . . .',
+              title: 'Error . . .',
               text: error.response.message
             });
           }
@@ -4997,8 +4991,8 @@ __webpack_require__.r(__webpack_exports__);
         sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
           heightAuto: false,
           icon: 'error',
-          title: 'خطا . . .',
-          text: "لطفا تا بررسی موجودی کالا صبر کنید"
+          title: 'Error . . .',
+          text: "Please wait until the inventory is checked"
         });
       } else {
         if (this.requestDetails[index].product_id) {
@@ -5007,12 +5001,12 @@ __webpack_require__.r(__webpack_exports__);
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               heightAuto: false,
               icon: 'error',
-              title: "مقدار درخواستی بیشتر از موجودی کالا می باشد",
-              text: "آیا ادامه می دهید؟",
+              title: "The requested amount is more than the stock",
+              text: "Do you continue?",
               showConfirmButton: true,
               showCancelButton: true,
-              confirmButtonText: "بله",
-              cancelButtonText: "انصراف",
+              confirmButtonText: "Yes",
+              cancelButtonText: "Opt out",
               confirmButtonColor: "#51a139"
             }).then(function (response) {
               if (response.isConfirmed) {} else {
@@ -5027,8 +5021,8 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
-            text: "لطفا اول یک کالا انتخاب کنید"
+            title: 'Error . . .',
+            text: "Please select a product"
           });
         }
       }
@@ -5060,20 +5054,11 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       myActive: false,
-      // isAuth: false
       user: ''
     };
   },
   methods: {
-    logout: function logout() {
-      // if(confirm("آیا مایل به خروج از برنامه می باشید ؟")) {
-      //     localStorage.removeItem('token')
-      //     localStorage.removeItem('expire')
-      //     store.commit('logoutUser')
-      //     window.location.href = '/';
-      //     //this.$router.push({ name: 'login' })
-      // }
-    },
+    logout: function logout() {},
     loadUser: function loadUser() {
       var _this = this;
       axios.get('api/user/getById').then(function (_ref) {
@@ -5227,7 +5212,7 @@ __webpack_require__.r(__webpack_exports__);
             heightAuto: false,
             position: 'center',
             icon: 'success',
-            title: 'ثبت با موفقیت ذخیره شد',
+            title: 'Saved successfully',
             showConfirmButton: false,
             timer: 2000
           });
@@ -5237,7 +5222,7 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
+            title: 'Error . . .',
             text: error.response.data.message
           });
         }
@@ -5254,12 +5239,12 @@ __webpack_require__.r(__webpack_exports__);
       var _this4 = this;
       sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
         icon: 'error',
-        title: "لطفا علت عدم تائید را شرح دهید:",
+        title: "Please explain the reason for the disapproval",
         input: 'text',
         inputValue: this.confirm_temp[i].description,
         showCancelButton: true,
-        confirmButtonText: 'ثبت',
-        cancelButtonText: 'لغو'
+        confirmButtonText: 'Submit',
+        cancelButtonText: 'Cancel'
       }).then(function (result) {
         if (result.isConfirmed) {
           if (result.value != '') {
@@ -5278,12 +5263,12 @@ __webpack_require__.r(__webpack_exports__);
       var _this5 = this;
       sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
         icon: 'error',
-        title: "لطفا علت عدم تائید را شرح دهید:",
+        title: "Please explain the reason for the disapproval",
         input: 'text',
         inputValue: '',
         showCancelButton: true,
-        confirmButtonText: 'ثبت',
-        cancelButtonText: 'لغو'
+        confirmButtonText: 'Submit',
+        cancelButtonText: 'Cancel'
       }).then(function (result) {
         if (result.isConfirmed) {
           if (result.value != '') {
@@ -5337,10 +5322,8 @@ __webpack_require__.r(__webpack_exports__);
         if (!error.response.success) {
           sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
             icon: 'error',
-            // title: error.response.message,
             text: error.response.data.message
           });
-          // this.$data.loader = false
         }
       });
     },
@@ -5370,7 +5353,6 @@ __webpack_require__.r(__webpack_exports__);
           var confirm = String(item.confirmed).includes('true') + String(item.confirmed).includes('false');
           return confirm;
         });
-        // return this.request_all;
       }
     }
   },
@@ -5466,7 +5448,7 @@ __webpack_require__.r(__webpack_exports__);
             heightAuto: false,
             position: 'center',
             icon: 'success',
-            title: 'ذخیره با موفقیت ذخیره شد',
+            title: 'Saved successfully',
             showConfirmButton: false,
             timer: 2000
           });
@@ -5476,7 +5458,7 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
+            title: 'Error . . .',
             text: error.response.data.message
           });
         }
@@ -5489,11 +5471,11 @@ __webpack_require__.r(__webpack_exports__);
         position: 'center',
         heightAuto: false,
         icon: 'question',
-        title: "آیا از صدور حواله مطمئن هستید؟",
+        title: "Are you sure about issuing a remittance?",
         showConfirmButton: true,
         showCancelButton: true,
-        confirmButtonText: "بله",
-        cancelButtonText: "انصراف",
+        confirmButtonText: "Yes",
+        cancelButtonText: "Opt out",
         confirmButtonColor: "#54ad31"
       }).then(function (response) {
         if (response.isConfirmed) {
@@ -5530,7 +5512,7 @@ __webpack_require__.r(__webpack_exports__);
           timer: 2000
         });
       })["catch"](function (response) {
-        alert("صدور حواله با خطا مواجه شد");
+        alert("An error occurred while issuing the remittance");
         console.log(response);
       });
     }
@@ -5572,14 +5554,13 @@ __webpack_require__.r(__webpack_exports__);
       editMode: false,
       editedUser: null,
       users: {},
-      //لیست کاربران
       user2: {
         name: '',
         family: '',
         code: '',
         roles: ''
       },
-      //کاربر انتخاب شده برای ویرایش
+      //selected users for edit
       newUser: {
         name: '',
         family: '',
@@ -5614,8 +5595,8 @@ __webpack_require__.r(__webpack_exports__);
       if ($("select option:selected").text() == '') {
         sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
           icon: 'error',
-          title: 'خطا',
-          text: 'نقش کاربری را انتخاب کنید'
+          title: 'Error',
+          text: 'Please choose the role of user'
         });
         return false;
       }
@@ -5637,7 +5618,7 @@ __webpack_require__.r(__webpack_exports__);
         _this2.allerrors = error.response.data;
         sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
           icon: 'error',
-          title: 'خطا . . .',
+          title: 'Error . . .',
           text: error.response.data.message
         });
       });
@@ -5656,7 +5637,7 @@ __webpack_require__.r(__webpack_exports__);
         sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
           position: 'center',
           icon: 'success',
-          title: 'کاربر جدید ایجاد شد',
+          title: 'New user added!',
           showConfirmButton: false,
           timer: 1500
         });
@@ -5667,7 +5648,7 @@ __webpack_require__.r(__webpack_exports__);
         if (error.response.data.status == '406') {
           sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
             icon: 'error',
-            title: 'خطا . . .',
+            title: 'Error . . .',
             text: error.response.data.message
           });
         }
@@ -5702,11 +5683,11 @@ __webpack_require__.r(__webpack_exports__);
         position: 'center',
         heightAuto: false,
         icon: 'question',
-        title: "آیا از " + event.target.value + " کردن پرسنل مطمئن هستید؟",
+        title: "Are you sure you want to " + event.target.value + " the personnel?",
         showConfirmButton: true,
         showCancelButton: true,
-        confirmButtonText: "بله",
-        cancelButtonText: "انصراف",
+        confirmButtonText: "Yes",
+        cancelButtonText: "Opt out",
         confirmButtonColor: "#58c03e"
       }).then(function (response) {
         if (response.isConfirmed) {
@@ -5722,7 +5703,7 @@ __webpack_require__.r(__webpack_exports__);
             });
             _this6.getUsers();
           })["catch"](function (response) {
-            alert("عملیات با خطا مواجه شد");
+            alert("The operation failed");
             console.log(response);
           });
         }
@@ -5809,11 +5790,11 @@ __webpack_require__.r(__webpack_exports__);
       sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
         heightAuto: false,
         icon: 'error',
-        title: 'آیا از حذف وسیله نقلیه اطمینان دارید؟',
+        title: 'Are you sure you want to delete the vehicle?',
         showConfirmButton: true,
         showCancelButton: true,
-        confirmButtonText: 'بله',
-        cancelButtonText: ' خیر',
+        confirmButtonText: 'Yes',
+        cancelButtonText: ' No',
         timer: 10000
       }).then(function (response) {
         if (response.isConfirmed) {
@@ -5824,7 +5805,7 @@ __webpack_require__.r(__webpack_exports__);
                 heightAuto: false,
                 position: 'center',
                 icon: 'success',
-                title: 'حذف با موفقیت انجام شد',
+                title: 'Deleted successfully',
                 showConfirmButton: false,
                 timer: 2000
               });
@@ -5834,7 +5815,7 @@ __webpack_require__.r(__webpack_exports__);
               sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
                 heightAuto: false,
                 icon: 'error',
-                title: 'خطا . . .',
+                title: 'Error . . .',
                 text: error.response.data.message
               });
             }
@@ -5854,7 +5835,7 @@ __webpack_require__.r(__webpack_exports__);
             heightAuto: false,
             position: 'center',
             icon: 'success',
-            title: 'ویرایش با موفقیت ذخیره شد',
+            title: 'Edited successfully',
             showConfirmButton: false,
             timer: 2000
           });
@@ -5864,7 +5845,7 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
+            title: 'Error . . .',
             text: error.response.data.message
           });
         }
@@ -5882,7 +5863,7 @@ __webpack_require__.r(__webpack_exports__);
             heightAuto: false,
             position: 'center',
             icon: 'success',
-            title: 'ذخیره با موفقیت ذخیره شد',
+            title: 'Saved successfully',
             showConfirmButton: false,
             timer: 2000
           });
@@ -5894,8 +5875,8 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
-            text: 'وارد کردن نام وسیله اجباری است'
+            title: 'Error . . .',
+            text: 'Name of vehicle is required'
           });
         }
       });
@@ -6005,7 +5986,7 @@ __webpack_require__.r(__webpack_exports__);
               heightAuto: false,
               position: 'center',
               icon: 'success',
-              title: 'ارسال با موفقیت ذخیره شد',
+              title: 'Saved succussfully',
               showConfirmButton: false,
               timer: 2000
             });
@@ -6015,7 +5996,7 @@ __webpack_require__.r(__webpack_exports__);
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               heightAuto: false,
               icon: 'error',
-              title: 'خطا . . .',
+              title: 'Error . . .',
               text: error.response.data.message
             });
           }
@@ -6048,7 +6029,7 @@ __webpack_require__.r(__webpack_exports__);
             heightAuto: false,
             position: 'center',
             icon: 'success',
-            title: 'ثبت با موفقیت ذخیره شد',
+            title: 'Saved successfully',
             showConfirmButton: false,
             timer: 2000
           });
@@ -6058,7 +6039,7 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
+            title: 'Error . . .',
             text: error.response.data.message
           });
         }
@@ -6108,8 +6089,8 @@ __webpack_require__.r(__webpack_exports__);
         sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
           heightAuto: false,
           icon: 'error',
-          title: 'خطا . . .',
-          text: "لطفا اول یک نوع تائیدیه انتخاب کنید"
+          title: 'Error . . .',
+          text: "Please select a confirmation type first"
         });
       } else {
         axios.post('api/requestDetailsConfirms/store', this.reference_array).then(function (response) {
@@ -6130,7 +6111,7 @@ __webpack_require__.r(__webpack_exports__);
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               heightAuto: false,
               icon: 'error',
-              title: 'خطا . . .',
+              title: 'Error . . .',
               text: error.response.data.message
             });
           }
@@ -6159,7 +6140,7 @@ __webpack_require__.r(__webpack_exports__);
             heightAuto: false,
             position: 'center',
             icon: 'success',
-            title: 'ذخیره با موفقیت ذخیره شد',
+            title: 'Saved successfully',
             showConfirmButton: false,
             timer: 2000
           });
@@ -6169,7 +6150,7 @@ __webpack_require__.r(__webpack_exports__);
           sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
             heightAuto: false,
             icon: 'error',
-            title: 'خطا . . .',
+            title: 'Error . . .',
             text: error.response.data.message
           });
         }
@@ -6185,13 +6166,13 @@ __webpack_require__.r(__webpack_exports__);
     sendDelivery: function sendDelivery(requestID) {
       var _this7 = this;
       sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-        title: 'آیا از ارسال به پیک اطمینان دارید؟',
-        text: "تائید ارسال به منزله تائید انبار از موجودی می باشد",
+        title: 'Are you sure about sending by courier?',
+        text: "Confirmation of sending means warehouse confirmation of inventory",
         icon: 'warning',
         confirmButtonColor: '#28a745',
         showCancelButton: true,
-        confirmButtonText: 'تایید',
-        cancelButtonText: 'لغو'
+        confirmButtonText: 'Confirmation',
+        cancelButtonText: 'Cancel'
       }).then(function (result) {
         if (result.isConfirmed) {
           axios.put('api/requests/statusRequestAndItsRequestDetails/3', {
@@ -6203,7 +6184,7 @@ __webpack_require__.r(__webpack_exports__);
                 heightAuto: false,
                 position: 'center',
                 icon: 'success',
-                title: 'ارسال با موفقیت انجام شد',
+                title: 'Submitted successfully',
                 showConfirmButton: false,
                 timer: 2000
               });
@@ -6213,7 +6194,7 @@ __webpack_require__.r(__webpack_exports__);
               sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                 heightAuto: false,
                 icon: 'error',
-                title: 'خطا . . .',
+                title: 'Error . . .',
                 text: error.response.data.message
               });
             }
@@ -6235,12 +6216,12 @@ __webpack_require__.r(__webpack_exports__);
     cancel: function cancel(request_id) {
       var _this9 = this;
       sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-        title: 'آیا از لغو درخواست اطمینان دارید؟',
+        title: 'Are you sure you want to cancel?',
         icon: 'question',
         confirmButtonColor: '#ea3f3f',
         showCancelButton: true,
-        confirmButtonText: 'بله',
-        cancelButtonText: 'بستن'
+        confirmButtonText: 'Yes',
+        cancelButtonText: 'Close'
       }).then(function (result) {
         if (result.isConfirmed) {
           axios.put('api/requests/statusRequestAndItsRequestDetails/5', {
@@ -6252,7 +6233,7 @@ __webpack_require__.r(__webpack_exports__);
                 heightAuto: false,
                 position: 'center',
                 icon: 'success',
-                title: 'لغو با موفقیت انجام شد',
+                title: 'Canceled succussfully',
                 showConfirmButton: false,
                 timer: 2000
               });
@@ -6262,7 +6243,7 @@ __webpack_require__.r(__webpack_exports__);
               sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                 heightAuto: false,
                 icon: 'error',
-                title: 'خطا . . .',
+                title: 'Error . . .',
                 text: error.response.data.message
               });
             }
@@ -6357,7 +6338,7 @@ var staticRenderFns = [function () {
     staticClass: "container1 mt-4 w-100"
   }, [_c("h2", {
     staticClass: "mb-4"
-  }, [_vm._v("کالاهای در حال اتمام")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Products that are running out")]), _vm._v(" "), _c("div", {
     staticClass: "table-responsive text-center"
   }, [_c("table", {
     staticClass: "table table-striped table-bordered table-hover",
@@ -6366,19 +6347,19 @@ var staticRenderFns = [function () {
     }
   }, [_c("thead", [_c("tr", [_c("th", {
     staticClass: "wid-1"
-  }, [_vm._v("ردیف")]), _vm._v(" "), _c("th", {
+  }, [_vm._v("Row")]), _vm._v(" "), _c("th", {
     staticClass: "wid-20"
-  }, [_vm._v("نام کالا")]), _vm._v(" "), _c("th", {
+  }, [_vm._v("Products name")]), _vm._v(" "), _c("th", {
     staticClass: "wid-20"
-  }, [_vm._v("مشخصات کالا")]), _vm._v(" "), _c("th", {
+  }, [_vm._v("Products specification")]), _vm._v(" "), _c("th", {
     staticClass: "wid-9"
-  }, [_vm._v("تعداد موجودی فعلی")]), _vm._v(" "), _c("th", {
+  }, [_vm._v("Currently available counts")]), _vm._v(" "), _c("th", {
     staticClass: "wid-9"
-  }, [_vm._v("حد نصاب")]), _vm._v(" "), _c("th", {
+  }, [_vm._v("Quorum")]), _vm._v(" "), _c("th", {
     staticClass: "wid-13"
-  }, [_vm._v("حداقل تعداد درخواست خرید")]), _vm._v(" "), _c("th", {
+  }, [_vm._v("Minimum number of purchase requests")]), _vm._v(" "), _c("th", {
     staticClass: "wid-9"
-  }, [_vm._v("وضعیت خرید")])])]), _vm._v(" "), _c("tbody", [_c("tr", [_c("td", [_vm._v("1")]), _vm._v(" "), _c("td", [_vm._v("نام کالا")]), _vm._v(" "), _c("td", [_vm._v("مشخصات کالا")]), _vm._v(" "), _c("td", [_vm._v("5")]), _vm._v(" "), _c("td", [_vm._v("10")]), _vm._v(" "), _c("td", [_vm._v("5")]), _vm._v(" "), _c("td", [_vm._v("\n          در حال خرید\n        ")])])])])])]);
+  }, [_vm._v("Purchase status")])])]), _vm._v(" "), _c("tbody", [_c("tr", [_c("td", [_vm._v("1")]), _vm._v(" "), _c("td", [_vm._v("Product name")]), _vm._v(" "), _c("td", [_vm._v("Product specification")]), _vm._v(" "), _c("td", [_vm._v("5")]), _vm._v(" "), _c("td", [_vm._v("10")]), _vm._v(" "), _c("td", [_vm._v("5")]), _vm._v(" "), _c("td", [_vm._v("\n          Buying...\n        ")])])])])])]);
 }];
 render._withStripped = true;
 
@@ -6427,7 +6408,7 @@ var render = function render() {
     staticClass: "col-4 text-center"
   }, [_c("h5", {
     staticClass: "inline"
-  }, [_vm._v("تاریخ:")]), _vm._v(" "), _vm.request_all != "" ? _c("h5", {
+  }, [_vm._v("Date:")]), _vm._v(" "), _vm.request_all != "" ? _c("h5", {
     staticClass: "inline"
   }, [_vm._v("\n                                        " + _vm._s(_vm.convertDate(_vm.request_all[_vm.request_id].created_at)))]) : _vm._e(), _vm._v(" "), _vm.request_all != "" ? _c("h5", {
     staticClass: "d-block"
@@ -6449,31 +6430,31 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v("\n                                                " + _vm._s(index + 1) + "\n                                            ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام کالا"
+        label: "Products name"
       }
     }, [_vm._v("\n                                                " + _vm._s(print.product.name) + "\n                                            ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تعداد"
+        label: "Count"
       }
     }, [_vm._v("\n                                                " + _vm._s(print.amount) + "\n                                            ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v("\n                                                " + _vm._s(_vm.request_all[_vm.request_id].unit.name) + "\n                                            ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مرکز هزینه"
+        label: "Cost center"
       }
     }, [print.center ? _c("label", [_vm._v(" " + _vm._s(print.center.name))]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت تائید"
+        label: "Confirmation status"
       }
-    }, [print.confirmed == null ? _c("i", [_vm._v("در انتظار تائید")]) : _vm._e(), _vm._v(" "), print.confirmed == 0 ? _c("i", [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), print.confirmed == 1 ? _c("i", [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [print.confirmed == null ? _c("i", [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), print.confirmed == 0 ? _c("i", [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), print.confirmed == 1 ? _c("i", [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_vm._v("\n                                                " + _vm._s(print.descriptions) + "\n                                            ")])]);
   }) : _vm._e()], 2)])]), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4)]), _vm._v(" "), _c("div", {
@@ -6490,13 +6471,13 @@ var render = function render() {
       type: "button",
       id: "btnPrint"
     }
-  }, [_vm._v("چاپ\n                            ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Print\n                            ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-secondary",
     attrs: {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Close")])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "modal",
     attrs: {
       tabindex: "-1",
@@ -6518,41 +6499,41 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام کالا"
+        label: "Products name"
       }
     }, [_vm._v(_vm._s(details.product.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تعداد"
+        label: "Count"
       }
     }, [_vm._v(_vm._s(details.amount))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v(_vm._s(_vm.request_all[_vm.request_id].unit.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مرکز هزینه"
+        label: "Cost center"
       }
     }, [details.center ? _c("label", [_vm._v("\n                                            " + _vm._s(details.center.name) + "\n                                        ")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "انبار"
+        label: "Warehouse"
       }
     }, [_vm._v(_vm._s(details.warehouse.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت درخواست"
+        label: "Request Status"
       }
     }, [details.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار\n                                        تائید")]) : _vm._e(), _vm._v(" "), details.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), details.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), details.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), details.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نمایش تائیدیه ها"
+        label: "Show confirmations"
       }
     }, [_c("i", {
       staticClass: "fa fa-info-circle fa-2x",
@@ -6567,7 +6548,7 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -6578,7 +6559,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(details.descriptions))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "فایل"
+        label: "File"
       }
     }, [_c("button", {
       staticClass: "btn btn-sm btn-primary",
@@ -6593,7 +6574,7 @@ var render = function render() {
           return _vm.showFile(details);
         }
       }
-    }, [_vm._v("نمایش\n                                        ")])])]) : _vm._e();
+    }, [_vm._v("Show\n                                        ")])])]) : _vm._e();
   }) : _vm._e()], 2)])]), _vm._v(" "), _vm._m(7)])])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
@@ -6619,33 +6600,33 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v("\n                                            " + _vm._s(index + 1) + "\n                                        ")]), _vm._v(" "), confirm.user != null ? _c("td", {
       attrs: {
-        label: "نام تائید کننده"
+        label: "Name of the approver"
       }
     }, [_vm._v("\n                                            " + _vm._s(confirm.user.first_name) + " " + _vm._s(confirm.user.last_name) + "\n                                        ")]) : _vm._e(), _vm._v(" "), confirm.user == null ? _c("td", {
       attrs: {
-        label: "نام تائید کننده"
+        label: "Name of the approver"
       }
-    }, [_vm._v("\n                                            نا معلوم\n                                        ")]) : _vm._e(), _vm._v(" "), confirm.confirm.name != null ? _c("td", {
+    }, [_vm._v("\n                                            Unknown\n                                        ")]) : _vm._e(), _vm._v(" "), confirm.confirm.name != null ? _c("td", {
       attrs: {
-        label: "نام تائیدیه"
+        label: "Confirmation name"
       }
     }, [_vm._v("\n                                            " + _vm._s(confirm.confirm.name) + "\n                                        ")]) : _vm._e(), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت تائید"
+        label: "Confirmation status"
       }
     }, [confirm.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار\n                                                تائید")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation\n                                                approved")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -6656,7 +6637,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(confirm.description))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تاریخ"
+        label: "Date"
       }
     }, [_vm._v("\n                                            " + _vm._s(confirm.updated_at) + "\n                                        ")])]);
   }) : _vm._e()], 2)])])]), _vm._v(" "), _vm._m(10)])])]), _vm._v(" "), _c("div", {
@@ -6687,19 +6668,19 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v("\n                                        " + _vm._s(index + 1) + "\n                                    ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام فایل"
+        label: "File name"
       }
     }, [_vm._v("\n                                        " + _vm._s(file.file.name) + "\n                                    ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_vm._v("\n                                        " + _vm._s(file.file.description) + "\n                                    ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "پیش نمایش"
+        label: "Preshow"
       }
     }, [_c("div", {
       staticClass: "preview"
@@ -6712,21 +6693,21 @@ var render = function render() {
       staticClass: "size_img",
       attrs: {
         src: "/file-show?fileId=" + file.file_id,
-        alt: "باز کردن"
+        alt: "Open"
       }
     })])])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "دانلود"
+        label: "Download"
       }
     }, [_c("a", {
       staticClass: "btn btn-sm btn-primary",
       attrs: {
         href: "/file-download?fileId=" + file.file_id
       }
-    }, [_vm._v("دانلود")])])]) : _vm._e();
+    }, [_vm._v("Download")])])]) : _vm._e();
   }), 0)])])]), _vm._v(" "), _vm._m(13)])])]), _vm._v(" "), _c("h4", {
     staticClass: "mb-4"
-  }, [_vm._v("درخواست های کنسل شده")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Canceled requests")]), _vm._v(" "), _c("div", {
     staticClass: "text-center scroll"
   }, [_c("table", {
     staticClass: "table table-bordered text-center style_table",
@@ -6742,33 +6723,33 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v(_vm._s(request.unit.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "شماره درخواست"
+        label: "Request number"
       }
     }, [_vm._v(_vm._s(request.request_number))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تاریخ"
+        label: "Date"
       }
     }, [_vm._v(_vm._s(_vm.convertDate(request.created_at)))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت درخواست"
+        label: "Request Status"
       }
     }, [request.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار تائید")]) : _vm._e(), _vm._v(" "), request.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), request.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), request.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), request.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -6777,7 +6758,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(request.descriptions))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "پرینت رسید تحویل"
+        label: "Delivery receipt print"
       }
     }, [_c("button", {
       staticClass: "btn btn-primary btn-table",
@@ -6795,7 +6776,7 @@ var render = function render() {
       staticClass: "fas fa-print"
     })])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مشاهده جزئیات"
+        label: "Show details"
       }
     }, [_c("button", {
       staticClass: "btn btn-primary",
@@ -6811,7 +6792,7 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fas fa-info-circle"
-    }), _vm._v(" نمایش جزئیات\n                        ")])])]);
+    }), _vm._v(" Show details\n                        ")])])]);
   }), 0)])])]);
 };
 var staticRenderFns = [function () {
@@ -6827,9 +6808,9 @@ var staticRenderFns = [function () {
     }
   })]), _vm._v(" "), _c("span", {
     staticClass: "img-font"
-  }, [_vm._v("\n                                                    \t\t\t\t\t\tگروه کارخانجات شیشه اردکان\n                                                    \t\t\t\t\t")]), _vm._v(" "), _c("span", {
+  }, [_vm._v("\n                                                    \t\t\t\t\tWarehouse Software\n                                                    \t\t\t\t\t")]), _vm._v(" "), _c("span", {
     staticClass: "img-font"
-  }, [_vm._v("ARDAKAN FLOAT GLASS CO")])])]);
+  }, [_vm._v("Warehouse Software")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -6837,11 +6818,11 @@ var staticRenderFns = [function () {
     staticClass: "col-4"
   }, [_c("h2", {
     staticClass: "print-head"
-  }, [_vm._v("رسید تحویل")])]);
+  }, [_vm._v("Delivery receipt")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                            ردیف\n                                        ")]), _vm._v(" "), _c("th", [_vm._v("نام کالا")]), _vm._v(" "), _c("th", [_vm._v("تعداد")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("مرکز هزینه")]), _vm._v(" "), _c("th", [_vm._v("وضعیت تائید")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                           Row\n                                        ")]), _vm._v(" "), _c("th", [_vm._v("Products name")]), _vm._v(" "), _c("th", [_vm._v("Count")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Cost center")]), _vm._v(" "), _c("th", [_vm._v("Confirmation status")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -6849,7 +6830,7 @@ var staticRenderFns = [function () {
     staticClass: "row text-right p-3"
   }, [_c("p", {
     staticClass: "inline"
-  }, [_vm._v("آدرس تحویل:")]), _vm._v(" "), _c("p", {
+  }, [_vm._v("Delivery address:")]), _vm._v(" "), _c("p", {
     staticClass: "inline"
   })]);
 }, function () {
@@ -6861,15 +6842,15 @@ var staticRenderFns = [function () {
     staticClass: "col-4 border"
   }, [_c("div", {
     staticClass: "signature"
-  }, [_c("p", [_vm._v("مسئول انبار")])])]), _vm._v(" "), _c("div", {
+  }, [_c("p", [_vm._v("Warehouse manager")])])]), _vm._v(" "), _c("div", {
     staticClass: "col-4 border"
   }, [_c("div", {
     staticClass: "signature"
-  }, [_c("p", [_vm._v("مسئول پیک")])])]), _vm._v(" "), _c("div", {
+  }, [_c("p", [_vm._v("Courier in charge")])])]), _vm._v(" "), _c("div", {
     staticClass: "col-4 border"
   }, [_c("div", {
     staticClass: "signature"
-  }, [_c("p", [_vm._v("دریافت کننده")])])])]);
+  }, [_c("p", [_vm._v("Receiver")])])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -6894,7 +6875,7 @@ var staticRenderFns = [function () {
     attrs: {
       colspan: "10"
     }
-  }, [_c("h4", [_vm._v("نمایش جزئیات")])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ردیف")]), _vm._v(" "), _c("th", [_vm._v("نام کالا")]), _vm._v(" "), _c("th", [_vm._v("تعداد")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("مرکز هزینه")]), _vm._v(" "), _c("th", [_vm._v("انبار")]), _vm._v(" "), _c("th", [_vm._v("وضعیت درخواست")]), _vm._v(" "), _c("th", [_vm._v("نمایش تائیدیه ها")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")]), _vm._v(" "), _c("th", [_vm._v("فایل")])])]);
+  }, [_c("h4", [_vm._v("Show details")])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Row")]), _vm._v(" "), _c("th", [_vm._v("Products name")]), _vm._v(" "), _c("th", [_vm._v("Count")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Cost center")]), _vm._v(" "), _c("th", [_vm._v("Warehouse")]), _vm._v(" "), _c("th", [_vm._v("Request Status")]), _vm._v(" "), _c("th", [_vm._v("Show confirmations")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")]), _vm._v(" "), _c("th", [_vm._v("File")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -6906,7 +6887,7 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("\n                            بستن\n                        ")])]);
+  }, [_vm._v("\n                            Close\n                        ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -6917,7 +6898,7 @@ var staticRenderFns = [function () {
     attrs: {
       id: "exampleModalLongTitle"
     }
-  }, [_vm._v("نمایش تائیدیه ها")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Show confirmations")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -6932,7 +6913,7 @@ var staticRenderFns = [function () {
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        ردیف\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        نام تائید کننده\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        نام تائیدیه\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        وضعیت تائید\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        توضیحات\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        تاریخ\n                                    ")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        Row\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Name of the approver\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Confirmation name\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Confirmation status\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Descriptions\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Date\n                                    ")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -6944,7 +6925,7 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])]);
+  }, [_vm._v("Close")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -6955,11 +6936,11 @@ var staticRenderFns = [function () {
     attrs: {
       id: "exampleModalLabel"
     }
-  }, [_vm._v("لیست فایل ها")])]);
+  }, [_vm._v("Files list")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        ردیف\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        نام فایل\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        توضیحات\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        پیش نمایش\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        دانلود\n                                    ")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        Row\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                       File name\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Descriptions\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                       Preshow\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Download\n                                    ")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -6971,11 +6952,11 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])]);
+  }, [_vm._v("Close")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("ردیف")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("شماره درخواست")]), _vm._v(" "), _c("th", [_vm._v("تاریخ")]), _vm._v(" "), _c("th", [_vm._v("وضعیت درخواست")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")]), _vm._v(" "), _c("th", [_vm._v("پرینت رسید تحویل")]), _vm._v(" "), _c("th", [_vm._v("مشاهده جزئیات")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("Row")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Request number")]), _vm._v(" "), _c("th", [_vm._v("Date")]), _vm._v(" "), _c("th", [_vm._v("Request Status")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")]), _vm._v(" "), _c("th", [_vm._v("Delivery receipt print")]), _vm._v(" "), _c("th", [_vm._v("Show details")])])]);
 }];
 render._withStripped = true;
 
@@ -7288,7 +7269,7 @@ var render = function render() {
     staticClass: "modal-content"
   }, [_vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "modal-body form-group text-right"
-  }, [_c("div", [_c("label", [_vm._v("نام:")]), _vm._v(" "), _vm.users != "" ? _c("multiselect", {
+  }, [_c("div", [_c("label", [_vm._v("Name:")]), _vm._v(" "), _vm.users != "" ? _c("multiselect", {
     attrs: {
       options: _vm.users.map(function (type) {
         return type.id;
@@ -7303,7 +7284,7 @@ var render = function render() {
         }).personnel_code;
       },
       showLabels: false,
-      placeholder: "نام کابر"
+      placeholder: "User name"
     },
     model: {
       value: _vm.user_temp.user_id,
@@ -7314,7 +7295,7 @@ var render = function render() {
     }
   }) : _vm._e()], 1), _vm._v(" "), _c("div", {
     staticClass: "mt-4"
-  }, [_c("label", [_vm._v("نام تائیدیه:")]), _vm._v(" "), _vm.confirms != "" ? _c("multiselect", {
+  }, [_c("label", [_vm._v("Confirmation name:")]), _vm._v(" "), _vm.confirms != "" ? _c("multiselect", {
     attrs: {
       options: _vm.confirms.map(function (type) {
         return type.id;
@@ -7325,7 +7306,7 @@ var render = function render() {
         }).name;
       },
       showLabels: false,
-      placeholder: "نام تائیدیه"
+      placeholder: "Confirmation name"
     },
     model: {
       value: _vm.user_temp.confirm_id,
@@ -7342,7 +7323,7 @@ var render = function render() {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("\n                        لغو\n                    ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n                        Cancel\n                    ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary",
     attrs: {
       type: "button"
@@ -7352,7 +7333,7 @@ var render = function render() {
         return _vm.saveUserConfirm(_vm.user_temp);
       }
     }
-  }, [_vm._v("ثبت\n                    ")])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Submit\n                    ")])])])])]), _vm._v(" "), _c("div", {
     staticClass: "row margin_top"
   }, [_c("div", {
     staticClass: "col-12"
@@ -7376,7 +7357,7 @@ var staticRenderFns = [function () {
     staticClass: "modal-header"
   }, [_c("h5", {
     staticClass: "modal-title"
-  }, [_vm._v("افزودن تائیدیه")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Add confirmation")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -7395,14 +7376,14 @@ var staticRenderFns = [function () {
     staticClass: "box-header"
   }, [_c("h3", {
     staticClass: "box-title"
-  }, [_vm._v("تائیدیه اشخاص")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Confirmation of People")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-sm btn-success float-left",
     attrs: {
       type: "button",
       "data-toggle": "modal",
       "data-target": "#modal-userConfirm"
     }
-  }, [_vm._v("افزودن\n                    ")])]);
+  }, [_vm._v("Add\n                    ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -7410,15 +7391,15 @@ var staticRenderFns = [function () {
     staticStyle: {
       width: "10px"
     }
-  }, [_vm._v("#")]), _vm._v(" "), _c("th", [_vm._v("نام")]), _vm._v(" "), _c("th", [_vm._v("نام خانوادگی")]), _vm._v(" "), _c("th", [_vm._v("نام تائید")]), _vm._v(" "), _c("th", [_vm._v("عملیات")])])]);
+  }, [_vm._v("#")]), _vm._v(" "), _c("th", [_vm._v("Name")]), _vm._v(" "), _c("th", [_vm._v("Last name")]), _vm._v(" "), _c("th", [_vm._v("Confirmation name")]), _vm._v(" "), _c("th", [_vm._v("Actions")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("td", [_c("i", {
     staticClass: "badge badge-info"
-  }, [_vm._v("غیرفعال")]), _vm._v(" "), _c("i", {
+  }, [_vm._v("Inactive")]), _vm._v(" "), _c("i", {
     staticClass: "badge badge-danger"
-  }, [_vm._v("حذف")])]);
+  }, [_vm._v("Delete")])]);
 }];
 render._withStripped = true;
 
@@ -7481,7 +7462,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("label", {
     staticClass: "my-auto"
-  }, [_vm._v(" انتخاب دستی ")])]), _vm._v(" "), _c("div", {
+  }, [_vm._v(" Manual selection ")])]), _vm._v(" "), _c("div", {
     staticClass: "col-6 d-flex align-items-center"
   }, [_c("input", {
     directives: [{
@@ -7507,14 +7488,14 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("label", {
     staticClass: "my-auto text-secondary"
-  }, [_vm._v(" انتخاب اتوماتیک ")])]), _vm._v(" "), _vm.peyk_temp.type_send == "manual" ? _c("div", {
+  }, [_vm._v(" Automatic selection ")])]), _vm._v(" "), _vm.peyk_temp.type_send == "manual" ? _c("div", {
     staticClass: "col-10 mt-3"
   }, [_c("multiselect", {
     attrs: {
       options: _vm.peyks,
       "custom-label": _vm.coustomName,
       showLabels: false,
-      placeholder: "نام پیک"
+      placeholder: "Courier name"
     },
     on: {
       input: function input($event) {
@@ -7536,7 +7517,7 @@ var render = function render() {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("\n                            لغو\n                        ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n                            Cancel\n                        ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary",
     attrs: {
       type: "button"
@@ -7544,7 +7525,7 @@ var render = function render() {
     on: {
       click: _vm.sendPeyk
     }
-  }, [_vm._v("ارسال")])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Send")])])])])]), _vm._v(" "), _c("div", {
     attrs: {
       id: "printMe",
       dir: "rtl"
@@ -7570,7 +7551,7 @@ var render = function render() {
     staticClass: "col-4 text-center"
   }, [_c("h5", {
     staticClass: "inline"
-  }, [_vm._v("تاریخ:")]), _vm._v(" "), _vm.request_all != "" ? _c("h5", {
+  }, [_vm._v("Date:")]), _vm._v(" "), _vm.request_all != "" ? _c("h5", {
     staticClass: "inline"
   }, [_vm._v("\n                                        " + _vm._s(_vm.convertDate(_vm.request_all[_vm.request_id].created_at)))]) : _vm._e(), _vm._v(" "), _vm.request_all != "" ? _c("h5", {
     staticClass: "d-block"
@@ -7592,31 +7573,31 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v("\n                                                " + _vm._s(index + 1) + "\n                                            ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام کالا"
+        label: "Products name"
       }
     }, [_vm._v("\n                                                " + _vm._s(print.product.name) + "\n                                            ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تعداد"
+        label: "Count"
       }
     }, [_vm._v("\n                                                " + _vm._s(print.amount) + "\n                                            ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v("\n                                                " + _vm._s(_vm.request_all[_vm.request_id].unit.name) + "\n                                            ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مرکز هزینه"
+        label: "Cost center"
       }
     }, [print.center ? _c("label", [_vm._v(" " + _vm._s(print.center.name))]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت تائید"
+        label: "Confirmation status"
       }
-    }, [print.confirmed == null ? _c("i", [_vm._v("در انتظار تائید")]) : _vm._e(), _vm._v(" "), print.confirmed == 0 ? _c("i", [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), print.confirmed == 1 ? _c("i", [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [print.confirmed == null ? _c("i", [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), print.confirmed == 0 ? _c("i", [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), print.confirmed == 1 ? _c("i", [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_vm._v("\n                                                " + _vm._s(print.descriptions) + "\n                                            ")])]);
   }) : _vm._e()], 2)])]), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5)]), _vm._v(" "), _c("div", {
@@ -7633,13 +7614,13 @@ var render = function render() {
       type: "button",
       id: "btnPrint"
     }
-  }, [_vm._v("چاپ\n                            ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Print\n                            ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-secondary",
     attrs: {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Close")])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "modal",
     attrs: {
       tabindex: "-1",
@@ -7661,41 +7642,41 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام کالا"
+        label: "Products name"
       }
     }, [_vm._v(_vm._s(details.product.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تعداد"
+        label: "Count"
       }
     }, [_vm._v(_vm._s(details.amount))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v(_vm._s(_vm.request_all[_vm.request_id].unit.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مرکز هزینه"
+        label: "Cost center"
       }
     }, [details.center ? _c("label", [_vm._v("\n                                            " + _vm._s(details.center.name) + "\n                                        ")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "انبار"
+        label: "Warehouse"
       }
     }, [_vm._v(_vm._s(details.warehouse.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت درخواست"
+        label: "Request Status"
       }
     }, [details.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار\n                                        تائید")]) : _vm._e(), _vm._v(" "), details.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), details.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), details.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), details.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نمایش تائیدیه ها"
+        label: "Show confirmations"
       }
     }, [_c("i", {
       staticClass: "fa fa-info-circle fa-2x",
@@ -7710,7 +7691,7 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -7721,7 +7702,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(details.descriptions))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "فایل"
+        label: "File"
       }
     }, [_c("button", {
       staticClass: "btn btn-sm btn-primary",
@@ -7736,7 +7717,7 @@ var render = function render() {
           return _vm.showFile(details);
         }
       }
-    }, [_vm._v("نمایش\n                                        ")])])]) : _vm._e();
+    }, [_vm._v("Show\n                                        ")])])]) : _vm._e();
   }) : _vm._e()], 2)])]), _vm._v(" "), _vm._m(8)])])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
@@ -7762,33 +7743,33 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v("\n                                            " + _vm._s(index + 1) + "\n                                        ")]), _vm._v(" "), confirm.user != null ? _c("td", {
       attrs: {
-        label: "نام تائید کننده"
+        label: "Name of the approver"
       }
     }, [_vm._v("\n                                            " + _vm._s(confirm.user.first_name) + " " + _vm._s(confirm.user.last_name) + "\n                                        ")]) : _vm._e(), _vm._v(" "), confirm.user == null ? _c("td", {
       attrs: {
-        label: "نام تائید کننده"
+        label: "Name of the approver"
       }
-    }, [_vm._v("\n                                            نا معلوم\n                                        ")]) : _vm._e(), _vm._v(" "), confirm.confirm.name != null ? _c("td", {
+    }, [_vm._v("\n                                            Unknown\n                                        ")]) : _vm._e(), _vm._v(" "), confirm.confirm.name != null ? _c("td", {
       attrs: {
-        label: "نام تائیدیه"
+        label: "Confirmation name"
       }
     }, [_vm._v("\n                                            " + _vm._s(confirm.confirm.name) + "\n                                        ")]) : _vm._e(), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت تائید"
+        label: "Confirmation status"
       }
     }, [confirm.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار\n                                                تائید")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -7799,7 +7780,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(confirm.description))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تاریخ"
+        label: "Date"
       }
     }, [_vm._v("\n                                            " + _vm._s(confirm.updated_at) + "\n                                        ")])]);
   }) : _vm._e()], 2)])])]), _vm._v(" "), _vm._m(11)])])]), _vm._v(" "), _c("div", {
@@ -7830,19 +7811,19 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v("\n                                        " + _vm._s(index + 1) + "\n                                    ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام فایل"
+        label: "File name"
       }
     }, [_vm._v("\n                                        " + _vm._s(file.file.name) + "\n                                    ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_vm._v("\n                                        " + _vm._s(file.file.description) + "\n                                    ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "پیش نمایش"
+        label: "Preshow"
       }
     }, [_c("div", {
       staticClass: "preview"
@@ -7855,23 +7836,23 @@ var render = function render() {
       staticClass: "size_img",
       attrs: {
         src: "/file-show?fileId=" + file.file_id,
-        alt: "باز کردن"
+        alt: "Open"
       }
     })])])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "دانلود"
+        label: "Download"
       }
     }, [_c("a", {
       staticClass: "btn btn-sm btn-primary",
       attrs: {
         href: "/file-download?fileId=" + file.file_id
       }
-    }, [_vm._v("دانلود")])])]) : _vm._e();
+    }, [_vm._v("Download")])])]) : _vm._e();
   }), 0)])])]), _vm._v(" "), _vm._m(14)])])]), _vm._v(" "), _c("div", {
     staticClass: "radio"
   }, [_c("input", {
     attrs: {
-      label: "در انتظار",
+      label: "waiting",
       type: "radio",
       id: "wait",
       name: "filter",
@@ -7882,7 +7863,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("input", {
     attrs: {
-      label: "تحویل مامور پیک",
+      label: "Courier delivery",
       type: "radio",
       id: "send",
       name: "filter"
@@ -7892,7 +7873,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("input", {
     attrs: {
-      label: "همه",
+      label: "All",
       type: "radio",
       id: "all",
       name: "filter"
@@ -7902,7 +7883,7 @@ var render = function render() {
     }
   })]), _vm._v(" "), _c("h4", {
     staticClass: "mb-4 my-font-size"
-  }, [_vm._v("کارتابل پیک")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Cartable Courier")]), _vm._v(" "), _c("div", {
     staticClass: "text-center"
   }, [_c("table", {
     staticClass: "table table-bordered style_table",
@@ -7918,33 +7899,33 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v(_vm._s(request.unit.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "شماره درخواست"
+        label: "Request number"
       }
     }, [_vm._v(_vm._s(request.request_number))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تاریخ"
+        label: "Date"
       }
     }, [_vm._v("\n                        " + _vm._s(_vm.convertDate(request.created_at)) + "\n                    ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت درخواست"
+        label: "Request Status"
       }
     }, [request.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار تائید")]) : _vm._e(), _vm._v(" "), request.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), request.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), request.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), request.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -7953,7 +7934,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(request.descriptions))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تحویل به پیک"
+        label: "Delivery by courier"
       }
     }, [_vm.show_btn_send ? _c("button", {
       staticClass: "btn btn-primary btn-table",
@@ -7973,7 +7954,7 @@ var render = function render() {
       staticClass: "badge badge-info"
     }, [_vm._v(_vm._s(request.request_detail[0].delivery[0].user.first_name) + " " + _vm._s(request.request_detail[0].delivery[0].user.last_name) + "-" + _vm._s(request.request_detail[0].delivery[0].user.personnel_code))]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "پرینت رسید تحویل"
+        label: "Delivery receipt print"
       }
     }, [_c("button", {
       staticClass: "btn btn-primary btn-table",
@@ -7991,7 +7972,7 @@ var render = function render() {
       staticClass: "fas fa-print"
     })])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مشاهده جزئیات"
+        label: "Show details"
       }
     }, [_c("button", {
       staticClass: "btn btn-primary",
@@ -8007,7 +7988,7 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fas fa-info-circle"
-    }), _vm._v(" نمایش جزئیات\n                        ")])])]);
+    }), _vm._v(" Show details\n                        ")])])]);
   }), 0)])])]);
 };
 var staticRenderFns = [function () {
@@ -8017,7 +7998,7 @@ var staticRenderFns = [function () {
     staticClass: "modal-header"
   }, [_c("h5", {
     staticClass: "modal-title"
-  }, [_vm._v("ارسال به پیک")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Send by courier")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -8042,9 +8023,9 @@ var staticRenderFns = [function () {
     }
   })]), _vm._v(" "), _c("span", {
     staticClass: "img-font"
-  }, [_vm._v("\n                                                    \t\t\t\t\t\tگروه کارخانجات شیشه اردکان\n                                                    \t\t\t\t\t")]), _vm._v(" "), _c("span", {
+  }, [_vm._v("\n                                                    \t\t\t\t\t\tWarehouse Software\n                                                    \t\t\t\t\t")]), _vm._v(" "), _c("span", {
     staticClass: "img-font"
-  }, [_vm._v("ARDAKAN FLOAT GLASS CO")])])]);
+  }, [_vm._v("Warehouse Software")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -8052,11 +8033,11 @@ var staticRenderFns = [function () {
     staticClass: "col-4"
   }, [_c("h2", {
     staticClass: "print-head"
-  }, [_vm._v("رسید تحویل")])]);
+  }, [_vm._v("Delivery receipts")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                            ردیف\n                                        ")]), _vm._v(" "), _c("th", [_vm._v("نام کالا")]), _vm._v(" "), _c("th", [_vm._v("تعداد")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("مرکز هزینه")]), _vm._v(" "), _c("th", [_vm._v("وضعیت تائید")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                            Row\n                                        ")]), _vm._v(" "), _c("th", [_vm._v("Products name")]), _vm._v(" "), _c("th", [_vm._v("Count")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Cost center")]), _vm._v(" "), _c("th", [_vm._v("Confirmation status")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -8064,7 +8045,7 @@ var staticRenderFns = [function () {
     staticClass: "row text-right p-3"
   }, [_c("p", {
     staticClass: "inline"
-  }, [_vm._v("آدرس تحویل:")]), _vm._v(" "), _c("p", {
+  }, [_vm._v("Delivery address:")]), _vm._v(" "), _c("p", {
     staticClass: "inline"
   })]);
 }, function () {
@@ -8076,15 +8057,15 @@ var staticRenderFns = [function () {
     staticClass: "col-4 border"
   }, [_c("div", {
     staticClass: "signature"
-  }, [_c("p", [_vm._v("مسئول انبار")])])]), _vm._v(" "), _c("div", {
+  }, [_c("p", [_vm._v("Warehouse manager")])])]), _vm._v(" "), _c("div", {
     staticClass: "col-4 border"
   }, [_c("div", {
     staticClass: "signature"
-  }, [_c("p", [_vm._v("مسئول پیک")])])]), _vm._v(" "), _c("div", {
+  }, [_c("p", [_vm._v("Courier in charge")])])]), _vm._v(" "), _c("div", {
     staticClass: "col-4 border"
   }, [_c("div", {
     staticClass: "signature"
-  }, [_c("p", [_vm._v("دریافت کننده")])])])]);
+  }, [_c("p", [_vm._v("Receiver")])])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -8109,7 +8090,7 @@ var staticRenderFns = [function () {
     attrs: {
       colspan: "10"
     }
-  }, [_c("h4", [_vm._v("نمایش جزئیات")])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ردیف")]), _vm._v(" "), _c("th", [_vm._v("نام کالا")]), _vm._v(" "), _c("th", [_vm._v("تعداد")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("مرکز هزینه")]), _vm._v(" "), _c("th", [_vm._v("انبار")]), _vm._v(" "), _c("th", [_vm._v("وضعیت درخواست")]), _vm._v(" "), _c("th", [_vm._v("نمایش تائیدیه ها")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")]), _vm._v(" "), _c("th", [_vm._v("فایل")])])]);
+  }, [_c("h4", [_vm._v("Show details")])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Row")]), _vm._v(" "), _c("th", [_vm._v("Products name")]), _vm._v(" "), _c("th", [_vm._v("Count")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Cost center")]), _vm._v(" "), _c("th", [_vm._v("Warehouse")]), _vm._v(" "), _c("th", [_vm._v("Request Status")]), _vm._v(" "), _c("th", [_vm._v("Show confirmations")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")]), _vm._v(" "), _c("th", [_vm._v("File")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -8121,7 +8102,7 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("\n                            بستن\n                        ")])]);
+  }, [_vm._v("\n                            Close\n                        ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -8132,7 +8113,7 @@ var staticRenderFns = [function () {
     attrs: {
       id: "exampleModalLongTitle"
     }
-  }, [_vm._v("نمایش تائیدیه ها")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Show confirmations")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -8147,7 +8128,7 @@ var staticRenderFns = [function () {
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        ردیف\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        نام تائید کننده\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        نام تائیدیه\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        وضعیت تائید\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        توضیحات\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        تاریخ\n                                    ")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        Row\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Name of the approver\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Confirmation name\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Confirmation status\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Descriptions\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Date\n                                    ")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -8159,7 +8140,7 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])]);
+  }, [_vm._v("Close")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -8170,11 +8151,11 @@ var staticRenderFns = [function () {
     attrs: {
       id: "exampleModalLabel"
     }
-  }, [_vm._v("لیست فایل ها")])]);
+  }, [_vm._v("Files list")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        ردیف\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        نام فایل\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        توضیحات\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        پیش نمایش\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        دانلود\n                                    ")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        Row\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                       File name\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Descriptions\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                       Preshow\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Download\n                                    ")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -8186,11 +8167,11 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])]);
+  }, [_vm._v("Close")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("ردیف")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("شماره درخواست")]), _vm._v(" "), _c("th", [_vm._v("تاریخ")]), _vm._v(" "), _c("th", [_vm._v("وضعیت درخواست")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")]), _vm._v(" "), _c("th", [_vm._v("تحویل به پیک")]), _vm._v(" "), _c("th", [_vm._v("پرینت رسید تحویل")]), _vm._v(" "), _c("th", [_vm._v("مشاهده جزئیات")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("Row")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Request number")]), _vm._v(" "), _c("th", [_vm._v("Date")]), _vm._v(" "), _c("th", [_vm._v("Request Status")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")]), _vm._v(" "), _c("th", [_vm._v("Delivery by courier")]), _vm._v(" "), _c("th", [_vm._v("Delivery receipt print")]), _vm._v(" "), _c("th", [_vm._v("Show details")])])]);
 }];
 render._withStripped = true;
 
@@ -8244,7 +8225,7 @@ var render = function render() {
     on: {
       click: _vm.cleanForm
     }
-  }, [_vm._v("\n                            افزودن فایل\n                        ")]), _vm._v(" "), _c("div", [_c("table", {
+  }, [_vm._v("\n                            Add file\n                        ")]), _vm._v(" "), _c("div", [_c("table", {
     staticClass: "table table-bordered"
   }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.file_array[_vm.my_index].files, function (file, index) {
     return _vm.file_array[_vm.my_index].files != null ? _c("tr", {
@@ -8260,7 +8241,7 @@ var render = function render() {
       staticClass: "size_img",
       attrs: {
         src: "/file-show?fileId=" + file.id,
-        alt: "باز کردن"
+        alt: "Open"
       }
     })])])]), _vm._v(" "), _c("td", [_c("i", {
       staticClass: "fas fa-trash-alt minus",
@@ -8297,7 +8278,7 @@ var render = function render() {
     staticStyle: {
       "border-radius": "0 5px 5px 0"
     }
-  }, [_vm._v("\n                    انتخاب فایل "), _c("input", {
+  }, [_vm._v("\n                    Choose file "), _c("input", {
     staticStyle: {
       display: "none"
     },
@@ -8324,7 +8305,7 @@ var render = function render() {
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "col mt-2"
-  }, [_c("label", [_vm._v("نام:")]), _vm._v(" "), _c("input", {
+  }, [_c("label", [_vm._v("Name:")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -8347,7 +8328,7 @@ var render = function render() {
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "col"
-  }, [_c("label", [_vm._v("توضیحات:")]), _vm._v(" "), _c("input", {
+  }, [_c("label", [_vm._v("Descriptions:")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -8384,7 +8365,7 @@ var render = function render() {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("لغو")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Cancel")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-success btb_submit",
     attrs: {
       type: "button",
@@ -8393,7 +8374,7 @@ var render = function render() {
     on: {
       click: _vm.formSubmit
     }
-  }, [_vm._v("ارسال\n                        ")])])])])]), _vm._v(" "), _c("form", {
+  }, [_vm._v("Send\n                        ")])])])])]), _vm._v(" "), _c("form", {
     staticClass: "height-100",
     attrs: {
       name: "requestForm",
@@ -8418,7 +8399,7 @@ var render = function render() {
     staticClass: "row flex-column"
   }, [_c("h5", {
     staticClass: "text_form"
-  }, [_vm._v("\n                                    تاریخ :\n                                ")]), _vm._v(" "), _c("h5", {
+  }, [_vm._v("\n                                    Date :\n                                ")]), _vm._v(" "), _c("h5", {
     staticClass: "text_form"
   }, [_vm._v("\n                                    " + _vm._s(_vm.date) + "\n                                ")])])])]), _vm._v(" "), _c("tr", [_c("td", {
     staticClass: "mx-0"
@@ -8470,27 +8451,27 @@ var render = function render() {
     staticClass: "table table-bordered"
   }, [_c("thead", [_c("tr", {
     staticClass: "text-nowrap"
-  }, [_c("th", [_vm._v("ردیف")]), _vm._v(" "), _c("th", {
+  }, [_c("th", [_vm._v("Row")]), _vm._v(" "), _c("th", {
     attrs: {
       width: "18%"
     }
-  }, [_vm._v("شرح کالا")]), _vm._v(" "), _c("th", [_vm._v("مشخصات فنی")]), _vm._v(" "), _c("th", {
+  }, [_vm._v("Product description")]), _vm._v(" "), _c("th", [_vm._v("Technical specifications")]), _vm._v(" "), _c("th", {
     attrs: {
       width: "2%"
     }
-  }, [_vm._v("مقدار درخواستی")]), _vm._v(" "), _c("th", {
+  }, [_vm._v("Amount required")]), _vm._v(" "), _c("th", {
     attrs: {
       width: "14%"
     }
-  }, [_vm._v("مرکز هزینه")]), _vm._v(" "), _c("th", {
+  }, [_vm._v("Cost center")]), _vm._v(" "), _c("th", {
     attrs: {
       width: "20px"
     }
-  }, [_vm._v("وضعیت داغی")]), _vm._v(" "), _c("th", {
+  }, [_vm._v("Obsolete condition")]), _vm._v(" "), _c("th", {
     attrs: {
       width: "2%"
     }
-  }, [_vm._v("تعداد داغی")]), _vm._v(" "), _c("th", [_vm._v("بارگذاری فایل")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")]), _vm._v(" "), _c("th", [_c("i", {
+  }, [_vm._v("Count Obsolete ")]), _vm._v(" "), _c("th", [_vm._v("Load file")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")]), _vm._v(" "), _c("th", [_c("i", {
     staticClass: "fa fa-plus add",
     attrs: {
       id: "addrow"
@@ -8518,7 +8499,7 @@ var render = function render() {
         options: _vm.products_array,
         "custom-label": _vm.nameWithLang,
         showLabels: false,
-        placeholder: "نام کالا"
+        placeholder: "Products name"
       },
       on: {
         input: function input($event) {
@@ -8551,7 +8532,7 @@ var render = function render() {
           return _vm.getApiAttribute(myform.product_id);
         }
       }
-    }, [_vm._v("\n                                    به زودی در شناسنامه کالا\n                                ")]), _vm._v(" "), _c("div", {
+    }, [_vm._v("\n                                    Soon in the ID of the goods\n                                ")]), _vm._v(" "), _c("div", {
       staticClass: "modal",
       attrs: {
         tabindex: "-1",
@@ -8601,10 +8582,10 @@ var render = function render() {
         id: "count" + index,
         type: "number",
         name: "counter",
-        placeholder: "تعداد",
+        placeholder: "Count",
         "data-toggle": "tooltip",
         "data-placement": "top",
-        title: "تعدادمجاز: " + myform.amount_rayvarz,
+        title: "Allowed Count: " + myform.amount_rayvarz,
         required: ""
       },
       domProps: {
@@ -8628,7 +8609,7 @@ var render = function render() {
         options: _vm.center,
         "custom-label": _vm.nameWithcode,
         showLabels: false,
-        placeholder: "مرکز هزینه"
+        placeholder: "Cost center"
       },
       model: {
         value: myform.center_id,
@@ -8663,7 +8644,7 @@ var render = function render() {
           return _vm.$set(myform, "worn", false);
         }
       }
-    }), _vm._v(" "), _c("b"), _vm._v(" "), _c("small", [_vm._v("ندارد")])])]), _vm._v(" "), _c("div", {
+    }), _vm._v(" "), _c("b"), _vm._v(" "), _c("small", [_vm._v("have not")])])]), _vm._v(" "), _c("div", {
       staticClass: "checkbox-custom"
     }, [_c("label", {
       staticClass: "d-flex justify-content-start align-items-center"
@@ -8687,7 +8668,7 @@ var render = function render() {
           return _vm.$set(myform, "worn", true);
         }
       }
-    }), _vm._v(" "), _c("b"), _vm._v(" "), _c("small", [_vm._v("دارد")])])])]), _vm._v(" "), _c("td", {
+    }), _vm._v(" "), _c("b"), _vm._v(" "), _c("small", [_vm._v("have")])])])]), _vm._v(" "), _c("td", {
       staticClass: "px-0 py-0"
     }, [myform.worn ? _c("input", {
       directives: [{
@@ -8700,7 +8681,7 @@ var render = function render() {
       attrs: {
         type: "number",
         name: "counter2",
-        placeholder: "تعداد"
+        placeholder: "Count"
       },
       domProps: {
         value: myform.worn_amount
@@ -8723,7 +8704,7 @@ var render = function render() {
       attrs: {
         type: "number",
         name: "counter2",
-        placeholder: "تعداد",
+        placeholder: "Count",
         readonly: ""
       }
     }) : _vm._e()]), _vm._v(" "), _c("td", {
@@ -8745,7 +8726,7 @@ var render = function render() {
           _vm.my_index = index;
         }
       }
-    }, [_vm._v("فایل پیوست\n                                    ")])])]), _vm._v(" "), _c("td", [_c("textarea", {
+    }, [_vm._v("Attached file\n                                    ")])])]), _vm._v(" "), _c("td", [_c("textarea", {
       directives: [{
         name: "model",
         rawName: "v-model",
@@ -8807,7 +8788,7 @@ var render = function render() {
     staticStyle: {
       "font-size": "13px"
     }
-  }, [_vm._v("\n                                                        تاریخ :\n                                                    ")]), _vm._v(" "), _c("span", {
+  }, [_vm._v("\n                                                        Date :\n                                                    ")]), _vm._v(" "), _c("span", {
     staticStyle: {
       "font-size": "14px"
     }
@@ -8866,7 +8847,7 @@ var render = function render() {
       key: index
     }, [_c("tr", [_c("th", {
       staticClass: "wid-30"
-    }, [_vm._v("نام کالا")]), _vm._v(" "), _c("td", {
+    }, [_vm._v("Products name")]), _vm._v(" "), _c("td", {
       staticClass: "wid-70"
     }, [_c("div", {
       staticClass: "d-flex justify-content-center"
@@ -8876,7 +8857,7 @@ var render = function render() {
         options: _vm.products_array,
         "custom-label": _vm.nameWithLang,
         showLabels: false,
-        placeholder: "نام کالا"
+        placeholder: "Products name"
       },
       on: {
         input: function input($event) {
@@ -8894,7 +8875,7 @@ var render = function render() {
       "class": "circle" + index
     }, [_c("div", {
       "class": "check" + index
-    })])], 1)])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("مشخصات فنی")]), _vm._v(" "), _c("td", [_c("button", {
+    })])], 1)])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Technical specifications")]), _vm._v(" "), _c("td", [_c("button", {
       staticClass: "btn btn-primary btn_config",
       attrs: {
         type: "button",
@@ -8907,7 +8888,7 @@ var render = function render() {
           return _vm.getApiAttribute(myform.product_id);
         }
       }
-    }, [_vm._v("\n                                        به زودی در شناسنامه کالا\n                                    ")])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("مقدار درخواستی")]), _vm._v(" "), _c("td", [_c("input", {
+    }, [_vm._v("\n                                        Soon in the ID of the goods\n                                    ")])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Amount required")]), _vm._v(" "), _c("td", [_c("input", {
       directives: [{
         name: "model",
         rawName: "v-model",
@@ -8919,10 +8900,10 @@ var render = function render() {
         id: "count" + index,
         type: "number",
         name: "counter",
-        placeholder: "تعداد",
+        placeholder: "Count",
         "data-toggle": "tooltip",
         "data-placement": "top",
-        title: "تعدادمجاز: " + myform.amount_rayvarz,
+        title: "Allowed Count: " + myform.amount_rayvarz,
         required: ""
       },
       domProps: {
@@ -8938,13 +8919,13 @@ var render = function render() {
           _vm.$set(myform, "amount", $event.target.value);
         }
       }
-    })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("مرکز هزینه")]), _vm._v(" "), _c("td", [_vm.center ? _c("multiselect", {
+    })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Cost center")]), _vm._v(" "), _c("td", [_vm.center ? _c("multiselect", {
       attrs: {
         id: "center" + index,
         options: _vm.center,
         "custom-label": _vm.nameWithcode,
         showLabels: false,
-        placeholder: "مرکز هزینه"
+        placeholder: "Cost center"
       },
       model: {
         value: myform.center_id,
@@ -8953,7 +8934,7 @@ var render = function render() {
         },
         expression: "myform.center_id"
       }
-    }) : _vm._e()], 1)]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("وضعیت داغی")]), _vm._v(" "), _c("td", {
+    }) : _vm._e()], 1)]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Obsolete condition")]), _vm._v(" "), _c("td", {
       staticClass: "text-right"
     }, [_c("div", {
       staticClass: "inline"
@@ -8981,7 +8962,7 @@ var render = function render() {
       attrs: {
         "for": "noitem"
       }
-    }, [_vm._v("ندارد")])]), _vm._v(" "), _c("div", {
+    }, [_vm._v("have not")])]), _vm._v(" "), _c("div", {
       staticClass: "inline"
     }, [_c("input", {
       directives: [{
@@ -9007,7 +8988,7 @@ var render = function render() {
       attrs: {
         "for": "okitem"
       }
-    }, [_vm._v("دارد")])])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("تعداد داغی")]), _vm._v(" "), _c("td", [myform.worn ? _c("input", {
+    }, [_vm._v("have")])])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Obsolete Count")]), _vm._v(" "), _c("td", [myform.worn ? _c("input", {
       directives: [{
         name: "model",
         rawName: "v-model",
@@ -9018,7 +8999,7 @@ var render = function render() {
       attrs: {
         type: "number",
         name: "counter2",
-        placeholder: "تعداد"
+        placeholder: "Count"
       },
       domProps: {
         value: myform.worn_amount
@@ -9041,10 +9022,10 @@ var render = function render() {
       attrs: {
         type: "number",
         name: "counter2",
-        placeholder: "تعداد",
+        placeholder: "Count",
         readonly: ""
       }
-    }) : _vm._e()])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("بارگذاری فایل")]), _vm._v(" "), _c("td", [_c("button", {
+    }) : _vm._e()])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Load file")]), _vm._v(" "), _c("td", [_c("button", {
       staticClass: "btn btn-primary",
       attrs: {
         type: "button",
@@ -9056,7 +9037,7 @@ var render = function render() {
           _vm.my_index = index;
         }
       }
-    }, [_vm._v("فایل پیوست\n                                    ")])])]), _vm._v(" "), _c("tr", [_c("td", [_vm._v("\n                                    توضیحات\n                                ")]), _vm._v(" "), _c("td", [_c("textarea", {
+    }, [_vm._v("Attached file\n                                    ")])])]), _vm._v(" "), _c("tr", [_c("td", [_vm._v("\n                                    Descriptions\n                                ")]), _vm._v(" "), _c("td", [_c("textarea", {
       directives: [{
         name: "model",
         rawName: "v-model",
@@ -9098,7 +9079,7 @@ var render = function render() {
     on: {
       click: _vm.checkValidation
     }
-  }, [_vm._v("ثبت ویرایش")])])])])]);
+  }, [_vm._v("Submit the edit")])])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -9110,11 +9091,11 @@ var staticRenderFns = [function () {
     attrs: {
       id: "exampleModalLabel"
     }
-  }, [_vm._v("لیست فایل ها")])]);
+  }, [_vm._v("Files list")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        ردیف\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        نام فایل\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        توضیحات\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        پیش نمایش\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        حذف\n                                    ")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        Row\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                       File name\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Descriptions\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                       Preshow\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Delete\n                                    ")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -9126,7 +9107,7 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])]);
+  }, [_vm._v("Close")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -9137,7 +9118,7 @@ var staticRenderFns = [function () {
     attrs: {
       id: "exampleModalLabel2"
     }
-  }, [_vm._v("افزودن فایل")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Add file")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -9162,9 +9143,9 @@ var staticRenderFns = [function () {
     }
   }), _vm._v(" "), _c("p", {
     staticClass: "img_title"
-  }, [_vm._v("گروه کارخانجات شیشه اردکان")]), _vm._v(" "), _c("p", {
+  }, [_vm._v("Warehouse Software")]), _vm._v(" "), _c("p", {
     staticClass: "img_title2"
-  }, [_vm._v("ARDAKAN FLOAT GLASS CO")])]);
+  }, [_vm._v("Warehouse Software")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -9174,7 +9155,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("p", {
     staticClass: "tablesubject mx-auto"
-  }, [_vm._v("درخواست کالا از انبار")])]);
+  }, [_vm._v("Request product from warehouse")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -9182,7 +9163,7 @@ var staticRenderFns = [function () {
     staticClass: "col-3 d-flex justify-content-center"
   }, [_c("h6", {
     staticClass: "my-auto"
-  }, [_vm._v("\n                                        نام انبار:\n                                    ")])]);
+  }, [_vm._v("\n                                        Warehouse name:\n                                    ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -9190,7 +9171,7 @@ var staticRenderFns = [function () {
     staticClass: "col-3 d-flex justify-content-center"
   }, [_c("h6", {
     staticClass: "my-auto"
-  }, [_vm._v("\n                                        توضیحات:\n                                    ")])]);
+  }, [_vm._v("\n                                        Descriptions:\n                                    ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -9198,7 +9179,7 @@ var staticRenderFns = [function () {
     staticClass: "modal-header"
   }, [_c("h5", {
     staticClass: "modal-title"
-  }, [_vm._v("مشخصات فنی")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Technical specifications")]), _vm._v(" "), _c("button", {
     staticClass: "btn-close",
     attrs: {
       type: "button",
@@ -9217,12 +9198,12 @@ var staticRenderFns = [function () {
       type: "button",
       "data-bs-dismiss": "modal"
     }
-  }, [_vm._v("\n                                                    لغو\n                                                ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n                                                    Cancel\n                                                ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary",
     attrs: {
       type: "button"
     }
-  }, [_vm._v("تائید")])]);
+  }, [_vm._v("approved")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -9230,7 +9211,7 @@ var staticRenderFns = [function () {
     attrs: {
       colspan: "3"
     }
-  }, [_vm._v("درخواست کالا از انبار")])]);
+  }, [_vm._v("Request product from warehouse")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -9238,7 +9219,7 @@ var staticRenderFns = [function () {
     staticClass: "col-3 d-flex justify-content-center"
   }, [_c("h6", {
     staticClass: "my-auto"
-  }, [_vm._v("\n                                            انبار:\n                                        ")])]);
+  }, [_vm._v("\n                                            Warehouse:\n                                        ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -9246,7 +9227,7 @@ var staticRenderFns = [function () {
     staticClass: "col-3 d-flex justify-content-center"
   }, [_c("h6", {
     staticClass: "my-auto"
-  }, [_vm._v("\n                                            توضیحات:\n                                        ")])]);
+  }, [_vm._v("\n                                            Descriptions:\n                                        ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -9254,7 +9235,7 @@ var staticRenderFns = [function () {
     staticClass: "col-6 d-flex justify-content-center"
   }, [_c("h6", {
     staticClass: "my-auto"
-  }, [_vm._v("\n                                            افزودن سطر جدید:\n                                        ")])]);
+  }, [_vm._v("\n                                            Add new row:\n                                        ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -9380,7 +9361,7 @@ var render = function render() {
     on: {
       click: _vm.logout
     }
-  }, [_vm._v("\n                                    خروج")])])])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                                    Exit")])])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "main-container",
     attrs: {
       id: "container"
@@ -9425,7 +9406,7 @@ var render = function render() {
     attrs: {
       points: "9 22 9 12 15 12 15 22"
     }
-  })]), _vm._v(" "), _c("span", [_vm._v("صفحه اصلی")])])])]), _vm._v(" "), _vm.hasAccessTo("bahrevari-automation") ? _c("li", {
+  })]), _vm._v(" "), _c("span", [_vm._v("Main page")])])])]), _vm._v(" "), _vm.hasAccessTo("bahrevari-automation") ? _c("li", {
     staticClass: "menu single-menu"
   }, [_c("a", {
     staticClass: "dropdown-toggle",
@@ -9451,7 +9432,7 @@ var render = function render() {
     attrs: {
       d: "M5.229,6.531H4.362c-0.239,0-0.434,0.193-0.434,0.434c0,0.239,0.194,0.434,0.434,0.434h0.868c0.24,0,0.434-0.194,0.434-0.434C5.663,6.724,5.469,6.531,5.229,6.531 M10,6.531c-1.916,0-3.47,1.554-3.47,3.47c0,1.916,1.554,3.47,3.47,3.47c1.916,0,3.47-1.555,3.47-3.47C13.47,8.084,11.916,6.531,10,6.531 M11.4,11.447c-0.071,0.164-0.169,0.299-0.294,0.406c-0.124,0.109-0.27,0.191-0.437,0.248c-0.167,0.057-0.298,0.09-0.492,0.098v0.402h-0.35v-0.402c-0.21-0.004-0.352-0.039-0.527-0.1c-0.175-0.064-0.324-0.154-0.449-0.27c-0.124-0.115-0.221-0.258-0.288-0.428c-0.068-0.17-0.1-0.363-0.096-0.583h0.664c-0.004,0.259,0.052,0.464,0.169,0.613c0.116,0.15,0.259,0.229,0.527,0.236v-1.427c-0.159-0.043-0.268-0.095-0.425-0.156c-0.157-0.061-0.299-0.139-0.425-0.235C8.852,9.752,8.75,9.631,8.672,9.486C8.594,9.34,8.556,9.16,8.556,8.944c0-0.189,0.036-0.355,0.108-0.498c0.072-0.144,0.169-0.264,0.292-0.36c0.122-0.097,0.263-0.17,0.422-0.221c0.159-0.052,0.277-0.077,0.451-0.077V7.401h0.35v0.387c0.174,0,0.29,0.023,0.445,0.071c0.155,0.047,0.29,0.118,0.404,0.212c0.115,0.095,0.206,0.215,0.274,0.359c0.067,0.146,0.103,0.315,0.103,0.508H10.74c-0.007-0.201-0.06-0.354-0.154-0.46c-0.096-0.106-0.199-0.159-0.408-0.159v1.244c0.174,0.047,0.296,0.102,0.462,0.165c0.167,0.063,0.314,0.144,0.443,0.241c0.128,0.099,0.23,0.221,0.309,0.366c0.077,0.146,0.116,0.324,0.116,0.536C11.509,11.092,11.473,11.283,11.4,11.447 M18.675,4.795H1.326c-0.479,0-0.868,0.389-0.868,0.868v8.674c0,0.479,0.389,0.867,0.868,0.867h17.349c0.479,0,0.867-0.389,0.867-0.867V5.664C19.542,5.184,19.153,4.795,18.675,4.795M1.76,5.664c0.24,0,0.434,0.193,0.434,0.434C2.193,6.336,2,6.531,1.76,6.531S1.326,6.336,1.326,6.097C1.326,5.857,1.52,5.664,1.76,5.664 M1.76,14.338c-0.24,0-0.434-0.195-0.434-0.434c0-0.24,0.194-0.434,0.434-0.434s0.434,0.193,0.434,0.434C2.193,14.143,2,14.338,1.76,14.338 M18.241,14.338c-0.24,0-0.435-0.195-0.435-0.434c0-0.24,0.194-0.434,0.435-0.434c0.239,0,0.434,0.193,0.434,0.434C18.675,14.143,18.48,14.338,18.241,14.338 M18.675,12.682c-0.137-0.049-0.281-0.08-0.434-0.08c-0.719,0-1.302,0.584-1.302,1.303c0,0.152,0.031,0.297,0.08,0.434H2.981c0.048-0.137,0.08-0.281,0.08-0.434c0-0.719-0.583-1.303-1.301-1.303c-0.153,0-0.297,0.031-0.434,0.08V7.318c0.136,0.049,0.28,0.08,0.434,0.08c0.718,0,1.301-0.583,1.301-1.301c0-0.153-0.032-0.298-0.08-0.434H17.02c-0.049,0.136-0.08,0.28-0.08,0.434c0,0.718,0.583,1.301,1.302,1.301c0.152,0,0.297-0.031,0.434-0.08V12.682z M18.241,6.531c-0.24,0-0.435-0.194-0.435-0.434c0-0.24,0.194-0.434,0.435-0.434c0.239,0,0.434,0.193,0.434,0.434C18.675,6.336,18.48,6.531,18.241,6.531 M9.22,8.896c0,0.095,0.019,0.175,0.058,0.242c0.039,0.066,0.088,0.124,0.148,0.171c0.061,0.047,0.13,0.086,0.21,0.115c0.079,0.028,0.11,0.055,0.192,0.073V8.319c-0.21,0-0.322,0.044-0.437,0.132C9.277,8.54,9.22,8.688,9.22,8.896 M15.639,12.602h-0.868c-0.239,0-0.434,0.195-0.434,0.434c0,0.24,0.194,0.436,0.434,0.436h0.868c0.24,0,0.434-0.195,0.434-0.436C16.072,12.797,15.879,12.602,15.639,12.602 M10.621,10.5c-0.068-0.052-0.145-0.093-0.23-0.124c-0.086-0.031-0.123-0.06-0.212-0.082v1.374c0.209-0.016,0.332-0.076,0.465-0.186c0.134-0.107,0.201-0.281,0.201-0.516c0-0.11-0.02-0.202-0.062-0.277C10.743,10.615,10.688,10.551,10.621,10.5"
     }
-  })]), _vm._v(" "), _c("span", [_vm._v("بهره وری")])])]), _vm._v(" "), _c("ul", {
+  })]), _vm._v(" "), _c("span", [_vm._v("Efficiency")])])]), _vm._v(" "), _c("ul", {
     staticClass: "collapse submenu list-unstyled",
     attrs: {
       id: "bahrevari",
@@ -9466,7 +9447,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("امتیاز دهی مدیران")])])]), _vm._v(" "), _vm.hasAccessTo("bahrevari-report") ? _c("li", [_c("a", {
+  }), _vm._v(" "), _c("span", [_vm._v("Rating managers")])])]), _vm._v(" "), _vm.hasAccessTo("bahrevari-report") ? _c("li", [_c("a", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     on: {
       click: function click($event) {
@@ -9475,7 +9456,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("گزارشات")])])]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.hasAccessTo("feeding-automation") ? _c("li", {
+  }), _vm._v(" "), _c("span", [_vm._v("Reports")])])]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.hasAccessTo("feeding-automation") ? _c("li", {
     staticClass: "menu single-menu"
   }, [_c("a", {
     staticClass: "dropdown-toggle",
@@ -9502,7 +9483,7 @@ var render = function render() {
       d: "M18 11v7a2 2 0 0 1-4 0v-5h-2V3a3 3 0 0 1 3-3h3v11zM4 10a2 2 0 0 1-2-2V1a1 1 0 0 1 2 0v4h1V1a1 1 0 0 1 2 0v4h1V1a1 1 0 0 1 2 0v7a2 2 0 0 1-2 2v8a2 2 0 0 1-4 0v-8z",
       fill: "white"
     }
-  })]), _vm._v(" "), _c("span", [_vm._v("تغذیه")])])]), _vm._v(" "), _c("ul", {
+  })]), _vm._v(" "), _c("span", [_vm._v("Feeding")])])]), _vm._v(" "), _c("ul", {
     staticClass: "collapse submenu list-unstyled",
     attrs: {
       id: "food",
@@ -9517,7 +9498,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("رزرو غذا")])])]), _vm._v(" "), _c("li", [_c("a", {
+  }), _vm._v(" "), _c("span", [_vm._v("Food reservation")])])]), _vm._v(" "), _c("li", [_c("a", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     on: {
       click: function click($event) {
@@ -9526,7 +9507,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("رزرو اضطراری")])])]), _vm._v(" "), _c("li", [_c("a", {
+  }), _vm._v(" "), _c("span", [_vm._v("Emergency reservation")])])]), _vm._v(" "), _c("li", [_c("a", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     on: {
       click: function click($event) {
@@ -9535,7 +9516,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("لیست رزروهای من")])])])])]) : _vm._e(), _vm._v(" "), _c("li", {
+  }), _vm._v(" "), _c("span", [_vm._v("My reservations list")])])])])]) : _vm._e(), _vm._v(" "), _c("li", {
     staticClass: "menu single-menu"
   }, [_c("a", {
     on: {
@@ -9556,7 +9537,7 @@ var render = function render() {
     attrs: {
       d: "M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
     }
-  })]), _vm._v(" "), _c("span", [_vm._v("سامانه بن")])])])]), _vm._v(" "), _vm.hasAccessTo("salary-automation") ? _c("li", {
+  })]), _vm._v(" "), _c("span", [_vm._v("Bonus system")])])])]), _vm._v(" "), _vm.hasAccessTo("salary-automation") ? _c("li", {
     staticClass: "menu single-menu"
   }, [_c("a", {
     staticClass: "dropdown-toggle",
@@ -9591,7 +9572,7 @@ var render = function render() {
       rx: "1",
       ry: "1"
     }
-  })]), _vm._v(" "), _c("span", [_vm._v("پرسنلی")])])]), _vm._v(" "), _c("ul", {
+  })]), _vm._v(" "), _c("span", [_vm._v("Personnel")])])]), _vm._v(" "), _c("ul", {
     staticClass: "collapse submenu list-unstyled",
     attrs: {
       id: "forms",
@@ -9606,7 +9587,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("فیش حقوقی من")])])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("li", [_c("a", {
+  }), _vm._v(" "), _c("span", [_vm._v("My pay slip")])])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("li", [_c("a", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     on: {
       click: function click($event) {
@@ -9615,7 +9596,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("بن های من")])])])])]) : _vm._e(), _vm._v(" "), _c("li", {
+  }), _vm._v(" "), _c("span", [_vm._v("My bonus")])])])])]) : _vm._e(), _vm._v(" "), _c("li", {
     staticClass: "menu single-menu"
   }, [_c("a", {
     staticClass: "dropdown-toggle",
@@ -9709,7 +9690,7 @@ var render = function render() {
       x2: "4",
       y2: "14"
     }
-  })]), _vm._v(" "), _c("span", [_vm._v("درخواست ها")])])]), _vm._v(" "), _c("ul", {
+  })]), _vm._v(" "), _c("span", [_vm._v("Requests")])])]), _vm._v(" "), _c("ul", {
     staticClass: "collapse submenu list-unstyled",
     attrs: {
       id: "menu",
@@ -9724,7 +9705,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("درخواست کالا")])])], 1), _vm._v(" "), _c("li", {
+  }), _vm._v(" "), _c("span", [_vm._v("Request goods")])])], 1), _vm._v(" "), _c("li", {
     staticClass: "mb-2"
   }, [_c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
@@ -9733,7 +9714,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("درخواست های من")])])], 1), _vm._v(" "), _c("li", {
+  }), _vm._v(" "), _c("span", [_vm._v("My requests")])])], 1), _vm._v(" "), _c("li", {
     staticClass: "mb-2"
   }, [_c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
@@ -9742,7 +9723,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("درخواست های در انتظار تائید شما")])])], 1)])]), _vm._v(" "), _c("li", {
+  }), _vm._v(" "), _c("span", [_vm._v("My awaiting confirmation requests")])])], 1)])]), _vm._v(" "), _c("li", {
     staticClass: "menu single-menu"
   }, [_c("a", {
     staticClass: "dropdown-toggle",
@@ -9779,7 +9760,7 @@ var render = function render() {
       x2: "12",
       y2: "12"
     }
-  })]), _vm._v(" "), _c("span", [_vm._v("انبار")])])]), _vm._v(" "), _c("ul", {
+  })]), _vm._v(" "), _c("span", [_vm._v("Warehouse")])])]), _vm._v(" "), _c("ul", {
     staticClass: "collapse submenu list-unstyled",
     attrs: {
       id: "components",
@@ -9794,21 +9775,21 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("کارتابل انبار")])])], 1) : _vm._e(), _vm._v(" "), _c("li", [_c("router-link", {
+  }), _vm._v(" "), _c("span", [_vm._v("Cartable warehouse")])])], 1) : _vm._e(), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     attrs: {
       to: "/cancel_requests"
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("درخواست های لغو شده")])])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }), _vm._v(" "), _c("span", [_vm._v("Canceled requests")])])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     attrs: {
       to: "/store_archive"
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("آرشیو")])])], 1)])]), _vm._v(" "), _c("li", {
+  }), _vm._v(" "), _c("span", [_vm._v("Archive")])])], 1)])]), _vm._v(" "), _c("li", {
     staticClass: "menu single-menu"
   }, [_c("a", {
     staticClass: "dropdown-toggle",
@@ -9834,7 +9815,7 @@ var render = function render() {
     attrs: {
       points: "13 2 3 14 12 14 11 22 21 10 12 10 13 2"
     }
-  })]), _vm._v(" "), _c("span", [_vm._v("پیک")])])]), _vm._v(" "), _c("ul", {
+  })]), _vm._v(" "), _c("span", [_vm._v("Courier")])])]), _vm._v(" "), _c("ul", {
     staticClass: "collapse submenu list-unstyled",
     attrs: {
       id: "uiKit",
@@ -9849,7 +9830,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("معرفی پیک")])])], 1) : _vm._e(), _vm._v(" "), _vm.hasAccessTo("vehicle-store") ? _c("li", {
+  }), _vm._v(" "), _c("span", [_vm._v("Introducing the courier")])])], 1) : _vm._e(), _vm._v(" "), _vm.hasAccessTo("vehicle-store") ? _c("li", {
     staticClass: "mb-2"
   }, [_c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
@@ -9858,7 +9839,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("معرفی وسیله")])])], 1) : _vm._e(), _vm._v(" "), _c("li", {
+  }), _vm._v(" "), _c("span", [_vm._v("Introducing the vehicle")])])], 1) : _vm._e(), _vm._v(" "), _c("li", {
     staticClass: "mb-2"
   }, [_c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
@@ -9867,7 +9848,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("درخواست های در انتظار تحویل")])])], 1), _vm._v(" "), _vm.hasAccessTo("delivery-cartable") ? _c("li", {
+  }), _vm._v(" "), _c("span", [_vm._v("Requests pending delivery")])])], 1), _vm._v(" "), _vm.hasAccessTo("delivery-cartable") ? _c("li", {
     staticClass: "mb-2"
   }, [_c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
@@ -9876,7 +9857,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("کارتابل پیک")])])], 1) : _vm._e()])]), _vm._v(" "), _c("li", {
+  }), _vm._v(" "), _c("span", [_vm._v("Cartable Courier")])])], 1) : _vm._e()])]), _vm._v(" "), _c("li", {
     staticClass: "menu single-menu"
   }, [_c("a", {
     staticClass: "dropdown-toggle",
@@ -9921,7 +9902,7 @@ var render = function render() {
       x2: "9",
       y2: "9"
     }
-  })]), _vm._v(" "), _c("span", [_vm._v("تائیدیه ها")])])]), _vm._v(" "), _c("ul", {
+  })]), _vm._v(" "), _c("span", [_vm._v("Confirmations")])])]), _vm._v(" "), _c("ul", {
     staticClass: "collapse submenu list-unstyled",
     attrs: {
       id: "tables",
@@ -9936,7 +9917,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("تائیدیه های جدید")])])], 1), _vm._v(" "), _c("li", {
+  }), _vm._v(" "), _c("span", [_vm._v("New confirmations")])])], 1), _vm._v(" "), _c("li", {
     staticClass: "mb-2"
   }, [_c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
@@ -9945,7 +9926,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("اختصاص تائیدیه به کاربران")])])], 1)])]), _vm._v(" "), _vm.hasAccessTo("setting") ? _c("li", {
+  }), _vm._v(" "), _c("span", [_vm._v("Assign confirmation to users")])])], 1)])]), _vm._v(" "), _vm.hasAccessTo("setting") ? _c("li", {
     staticClass: "menu single-menu"
   }, [_c("a", {
     staticClass: "dropdown-toggle",
@@ -9987,7 +9968,7 @@ var render = function render() {
       x2: "16",
       y2: "12"
     }
-  })]), _vm._v(" "), _c("span", [_vm._v("تنظیمات")])])]), _vm._v(" "), _c("ul", {
+  })]), _vm._v(" "), _c("span", [_vm._v("Settings")])])]), _vm._v(" "), _c("ul", {
     staticClass: "collapse submenu list-unstyled",
     attrs: {
       id: "more",
@@ -10000,14 +9981,14 @@ var render = function render() {
     attrs: {
       to: "/permission"
     }
-  }, [_c("span", [_vm._v("دسترسی ها")])])], 1) : _vm._e(), _vm._v(" "), _vm.hasAccessTo("manage-users") ? _c("li", {
+  }, [_c("span", [_vm._v("Permissions")])])], 1) : _vm._e(), _vm._v(" "), _vm.hasAccessTo("manage-users") ? _c("li", {
     staticClass: "mb-2"
   }, [_c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     attrs: {
       to: "/user"
     }
-  }, [_c("span", [_vm._v("مدیریت کاربران")])])], 1) : _vm._e()])]) : _vm._e()])])])])]), _vm._v(" "), _c("div", {
+  }, [_c("span", [_vm._v("User management")])])], 1) : _vm._e()])]) : _vm._e()])])])])]), _vm._v(" "), _c("div", {
     staticClass: "overlay"
   }), _vm._v(" "), _c("div", {
     staticClass: "search-overlay"
@@ -10027,7 +10008,7 @@ var staticRenderFns = [function () {
     }
   }), _vm._v(" "), _c("span", {
     staticClass: "navbar-brand-name"
-  }, [_vm._v("گروه کارخانجات شیشه اردکان")])])]);
+  }, [_vm._v("Warehouse Software")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -10038,7 +10019,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("فراموشی رمز")])])]);
+  }), _vm._v(" "), _c("span", [_vm._v("Forget password")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -10049,7 +10030,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("ثبت نام")])])]);
+  }), _vm._v(" "), _c("span", [_vm._v("Sign up")])])]);
 }];
 render._withStripped = true;
 
@@ -10095,41 +10076,41 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام کالا"
+        label: "Products name"
       }
     }, [_vm._v(_vm._s(details.product.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تعداد"
+        label: "Count"
       }
     }, [_vm._v(_vm._s(details.amount))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v(_vm._s(_vm.request_all[_vm.request_id].unit.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مرکز هزینه"
+        label: "Cost center"
       }
     }, [details.center ? _c("label", [_vm._v("\n                                            " + _vm._s(details.center.name) + "\n                                        ")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "انبار"
+        label: "Warehouse"
       }
     }, [_vm._v(_vm._s(details.warehouse.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت درخواست"
+        label: "Request Status"
       }
     }, [details.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار\n                                        تائید")]) : _vm._e(), _vm._v(" "), details.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), details.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), details.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), details.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نمایش تائیدیه ها"
+        label: "Show confirmations"
       }
     }, [_c("i", {
       staticClass: "fa fa-info-circle fa-2x",
@@ -10144,7 +10125,7 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -10155,7 +10136,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(details.descriptions))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "فایل"
+        label: "File"
       }
     }, [_c("button", {
       staticClass: "btn btn-sm btn-primary",
@@ -10170,7 +10151,7 @@ var render = function render() {
           return _vm.showFile(details);
         }
       }
-    }, [_vm._v("نمایش\n                                        ")])])]) : _vm._e();
+    }, [_vm._v("show\n                                        ")])])]) : _vm._e();
   }) : _vm._e()], 2)])]), _vm._v(" "), _vm._m(2)])])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
@@ -10199,19 +10180,19 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v("\n                                        " + _vm._s(index + 1) + "\n                                    ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام فایل"
+        label: "File name"
       }
     }, [_vm._v("\n                                        " + _vm._s(file.file.name) + "\n                                    ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_vm._v("\n                                        " + _vm._s(file.file.description) + "\n                                    ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "پیش نمایش"
+        label: "Preshow"
       }
     }, [_c("div", {
       staticClass: "preview"
@@ -10224,18 +10205,18 @@ var render = function render() {
       staticClass: "size_img",
       attrs: {
         src: "/file-show?fileId=" + file.file_id,
-        alt: "باز کردن"
+        alt: "Open"
       }
     })])])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "دانلود"
+        label: "Download"
       }
     }, [_c("a", {
       staticClass: "btn btn-sm btn-primary",
       attrs: {
         href: "/file-download?fileId=" + file.file_id
       }
-    }, [_vm._v("دانلود")])])]) : _vm._e();
+    }, [_vm._v("Download")])])]) : _vm._e();
   }), 0)])])]), _vm._v(" "), _vm._m(5)])])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
@@ -10261,33 +10242,25 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
-    }, [_vm._v("\n                                            " + _vm._s(index + 1) + "\n                                        ")]), _vm._v(" "), confirm.user != null ? _c("td", {
+    }, [_vm._v("\n                                            " + _vm._s(index + 1) + "\n                                        ")]), _vm._v(" "), _vm._v('">\n                                            ' + _vm._s(confirm.user.first_name) + " " + _vm._s(confirm.user.last_name) + "\n                                        "), _vm._v(" "), _vm._v('==null">\n                                            Unknown\n                                        '), _vm._v(" "), confirm.confirm.name != null ? _c("td", {
       attrs: {
-        label: "نام تائید کننده"
-      }
-    }, [_vm._v("\n                                            " + _vm._s(confirm.user.first_name) + " " + _vm._s(confirm.user.last_name) + "\n                                        ")]) : _vm._e(), _vm._v(" "), confirm.user == null ? _c("td", {
-      attrs: {
-        label: "نام تائید کننده"
-      }
-    }, [_vm._v("\n                                            نا معلوم\n                                        ")]) : _vm._e(), _vm._v(" "), confirm.confirm.name != null ? _c("td", {
-      attrs: {
-        label: "نام تائیدیه"
+        label: "Confirmation name"
       }
     }, [_vm._v("\n                                            " + _vm._s(confirm.confirm.name) + "\n                                        ")]) : _vm._e(), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت تائید"
+        label: "Confirmation status"
       }
     }, [confirm.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار\n                                                تائید")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -10298,7 +10271,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(confirm.description))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تاریخ"
+        label: "Date"
       }
     }, [_vm._v("\n                                            " + _vm._s(confirm.updated_at) + "\n                                        ")])]);
   }) : _vm._e()], 2)])])]), _vm._v(" "), _vm._m(8)])])]), _vm._v(" "), _c("div", [_c("div", {
@@ -10311,7 +10284,7 @@ var render = function render() {
       expression: "searchQuery"
     }],
     attrs: {
-      label: "در حال جریان",
+      label: "In process",
       type: "radio",
       name: "filter",
       value: "1",
@@ -10334,7 +10307,7 @@ var render = function render() {
       expression: "searchQuery"
     }],
     attrs: {
-      label: "لغو شده",
+      label: "Canceled",
       type: "radio",
       name: "filter",
       value: "5"
@@ -10350,7 +10323,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("input", {
     attrs: {
-      label: "آرشیو",
+      label: "Archive",
       type: "radio",
       name: "filter"
     },
@@ -10373,29 +10346,29 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "شماره درخواست"
+        label: "Request number"
       }
     }, [_vm._v(_vm._s(request.request_number))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v(_vm._s(request.unit.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تاریخ"
+        label: "Date"
       }
     }, [_vm._v("\n                        " + _vm._s(_vm.convertDate(request.created_at)) + "\n                    ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت تائید"
+        label: "Confirmation status"
       }
     }, [request.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار تائید")]) : _vm._e(), _vm._v(" "), request.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), request.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), request.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), request.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مرحله درخواست"
+        label: "Request stage"
       }
     }, [_c("i", {
       staticClass: "badge badge-info",
@@ -10405,7 +10378,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(request.status.name))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -10414,11 +10387,11 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(request.descriptions))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "کد تحویل"
+        label: "Delivery code"
       }
     }, [_vm._v("\n                        " + _vm._s(request.validated_code) + "\n                    ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مشاهده جزئیاتس"
+        label: "Show details"
       }
     }, [_c("button", {
       staticClass: "btn btn-primary",
@@ -10432,7 +10405,7 @@ var render = function render() {
           return _vm.request_info(request.id);
         }
       }
-    }, [_vm._v(" نمایش جزئیات\n                        ")])])]);
+    }, [_vm._v(" Show details\n                        ")])])]);
   }), 0)])])]);
 };
 var staticRenderFns = [function () {
@@ -10459,7 +10432,7 @@ var staticRenderFns = [function () {
     attrs: {
       colspan: "10"
     }
-  }, [_c("h4", [_vm._v("نمایش جزئیات")])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ردیف")]), _vm._v(" "), _c("th", [_vm._v("نام کالا")]), _vm._v(" "), _c("th", [_vm._v("تعداد")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("مرکز هزینه")]), _vm._v(" "), _c("th", [_vm._v("انبار")]), _vm._v(" "), _c("th", [_vm._v("وضعیت درخواست")]), _vm._v(" "), _c("th", [_vm._v("نمایش تائیدیه ها")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")]), _vm._v(" "), _c("th", [_vm._v("فایل")])])]);
+  }, [_c("h4", [_vm._v("Show details")])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Row")]), _vm._v(" "), _c("th", [_vm._v("Products name")]), _vm._v(" "), _c("th", [_vm._v("Count")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Cost center")]), _vm._v(" "), _c("th", [_vm._v("Warehouse")]), _vm._v(" "), _c("th", [_vm._v("Request Status")]), _vm._v(" "), _c("th", [_vm._v("Show confirmations")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")]), _vm._v(" "), _c("th", [_vm._v("File")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -10471,7 +10444,7 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("\n                            بستن\n                        ")])]);
+  }, [_vm._v("\n                            Close\n                        ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -10482,11 +10455,11 @@ var staticRenderFns = [function () {
     attrs: {
       id: "exampleModalLabel"
     }
-  }, [_vm._v("لیست فایل ها")])]);
+  }, [_vm._v("Files list")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        ردیف\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        نام فایل\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        توضیحات\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        پیش نمایش\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        دانلود\n                                    ")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        Row\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                       File name\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Descriptions\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                       Preshow\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Download\n                                    ")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -10498,7 +10471,7 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])]);
+  }, [_vm._v("Close")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -10509,7 +10482,7 @@ var staticRenderFns = [function () {
     attrs: {
       id: "exampleModalLongTitle"
     }
-  }, [_vm._v("نمایش تائیدیه ها")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Show confirmations")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -10524,7 +10497,7 @@ var staticRenderFns = [function () {
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        ردیف\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        نام تائید کننده\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        نام تائیدیه\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        وضعیت تائید\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        توضیحات\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        تاریخ\n                                    ")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        Row\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Name of the approver\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Confirmation name\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Confirmation status\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Descriptions\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Date\n                                    ")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -10536,17 +10509,17 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])]);
+  }, [_vm._v("Close")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", [_c("h4", {
     staticClass: "mb-4 my-font-size"
-  }, [_vm._v("درخواست های من")])]);
+  }, [_vm._v("My requests")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("شماره درخواست")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("تاریخ")]), _vm._v(" "), _c("th", [_vm._v("وضعیت تائید")]), _vm._v(" "), _c("th", [_vm._v("مرحله درخواست")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")]), _vm._v(" "), _c("th", [_vm._v("کد تحویل")]), _vm._v(" "), _c("th", [_vm._v("مشاهده جزئیات")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("Request number")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Date")]), _vm._v(" "), _c("th", [_vm._v("Confirmation status")]), _vm._v(" "), _c("th", [_vm._v("Request stage")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")]), _vm._v(" "), _c("th", [_vm._v("Delivery code")]), _vm._v(" "), _c("th", [_vm._v("Show details")])])]);
 }];
 render._withStripped = true;
 
@@ -10708,7 +10681,7 @@ var render = function render() {
     staticClass: "modal-content"
   }, [_vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "modal-body form-group text-right"
-  }, [_c("div", [_c("label", [_vm._v("نام تائیدیه:")]), _vm._v(" "), _c("input", {
+  }, [_c("div", [_c("label", [_vm._v("Confirmation name:")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -10736,7 +10709,7 @@ var render = function render() {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("\n                        لغو\n                    ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n                        Cancel\n                    ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary",
     attrs: {
       type: "button"
@@ -10746,7 +10719,7 @@ var render = function render() {
         return _vm.save_confirm(_vm.confirm_val);
       }
     }
-  }, [_vm._v("ثبت\n                    ")])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Submit\n                    ")])])])])]), _vm._v(" "), _c("div", {
     staticClass: "modal",
     attrs: {
       tabindex: "-1",
@@ -10758,12 +10731,12 @@ var render = function render() {
     staticClass: "modal-content"
   }, [_vm._m(1), _vm._v(" "), _c("div", {
     staticClass: "modal-body form-group text-right"
-  }, [_c("div", [_c("label", [_vm._v("نام محصول:")]), _vm._v(" "), _vm.products != "" ? _c("multiselect", {
+  }, [_c("div", [_c("label", [_vm._v("Product name:")]), _vm._v(" "), _vm.products != "" ? _c("multiselect", {
     attrs: {
       options: _vm.products,
       "custom-label": _vm.nameWithLang,
       showLabels: false,
-      placeholder: "نام محصول"
+      placeholder: "Product name"
     },
     model: {
       value: _vm.product_temp.product_id,
@@ -10774,7 +10747,7 @@ var render = function render() {
     }
   }) : _vm._e()], 1), _vm._v(" "), _c("div", {
     staticClass: "mt-4"
-  }, [_c("label", [_vm._v("نام تائیدیه:")]), _vm._v(" "), _vm.confirms != "" ? _c("multiselect", {
+  }, [_c("label", [_vm._v("Confirmation name:")]), _vm._v(" "), _vm.confirms != "" ? _c("multiselect", {
     attrs: {
       options: _vm.confirms.map(function (type) {
         return type.id;
@@ -10785,7 +10758,7 @@ var render = function render() {
         }).name;
       },
       showLabels: false,
-      placeholder: "نام تائیدیه"
+      placeholder: "Confirmation name"
     },
     model: {
       value: _vm.product_temp.confirm_id,
@@ -10802,7 +10775,7 @@ var render = function render() {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("\n                        لغو\n                    ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n                        Cancel\n                    ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary",
     attrs: {
       type: "button"
@@ -10812,7 +10785,7 @@ var render = function render() {
         return _vm.saveProduct(_vm.product_temp);
       }
     }
-  }, [_vm._v("ثبت\n                    ")])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Submit\n                    ")])])])])]), _vm._v(" "), _c("div", {
     staticClass: "modal",
     attrs: {
       tabindex: "-1",
@@ -10824,7 +10797,7 @@ var render = function render() {
     staticClass: "modal-content"
   }, [_vm._m(2), _vm._v(" "), _c("div", {
     staticClass: "modal-body form-group text-right"
-  }, [_c("div", [_c("label", [_vm._v("نام دسته بندی:")]), _vm._v(" "), _vm.categoris != "" ? _c("multiselect", {
+  }, [_c("div", [_c("label", [_vm._v("Category name:")]), _vm._v(" "), _vm.categoris != "" ? _c("multiselect", {
     attrs: {
       options: _vm.categoris.map(function (type) {
         return type.id;
@@ -10835,7 +10808,7 @@ var render = function render() {
         }).name;
       },
       showLabels: false,
-      placeholder: "نام دسته بندی"
+      placeholder: "Category name"
     },
     model: {
       value: _vm.category_temp.category_id,
@@ -10846,7 +10819,7 @@ var render = function render() {
     }
   }) : _vm._e()], 1), _vm._v(" "), _c("div", {
     staticClass: "mt-4"
-  }, [_c("label", [_vm._v("نام تائیدیه:")]), _vm._v(" "), _vm.confirms != "" ? _c("multiselect", {
+  }, [_c("label", [_vm._v("Confirmation name:")]), _vm._v(" "), _vm.confirms != "" ? _c("multiselect", {
     attrs: {
       options: _vm.confirms.map(function (type) {
         return type.id;
@@ -10857,7 +10830,7 @@ var render = function render() {
         }).name;
       },
       showLabels: false,
-      placeholder: "نام تائیدیه"
+      placeholder: "Confirmation name"
     },
     model: {
       value: _vm.category_temp.confirm_id,
@@ -10874,7 +10847,7 @@ var render = function render() {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("\n                        لغو\n                    ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n                        Cancel\n                    ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary",
     attrs: {
       type: "button"
@@ -10884,7 +10857,7 @@ var render = function render() {
         return _vm.saveCategories(_vm.category_temp);
       }
     }
-  }, [_vm._v("ثبت\n                    ")])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Submit\n                    ")])])])])]), _vm._v(" "), _c("div", {
     staticClass: "row margin_top my_scroll"
   }, [_c("div", {
     staticClass: "col-sm col-md-4"
@@ -10934,7 +10907,7 @@ var staticRenderFns = [function () {
     staticClass: "modal-header"
   }, [_c("h5", {
     staticClass: "modal-title"
-  }, [_vm._v("افزودن تائیدیه")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Add confirmation")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -10953,7 +10926,7 @@ var staticRenderFns = [function () {
     staticClass: "modal-header"
   }, [_c("h5", {
     staticClass: "modal-title"
-  }, [_vm._v("افزودن تائیدیه")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Add confirmation")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -10972,7 +10945,7 @@ var staticRenderFns = [function () {
     staticClass: "modal-header"
   }, [_c("h5", {
     staticClass: "modal-title"
-  }, [_vm._v("افزودن تائیدیه")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Add confirmation")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -10991,14 +10964,14 @@ var staticRenderFns = [function () {
     staticClass: "box-header"
   }, [_c("h3", {
     staticClass: "box-title"
-  }, [_vm._v("تعریف تائیدیه جدید")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Add new confirmation")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-sm btn-success float-left",
     attrs: {
       type: "button",
       "data-toggle": "modal",
       "data-target": "#modal-confirm"
     }
-  }, [_vm._v("افزودن\n                    ")])]);
+  }, [_vm._v("Add\n                    ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -11006,15 +10979,15 @@ var staticRenderFns = [function () {
     staticStyle: {
       width: "10px"
     }
-  }, [_vm._v("#")]), _vm._v(" "), _c("th", [_vm._v("نام تائید")]), _vm._v(" "), _c("th", [_vm._v("عملیات")])])]);
+  }, [_vm._v("#")]), _vm._v(" "), _c("th", [_vm._v("Confirmation name")]), _vm._v(" "), _c("th", [_vm._v("Actions")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("td", [_c("i", {
     staticClass: "badge badge-info"
-  }, [_vm._v("غیرفعال")]), _vm._v(" "), _c("i", {
+  }, [_vm._v("Inactive")]), _vm._v(" "), _c("i", {
     staticClass: "badge badge-danger"
-  }, [_vm._v("حذف")])]);
+  }, [_vm._v("Delete")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -11022,14 +10995,14 @@ var staticRenderFns = [function () {
     staticClass: "box-header"
   }, [_c("h3", {
     staticClass: "box-title"
-  }, [_vm._v("تائیدیه محصولات")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Products confirmation")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-sm btn-success float-left",
     attrs: {
       type: "button",
       "data-toggle": "modal",
       "data-target": "#modal-product"
     }
-  }, [_vm._v("افزودن\n                    ")])]);
+  }, [_vm._v("Add\n                    ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -11037,15 +11010,15 @@ var staticRenderFns = [function () {
     staticStyle: {
       width: "10px"
     }
-  }, [_vm._v("#")]), _vm._v(" "), _c("th", [_vm._v("نام محصول")]), _vm._v(" "), _c("th", [_vm._v("نام تائید")]), _vm._v(" "), _c("th", [_vm._v("عملیات")])])]);
+  }, [_vm._v("#")]), _vm._v(" "), _c("th", [_vm._v("Product name")]), _vm._v(" "), _c("th", [_vm._v("Confirmation name")]), _vm._v(" "), _c("th", [_vm._v("Actions")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("td", [_c("i", {
     staticClass: "badge badge-info"
-  }, [_vm._v("غیرفعال")]), _vm._v(" "), _c("i", {
+  }, [_vm._v("Inactive")]), _vm._v(" "), _c("i", {
     staticClass: "badge badge-danger"
-  }, [_vm._v("حذف")])]);
+  }, [_vm._v("Delete")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -11053,14 +11026,14 @@ var staticRenderFns = [function () {
     staticClass: "box-header"
   }, [_c("h3", {
     staticClass: "box-title"
-  }, [_vm._v("تائیدیه دسته بندی")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Confirmation of category")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-sm btn-success float-left",
     attrs: {
       type: "button",
       "data-toggle": "modal",
       "data-target": "#modal-categoris"
     }
-  }, [_vm._v("افزودن\n                    ")])]);
+  }, [_vm._v("Add\n                    ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -11068,15 +11041,15 @@ var staticRenderFns = [function () {
     staticStyle: {
       width: "10px"
     }
-  }, [_vm._v("#")]), _vm._v(" "), _c("th", [_vm._v("نام دسته بندی")]), _vm._v(" "), _c("th", [_vm._v("نام تائید")]), _vm._v(" "), _c("th", [_vm._v("عملیات")])])]);
+  }, [_vm._v("#")]), _vm._v(" "), _c("th", [_vm._v("Category name")]), _vm._v(" "), _c("th", [_vm._v("Confirmation name")]), _vm._v(" "), _c("th", [_vm._v("Actions")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("td", [_c("i", {
     staticClass: "badge badge-info"
-  }, [_vm._v("غیرفعال")]), _vm._v(" "), _c("i", {
+  }, [_vm._v("Inactive")]), _vm._v(" "), _c("i", {
     staticClass: "badge badge-danger"
-  }, [_vm._v("حذف")])]);
+  }, [_vm._v("Delete")])]);
 }];
 render._withStripped = true;
 
@@ -11123,7 +11096,7 @@ var render = function render() {
     staticClass: "form-group"
   }, [_c("label", {
     staticClass: "control-label"
-  }, [_vm._v("کاربر")]), _vm._v(" "), _c("select", {
+  }, [_vm._v("User")]), _vm._v(" "), _c("select", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -11151,11 +11124,11 @@ var render = function render() {
     staticClass: "form-group"
   }, [_c("label", {
     staticClass: "control-label"
-  }, [_vm._v("دسترسی")]), _vm._v(" "), _c("multiselect", {
+  }, [_vm._v("Permission")]), _vm._v(" "), _c("multiselect", {
     attrs: {
       "track-by": "name",
       label: "name",
-      placeholder: "انتخاب",
+      placeholder: "Select",
       options: _vm.permissions,
       searchable: true,
       "allow-empty": false,
@@ -11177,13 +11150,13 @@ var render = function render() {
         return _vm.assignPermissionToRole();
       }
     }
-  }, [_vm._v("افزودن دسترسی")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Add permission")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-secondary",
     attrs: {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("لغو")])])])])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("table", {
+  }, [_vm._v("Cancel")])])])])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("table", {
     staticClass: "table border my_size style_table"
   }, [_vm._m(2), _vm._v(" "), _vm._l(_vm.roles, function (role) {
     return _c("tr", [_c("td", [_vm._v(_vm._s(role.name))]), _vm._v(" "), _c("td", _vm._l(role.permissions, function (permission) {
@@ -11200,7 +11173,7 @@ var staticRenderFns = [function () {
     staticClass: "modal-header"
   }, [_c("h5", {
     staticClass: "modal-title"
-  }, [_vm._v("افزودن دسترسی")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Add permission")]), _vm._v(" "), _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -11221,15 +11194,15 @@ var staticRenderFns = [function () {
       "data-toggle": "modal",
       "data-target": "#permission"
     }
-  }, [_vm._v("افزودن مجوز دسترسی\n        ")])]);
+  }, [_vm._v("Add permission\n        ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("نوع کاربر")]), _vm._v(" "), _c("th", {
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("Type of user")]), _vm._v(" "), _c("th", {
     staticStyle: {
       width: "70%"
     }
-  }, [_vm._v("دسترسی ها")])])]);
+  }, [_vm._v("Permissions")])])]);
 }];
 render._withStripped = true;
 
@@ -11270,13 +11243,13 @@ var render = function render() {
     on: {
       click: _vm.cleanForm
     }
-  }, [_vm._v("افزودن پیک\n                    ")])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Add courier\n                    ")])]), _vm._v(" "), _c("div", {
     staticClass: "col-6 pl-0 text-left"
   }, [_c("div", {
     staticClass: "search-box mr-5"
   }, [_c("h5", {
     staticClass: "d-inline-flex"
-  }, [_vm._v("جستجو:")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("input", {
+  }, [_vm._v("Search:")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -11286,7 +11259,7 @@ var render = function render() {
     staticClass: "input-search",
     attrs: {
       type: "text",
-      placeholder: "جستجو..."
+      placeholder: "Search..."
     },
     domProps: {
       value: _vm.searchQuery
@@ -11309,12 +11282,12 @@ var render = function render() {
     staticClass: "modal-content"
   }, [_vm._m(1), _vm._v(" "), _c("div", {
     staticClass: "modal-body form-group text-right"
-  }, [_c("div", [_c("label", [_vm._v("نام:")]), _vm._v(" "), _c("multiselect", {
+  }, [_c("div", [_c("label", [_vm._v("Name:")]), _vm._v(" "), _c("multiselect", {
     attrs: {
       options: _vm.users,
       "custom-label": _vm.name_family,
       showLabels: false,
-      placeholder: "نام پیک"
+      placeholder: "Courier name"
     },
     model: {
       value: _vm.peyk_rel.user_id,
@@ -11325,12 +11298,12 @@ var render = function render() {
     }
   })], 1), _vm._v(" "), _c("div", {
     staticClass: "mt-4"
-  }, [_c("label", [_vm._v("نام وسیله:")]), _vm._v(" "), _c("multiselect", {
+  }, [_c("label", [_vm._v("Vehicle name:")]), _vm._v(" "), _c("multiselect", {
     attrs: {
       options: _vm.vehicle_list,
       "custom-label": _vm.nameWithLang,
       showLabels: false,
-      placeholder: "نام وسیله"
+      placeholder: "Vehicle name"
     },
     model: {
       value: _vm.peyk_rel.vehicle_id,
@@ -11347,7 +11320,7 @@ var render = function render() {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("\n                                لغو\n                            ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n                                Cancel\n                            ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary",
     attrs: {
       type: "button"
@@ -11357,7 +11330,7 @@ var render = function render() {
         return _vm.save(_vm.peyk_rel);
       }
     }
-  }, [_vm._v("ثبت\n                            ")])])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Submit\n                            ")])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "table-responsive table-bordered text-center style_table",
     attrs: {
       id: "table-units"
@@ -11377,17 +11350,17 @@ var render = function render() {
       }
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام"
+        label: "Name"
       }
     }, [_c("input", {
       staticClass: "form-control text-center d-inline w-100",
       attrs: {
         type: "text",
-        placeholder: "نام",
+        placeholder: "Name",
         readonly: ""
       },
       domProps: {
@@ -11395,13 +11368,13 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام خانوادگی"
+        label: "Last name"
       }
     }, [_c("input", {
       staticClass: "form-control text-center d-inline w-100",
       attrs: {
         type: "text",
-        placeholder: "نام خانوادگی",
+        placeholder: "Last name",
         readonly: ""
       },
       domProps: {
@@ -11409,7 +11382,7 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "کد پرسنلی"
+        label: "Personnel code"
       }
     }, [_c("input", {
       staticClass: "form-control text-center",
@@ -11422,13 +11395,13 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام وسیله"
+        label: "Vehicle name"
       }
     }, [_c("input", {
       staticClass: "form-control d-inline w-100 text-center",
       attrs: {
         type: "text",
-        placeholder: "نام وسیله",
+        placeholder: "Vehicle name",
         readonly: ""
       },
       domProps: {
@@ -11436,13 +11409,13 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "شماره وسیله"
+        label: "Vehicle number plate"
       }
     }, [_c("input", {
       staticClass: "form-control d-inline w-100 text-center",
       attrs: {
         type: "text",
-        placeholder: "شماره وسیله",
+        placeholder: "Vehicle number plate",
         readonly: ""
       },
       domProps: {
@@ -11450,14 +11423,14 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "عملیات"
+        label: "Actions"
       }
     }, [_c("a", {
       staticClass: "badge badge-danger",
       on: {
         click: function click($event) {}
       }
-    }, [_vm._v("حذف")])])]);
+    }, [_vm._v("Delete")])])]);
   }), 0)])])]);
 };
 var staticRenderFns = [function () {
@@ -11475,7 +11448,7 @@ var staticRenderFns = [function () {
     staticClass: "modal-header"
   }, [_c("h5", {
     staticClass: "modal-title"
-  }, [_vm._v("افزودن پیک")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Add courier")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -11490,7 +11463,7 @@ var staticRenderFns = [function () {
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("ردیف")]), _vm._v(" "), _c("th", [_vm._v("نام")]), _vm._v(" "), _c("th", [_vm._v("نام خانوادگی")]), _vm._v(" "), _c("th", [_vm._v("کد پرسنلی")]), _vm._v(" "), _c("th", [_vm._v("نام وسیله")]), _vm._v(" "), _c("th", [_vm._v("شماره وسیله")]), _vm._v(" "), _c("th", [_vm._v("عملیات")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("Row")]), _vm._v(" "), _c("th", [_vm._v("Name")]), _vm._v(" "), _c("th", [_vm._v("Last name")]), _vm._v(" "), _c("th", [_vm._v("Personnel code")]), _vm._v(" "), _c("th", [_vm._v("Vehicle name")]), _vm._v(" "), _c("th", [_vm._v("Vehicle number plate")]), _vm._v(" "), _c("th", [_vm._v("Actions")])])]);
 }];
 render._withStripped = true;
 
@@ -11536,41 +11509,41 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام کالا"
+        label: "Products name"
       }
     }, [_vm._v(_vm._s(details.product.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تعداد"
+        label: "Count"
       }
     }, [_vm._v(_vm._s(details.amount))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v(_vm._s(_vm.request_all[_vm.request_id].unit.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مرکز هزینه"
+        label: "Cost center"
       }
     }, [details.center ? _c("label", [_vm._v("\n                                        " + _vm._s(details.center.name) + "\n                                    ")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "انبار"
+        label: "Warehouse"
       }
     }, [_vm._v(_vm._s(details.warehouse.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت درخواست"
+        label: "Request Status"
       }
     }, [details.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار\n                                    تائید")]) : _vm._e(), _vm._v(" "), details.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), details.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), details.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), details.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نمایش تائیدیه ها"
+        label: "Show confirmations"
       }
     }, [_c("i", {
       staticClass: "fa fa-info-circle fa-2x",
@@ -11585,7 +11558,7 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -11596,7 +11569,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(details.descriptions))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "فایل"
+        label: "File"
       }
     }, [_c("button", {
       staticClass: "btn btn-sm btn-primary",
@@ -11611,7 +11584,7 @@ var render = function render() {
           return _vm.showFile(details);
         }
       }
-    }, [_vm._v("نمایش\n                                    ")])])]) : _vm._e();
+    }, [_vm._v("show\n                                    ")])])]) : _vm._e();
   }) : _vm._e()], 2)])]), _vm._v(" "), _vm._m(2)])])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
@@ -11637,33 +11610,33 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v("\n                                        " + _vm._s(index + 1) + "\n                                    ")]), _vm._v(" "), confirm.user != null ? _c("td", {
       attrs: {
-        label: "نام تائید کننده"
+        label: "Name of the approver"
       }
     }, [_vm._v("\n                                        " + _vm._s(confirm.user.first_name) + " " + _vm._s(confirm.user.last_name) + "\n                                    ")]) : _vm._e(), _vm._v(" "), confirm.user == null ? _c("td", {
       attrs: {
-        label: "نام تائید کننده"
+        label: "Name of the approver"
       }
-    }, [_vm._v("\n                                        نا معلوم\n                                    ")]) : _vm._e(), _vm._v(" "), confirm.confirm.name != null ? _c("td", {
+    }, [_vm._v("\n                                        Unknown\n                                    ")]) : _vm._e(), _vm._v(" "), confirm.confirm.name != null ? _c("td", {
       attrs: {
-        label: "نام تائیدیه"
+        label: "Confirmation name"
       }
     }, [_vm._v("\n                                        " + _vm._s(confirm.confirm.name) + "\n                                    ")]) : _vm._e(), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت تائید"
+        label: "Confirmation status"
       }
     }, [confirm.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار\n                                            تائید")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -11674,7 +11647,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(confirm.description))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تاریخ"
+        label: "Date"
       }
     }, [_vm._v("\n                                        " + _vm._s(confirm.updated_at) + "\n                                    ")])]);
   }) : _vm._e()], 2)])])]), _vm._v(" "), _vm._m(5)])])]), _vm._v(" "), _c("div", {
@@ -11705,19 +11678,19 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v("\n                                    " + _vm._s(index + 1) + "\n                                ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام فایل"
+        label: "File name"
       }
     }, [_vm._v("\n                                    " + _vm._s(file.file.name) + "\n                                ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_vm._v("\n                                    " + _vm._s(file.file.description) + "\n                                ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "پیش نمایش"
+        label: "Preshow"
       }
     }, [_c("div", {
       staticClass: "preview"
@@ -11730,18 +11703,18 @@ var render = function render() {
       staticClass: "size_img",
       attrs: {
         src: "/file-show?fileId=" + file.file_id,
-        alt: "باز کردن"
+        alt: "Open"
       }
     })])])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "دانلود"
+        label: "Download"
       }
     }, [_c("a", {
       staticClass: "btn btn-sm btn-primary",
       attrs: {
         href: "/file-download?fileId=" + file.file_id
       }
-    }, [_vm._v("دانلود")])])]) : _vm._e();
+    }, [_vm._v("Download")])])]) : _vm._e();
   }), 0)])])]), _vm._v(" "), _vm._m(8)])])]), _vm._v(" "), _c("div", {
     attrs: {
       id: "printMe",
@@ -11768,7 +11741,7 @@ var render = function render() {
     staticClass: "col-4 text-center"
   }, [_c("h5", {
     staticClass: "inline fa-1x"
-  }, [_vm._v("تاریخ:")]), _vm._v(" "), _vm.request_all != "" ? _c("h5", {
+  }, [_vm._v("Date:")]), _vm._v(" "), _vm.request_all != "" ? _c("h5", {
     staticClass: "inline fa-1x"
   }, [_vm._v("\n                                    " + _vm._s(_vm.convertDate(_vm.request_all[_vm.request_id].created_at)))]) : _vm._e(), _vm._v(" "), _vm.request_all != "" ? _c("h5", {
     staticClass: "d-block fa-1x"
@@ -11790,31 +11763,31 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v("\n                                            " + _vm._s(index + 1) + "\n                                        ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام کالا"
+        label: "Products name"
       }
     }, [_vm._v("\n                                            " + _vm._s(print.product.name) + "\n                                        ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تعداد"
+        label: "Count"
       }
     }, [_vm._v("\n                                            " + _vm._s(print.amount) + "\n                                        ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v("\n                                            " + _vm._s(_vm.request_all[_vm.request_id].unit.name) + "\n                                        ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مرکز هزینه"
+        label: "Cost center"
       }
     }, [print.center ? _c("label", [_vm._v(" " + _vm._s(print.center.name))]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت تائید"
+        label: "Confirmation status"
       }
-    }, [print.confirmed == null ? _c("i", [_vm._v("در انتظار تائید")]) : _vm._e(), _vm._v(" "), print.confirmed == 0 ? _c("i", [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), print.confirmed == 1 ? _c("i", [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [print.confirmed == null ? _c("i", [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), print.confirmed == 0 ? _c("i", [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), print.confirmed == 1 ? _c("i", [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_vm._v("\n                                            " + _vm._s(print.descriptions) + "\n                                        ")])]);
   }) : _vm._e()], 2)])]), _vm._v(" "), _vm._m(12), _vm._v(" "), _vm._m(13)]), _vm._v(" "), _c("div", {
@@ -11831,13 +11804,13 @@ var render = function render() {
       type: "button",
       id: "btnPrint"
     }
-  }, [_vm._v("چاپ\n                        ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Print\n                        ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-secondary",
     attrs: {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Close")])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "switch-holder float-left"
   }, [_vm._m(14), _vm._v(" "), _c("div", {
     staticClass: "switch-toggle"
@@ -11883,7 +11856,7 @@ var render = function render() {
     }
   })])]), _vm._v(" "), _c("h4", {
     staticClass: "mb-4 my-font-size"
-  }, [_vm._v("درخواست های در انتظار تحویل")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Requests pending delivery")]), _vm._v(" "), _c("div", {
     staticClass: "text-center"
   }, [_c("table", {
     staticClass: "table table-bordered style_table",
@@ -11899,35 +11872,35 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v(_vm._s(request.unit.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "شماره درخواست"
+        label: "Request number"
       }
     }, [_vm._v(_vm._s(request.request_number))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تاریخ"
+        label: "Date"
       }
     }, [_vm._v(" " + _vm._s(_vm.convertDate(request.created_at)))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت تحویل"
+        label: "Delivery status"
       }
     }, [request.status.id != 5 ? _c("i", {
       staticClass: "badge badge-warning"
     }, [_vm._v(_vm._s(request.status.name))]) : _vm._e(), _vm._v(" "), request.status.id == 5 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تحویل داده شده")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("delivered")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام وسیله"
+        label: "Vehicle name"
       }
     }, [request.request_detail[0].delivery[0].vehicle ? _c("label", [_vm._v("\n                        " + _vm._s(request.request_detail[0].delivery[0].vehicle.name) + " - " + _vm._s(request.request_detail[0].delivery[0].vehicle.number) + "\n                    ")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -11936,7 +11909,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(request.descriptions))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "پرینت رسید تحویل"
+        label: "Delivery receipt print"
       }
     }, [_c("button", {
       staticClass: "btn btn-primary btn-table",
@@ -11954,7 +11927,7 @@ var render = function render() {
       staticClass: "fas fa-print"
     })])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مشاهده جزئیات"
+        label: "Show details"
       }
     }, [_c("button", {
       staticClass: "btn btn-primary",
@@ -11970,9 +11943,9 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fas fa-info-circle"
-    }), _vm._v(" نمایش جزئیات\n                    ")])]), _vm._v(" "), _c("td", {
+    }), _vm._v(" Show details\n                    ")])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تحویل"
+        label: "Delivery"
       }
     }, [_c("button", {
       staticClass: "btn btn-success",
@@ -12014,7 +11987,7 @@ var staticRenderFns = [function () {
     attrs: {
       colspan: "10"
     }
-  }, [_c("h4", [_vm._v("نمایش جزئیات")])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ردیف")]), _vm._v(" "), _c("th", [_vm._v("نام کالا")]), _vm._v(" "), _c("th", [_vm._v("تعداد")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("مرکز هزینه")]), _vm._v(" "), _c("th", [_vm._v("انبار")]), _vm._v(" "), _c("th", [_vm._v("وضعیت درخواست")]), _vm._v(" "), _c("th", [_vm._v("نمایش تائیدیه ها")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")]), _vm._v(" "), _c("th", [_vm._v("فایل")])])]);
+  }, [_c("h4", [_vm._v("Show details")])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Row")]), _vm._v(" "), _c("th", [_vm._v("Products name")]), _vm._v(" "), _c("th", [_vm._v("Count")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Cost center")]), _vm._v(" "), _c("th", [_vm._v("Warehouse")]), _vm._v(" "), _c("th", [_vm._v("Request Status")]), _vm._v(" "), _c("th", [_vm._v("Show confirmations")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")]), _vm._v(" "), _c("th", [_vm._v("File")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -12026,7 +11999,7 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("\n                        بستن\n                    ")])]);
+  }, [_vm._v("\n                        Close\n                    ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -12037,7 +12010,7 @@ var staticRenderFns = [function () {
     attrs: {
       id: "exampleModalLongTitle"
     }
-  }, [_vm._v("نمایش تائیدیه ها")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Show confirmations")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -12052,7 +12025,7 @@ var staticRenderFns = [function () {
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                    ردیف\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    نام تائید کننده\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    نام تائیدیه\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    وضعیت تائید\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    توضیحات\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    تاریخ\n                                ")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                    Row\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Name of the approver\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Confirmation name\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Confirmation status\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Descriptions\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Date\n                                ")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -12064,7 +12037,7 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])]);
+  }, [_vm._v("Close")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -12075,11 +12048,11 @@ var staticRenderFns = [function () {
     attrs: {
       id: "exampleModalLabel"
     }
-  }, [_vm._v("لیست فایل ها")])]);
+  }, [_vm._v("Files list")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                    ردیف\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    نام فایل\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    توضیحات\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    پیش نمایش\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    دانلود\n                                ")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                    Row\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                   File name\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Descriptions\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                   Preshow\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Download\n                                ")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -12091,7 +12064,7 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])]);
+  }, [_vm._v("Close")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -12105,9 +12078,9 @@ var staticRenderFns = [function () {
     }
   })]), _vm._v(" "), _c("span", {
     staticClass: "img-font"
-  }, [_vm._v("\n                                                \t\t\t\t\t\tگروه کارخانجات شیشه اردکان\n                                                \t\t\t\t\t")]), _vm._v(" "), _c("span", {
+  }, [_vm._v("\n                                                \t\t\t\t\t\tWarehouse Software\n                                                \t\t\t\t\t")]), _vm._v(" "), _c("span", {
     staticClass: "img-font"
-  }, [_vm._v("ARDAKAN FLOAT GLASS CO")])])]);
+  }, [_vm._v("Warehouse Software")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -12115,11 +12088,11 @@ var staticRenderFns = [function () {
     staticClass: "col-4"
   }, [_c("h2", {
     staticClass: "print-head"
-  }, [_vm._v("رسید تحویل")])]);
+  }, [_vm._v("Delivery receipt")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        ردیف\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("نام کالا")]), _vm._v(" "), _c("th", [_vm._v("تعداد")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("مرکز هزینه")]), _vm._v(" "), _c("th", [_vm._v("وضعیت تائید")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        Row\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("Products name")]), _vm._v(" "), _c("th", [_vm._v("Count")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Cost center")]), _vm._v(" "), _c("th", [_vm._v("Confirmation status")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -12127,7 +12100,7 @@ var staticRenderFns = [function () {
     staticClass: "row text-right p-3"
   }, [_c("p", {
     staticClass: "inline"
-  }, [_vm._v("آدرس تحویل:")]), _vm._v(" "), _c("p", {
+  }, [_vm._v("Delivery address:")]), _vm._v(" "), _c("p", {
     staticClass: "inline"
   })]);
 }, function () {
@@ -12139,15 +12112,15 @@ var staticRenderFns = [function () {
     staticClass: "col-4 border"
   }, [_c("div", {
     staticClass: "signature"
-  }, [_c("p", [_vm._v("مسئول انبار")])])]), _vm._v(" "), _c("div", {
+  }, [_c("p", [_vm._v("Warehouse manager")])])]), _vm._v(" "), _c("div", {
     staticClass: "col-4 border"
   }, [_c("div", {
     staticClass: "signature"
-  }, [_c("p", [_vm._v("مسئول پیک")])])]), _vm._v(" "), _c("div", {
+  }, [_c("p", [_vm._v("Courier in charge")])])]), _vm._v(" "), _c("div", {
     staticClass: "col-4 border"
   }, [_c("div", {
     staticClass: "signature"
-  }, [_c("p", [_vm._v("دریافت کننده")])])])]);
+  }, [_c("p", [_vm._v("Receiver")])])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -12155,11 +12128,11 @@ var staticRenderFns = [function () {
     staticClass: "switch-label"
   }, [_c("i", {
     staticClass: "fa fa-bluetooth-b"
-  }), _c("span", [_vm._v("اماده به کار")])]);
+  }), _c("span", [_vm._v("Ready to start")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("ردیف")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("شماره درخواست")]), _vm._v(" "), _c("th", [_vm._v("تاریخ")]), _vm._v(" "), _c("th", [_vm._v("وضعیت تحویل")]), _vm._v(" "), _c("th", [_vm._v("نام وسیله")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")]), _vm._v(" "), _c("th", [_vm._v("پرینت رسید تحویل")]), _vm._v(" "), _c("th", [_vm._v("مشاهده جزئیات")]), _vm._v(" "), _c("th", [_vm._v("تحویل")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("Row")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Request number")]), _vm._v(" "), _c("th", [_vm._v("Date")]), _vm._v(" "), _c("th", [_vm._v("Delivery status")]), _vm._v(" "), _c("th", [_vm._v("Vehicle name")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")]), _vm._v(" "), _c("th", [_vm._v("Delivery receipt print")]), _vm._v(" "), _c("th", [_vm._v("Show details")]), _vm._v(" "), _c("th", [_vm._v("Delivery")])])]);
 }];
 render._withStripped = true;
 
@@ -12213,7 +12186,7 @@ var render = function render() {
     on: {
       click: _vm.cleanForm
     }
-  }, [_vm._v("\n                            افزودن فایل\n                        ")]), _vm._v(" "), _c("div", [_c("table", {
+  }, [_vm._v("\n                            Add file\n                        ")]), _vm._v(" "), _c("div", [_c("table", {
     staticClass: "table table-bordered"
   }, [_vm._m(1), _vm._v(" "), _c("tbody", _vm._l(_vm.file_array[_vm.my_index].files, function (file, index) {
     return _vm.file_array[_vm.my_index].files != null ? _c("tr", {
@@ -12229,7 +12202,7 @@ var render = function render() {
       staticClass: "size_img",
       attrs: {
         src: file.url,
-        alt: "باز کردن"
+        alt: "Open"
       }
     }) : _vm._e()])])]), _vm._v(" "), _c("td", [_c("i", {
       staticClass: "fas fa-trash-alt minus",
@@ -12266,7 +12239,7 @@ var render = function render() {
     staticStyle: {
       "border-radius": "0 5px 5px 0"
     }
-  }, [_vm._v("\n                    انتخاب فایل "), _c("input", {
+  }, [_vm._v("\n                    Choose file "), _c("input", {
     staticStyle: {
       display: "none"
     },
@@ -12293,7 +12266,7 @@ var render = function render() {
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "col mt-2"
-  }, [_c("label", [_vm._v("نام:")]), _vm._v(" "), _c("input", {
+  }, [_c("label", [_vm._v("Name:")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -12316,7 +12289,7 @@ var render = function render() {
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "col"
-  }, [_c("label", [_vm._v("توضیحات:")]), _vm._v(" "), _c("input", {
+  }, [_c("label", [_vm._v("Descriptions:")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -12353,7 +12326,7 @@ var render = function render() {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("لغو")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Cancel")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-success btb_submit",
     attrs: {
       type: "button",
@@ -12362,7 +12335,7 @@ var render = function render() {
     on: {
       click: _vm.formSubmit
     }
-  }, [_vm._v("ارسال\n                        ")])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Send\n                        ")])])])])]), _vm._v(" "), _c("div", {
     staticClass: "row justify-content-center mt-5 p-3 h-100",
     attrs: {
       id: "store_id"
@@ -12371,7 +12344,7 @@ var render = function render() {
     staticClass: "col col-md-4 list_warehouse my-box border"
   }, [_c("p", {
     staticClass: "text-center mt-3"
-  }, [_vm._v("برای ثبت درخواست لطفا اول انبار خود را انتخاب کنید:")]), _vm._v(" "), _c("ul", {
+  }, [_vm._v("To submit a request, please select your warehouse first:")]), _vm._v(" "), _c("ul", {
     staticClass: "ks-cboxtags"
   }, _vm._l(_vm.warehouse_array, function (warehous, index) {
     return _c("li", {
@@ -12412,7 +12385,7 @@ var render = function render() {
     on: {
       click: _vm.showProducts
     }
-  }, [_vm._v("ادامه")])])]), _vm._v(" "), _vm.show_form ? _c("form", {
+  }, [_vm._v("Continue")])])]), _vm._v(" "), _vm.show_form ? _c("form", {
     staticClass: "height-100",
     attrs: {
       name: "requestForm",
@@ -12437,7 +12410,7 @@ var render = function render() {
     staticClass: "row flex-column"
   }, [_c("h5", {
     staticClass: "text_form"
-  }, [_vm._v("\n                                    تاریخ :\n                                ")]), _vm._v(" "), _c("h5", {
+  }, [_vm._v("\n                                    Date :\n                                ")]), _vm._v(" "), _c("h5", {
     staticClass: "text_form"
   }, [_vm._v("\n                                    " + _vm._s(_vm.date) + "\n                                ")])])])]), _vm._v(" "), _c("tr", [_c("td", {
     staticClass: "mx-0"
@@ -12489,27 +12462,27 @@ var render = function render() {
     staticClass: "table table-bordered"
   }, [_c("thead", [_c("tr", {
     staticClass: "text-nowrap"
-  }, [_c("th", [_vm._v("ردیف")]), _vm._v(" "), _c("th", {
+  }, [_c("th", [_vm._v("Row")]), _vm._v(" "), _c("th", {
     attrs: {
       width: "18%"
     }
-  }, [_vm._v("شرح کالا")]), _vm._v(" "), _c("th", [_vm._v("مشخصات فنی")]), _vm._v(" "), _c("th", {
+  }, [_vm._v("Product description")]), _vm._v(" "), _c("th", [_vm._v("Technical specifications")]), _vm._v(" "), _c("th", {
     attrs: {
       width: "2%"
     }
-  }, [_vm._v("مقدار درخواستی")]), _vm._v(" "), _c("th", {
+  }, [_vm._v("Amount required")]), _vm._v(" "), _c("th", {
     attrs: {
       width: "14%"
     }
-  }, [_vm._v("مرکز هزینه")]), _vm._v(" "), _c("th", {
+  }, [_vm._v("Cost center")]), _vm._v(" "), _c("th", {
     attrs: {
       width: "20px"
     }
-  }, [_vm._v("وضعیت داغی")]), _vm._v(" "), _c("th", {
+  }, [_vm._v("Obsolete condition")]), _vm._v(" "), _c("th", {
     attrs: {
       width: "2%"
     }
-  }, [_vm._v("تعداد داغی")]), _vm._v(" "), _c("th", [_vm._v("بارگذاری فایل")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")]), _vm._v(" "), _c("th", [_c("i", {
+  }, [_vm._v("Count Obsolete ")]), _vm._v(" "), _c("th", [_vm._v("Load file")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")]), _vm._v(" "), _c("th", [_c("i", {
     staticClass: "fa fa-plus add",
     attrs: {
       id: "addrow"
@@ -12537,7 +12510,7 @@ var render = function render() {
         options: _vm.products_array,
         "custom-label": _vm.nameWithLang,
         showLabels: false,
-        placeholder: "نام کالا"
+        placeholder: "Products name"
       },
       on: {
         input: function input($event) {
@@ -12570,7 +12543,7 @@ var render = function render() {
           return _vm.getApiAttribute(myform.product_id);
         }
       }
-    }, [_vm._v("\n                                    به زودی در شناسنامه کالا\n                                ")]), _vm._v(" "), _c("div", {
+    }, [_vm._v("\n                                    Soon in the ID of the goods\n                                ")]), _vm._v(" "), _c("div", {
       staticClass: "modal",
       attrs: {
         tabindex: "-1",
@@ -12620,10 +12593,10 @@ var render = function render() {
         id: "count" + index,
         type: "number",
         name: "counter",
-        placeholder: "تعداد",
+        placeholder: "Count",
         "data-toggle": "tooltip",
         "data-placement": "top",
-        title: "تعدادمجاز: " + myform.amount_rayvarz,
+        title: "Allowed Count: " + myform.amount_rayvarz,
         required: ""
       },
       domProps: {
@@ -12647,7 +12620,7 @@ var render = function render() {
         options: _vm.center,
         "custom-label": _vm.nameWithcode,
         showLabels: false,
-        placeholder: "مرکز هزینه"
+        placeholder: "Cost center"
       },
       model: {
         value: myform.center_id,
@@ -12682,7 +12655,7 @@ var render = function render() {
           return _vm.$set(myform, "worn", false);
         }
       }
-    }), _vm._v(" "), _c("b"), _vm._v(" "), _c("small", [_vm._v("ندارد")])])]), _vm._v(" "), _c("div", {
+    }), _vm._v(" "), _c("b"), _vm._v(" "), _c("small", [_vm._v("have not")])])]), _vm._v(" "), _c("div", {
       staticClass: "checkbox-custom"
     }, [_c("label", {
       staticClass: "d-flex justify-content-start align-items-center"
@@ -12706,7 +12679,7 @@ var render = function render() {
           return _vm.$set(myform, "worn", true);
         }
       }
-    }), _vm._v(" "), _c("b"), _vm._v(" "), _c("small", [_vm._v("دارد")])])])]), _vm._v(" "), _c("td", {
+    }), _vm._v(" "), _c("b"), _vm._v(" "), _c("small", [_vm._v("have")])])])]), _vm._v(" "), _c("td", {
       staticClass: "px-0 py-0"
     }, [myform.worn ? _c("input", {
       directives: [{
@@ -12719,7 +12692,7 @@ var render = function render() {
       attrs: {
         type: "number",
         name: "counter2",
-        placeholder: "تعداد"
+        placeholder: "Count"
       },
       domProps: {
         value: myform.worn_amount
@@ -12742,7 +12715,7 @@ var render = function render() {
       attrs: {
         type: "number",
         name: "counter2",
-        placeholder: "تعداد",
+        placeholder: "Count",
         readonly: ""
       }
     }) : _vm._e()]), _vm._v(" "), _c("td", {
@@ -12764,7 +12737,7 @@ var render = function render() {
           _vm.my_index = index;
         }
       }
-    }, [_vm._v("فایل پیوست\n                                    ")])])]), _vm._v(" "), _c("td", [_c("textarea", {
+    }, [_vm._v("Attached file\n                                    ")])])]), _vm._v(" "), _c("td", [_c("textarea", {
       directives: [{
         name: "model",
         rawName: "v-model",
@@ -12826,7 +12799,7 @@ var render = function render() {
     staticStyle: {
       "font-size": "13px"
     }
-  }, [_vm._v("\n                                                        تاریخ :\n                                                    ")]), _vm._v(" "), _c("span", {
+  }, [_vm._v("\n                                                        Date :\n                                                    ")]), _vm._v(" "), _c("span", {
     staticStyle: {
       "font-size": "14px"
     }
@@ -12885,7 +12858,7 @@ var render = function render() {
       key: index
     }, [_c("tr", [_c("th", {
       staticClass: "wid-30"
-    }, [_vm._v("نام کالا")]), _vm._v(" "), _c("td", {
+    }, [_vm._v("Products name")]), _vm._v(" "), _c("td", {
       staticClass: "wid-70"
     }, [_c("div", {
       staticClass: "d-flex justify-content-center"
@@ -12895,7 +12868,7 @@ var render = function render() {
         options: _vm.products_array,
         "custom-label": _vm.nameWithLang,
         showLabels: false,
-        placeholder: "نام کالا"
+        placeholder: "Products name"
       },
       on: {
         input: function input($event) {
@@ -12913,7 +12886,7 @@ var render = function render() {
       "class": "circle" + index
     }, [_c("div", {
       "class": "check" + index
-    })])], 1)])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("مشخصات فنی")]), _vm._v(" "), _c("td", [_c("button", {
+    })])], 1)])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Technical specifications")]), _vm._v(" "), _c("td", [_c("button", {
       staticClass: "btn btn-primary btn_config",
       attrs: {
         type: "button",
@@ -12926,7 +12899,7 @@ var render = function render() {
           return _vm.getApiAttribute(myform.product_id);
         }
       }
-    }, [_vm._v("\n                                        به زودی در شناسنامه کالا\n                                    ")])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("مقدار درخواستی")]), _vm._v(" "), _c("td", [_c("input", {
+    }, [_vm._v("\n                                        Soon in the ID of the goods\n                                    ")])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Amount required")]), _vm._v(" "), _c("td", [_c("input", {
       directives: [{
         name: "model",
         rawName: "v-model",
@@ -12938,10 +12911,10 @@ var render = function render() {
         id: "count" + index,
         type: "number",
         name: "counter",
-        placeholder: "تعداد",
+        placeholder: "Count",
         "data-toggle": "tooltip",
         "data-placement": "top",
-        title: "تعدادمجاز: " + myform.amount_rayvarz,
+        title: "Allowed Count: " + myform.amount_rayvarz,
         required: ""
       },
       domProps: {
@@ -12957,13 +12930,13 @@ var render = function render() {
           _vm.$set(myform, "amount", $event.target.value);
         }
       }
-    })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("مرکز هزینه")]), _vm._v(" "), _c("td", [_vm.center ? _c("multiselect", {
+    })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Cost center")]), _vm._v(" "), _c("td", [_vm.center ? _c("multiselect", {
       attrs: {
         id: "center" + index,
         options: _vm.center,
         "custom-label": _vm.nameWithcode,
         showLabels: false,
-        placeholder: "مرکز هزینه"
+        placeholder: "Cost center"
       },
       model: {
         value: myform.center_id,
@@ -12972,7 +12945,7 @@ var render = function render() {
         },
         expression: "myform.center_id"
       }
-    }) : _vm._e()], 1)]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("وضعیت داغی")]), _vm._v(" "), _c("td", {
+    }) : _vm._e()], 1)]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Obsolete condition")]), _vm._v(" "), _c("td", {
       staticClass: "text-right"
     }, [_c("div", {
       staticClass: "inline"
@@ -13000,7 +12973,7 @@ var render = function render() {
       attrs: {
         "for": "noitem"
       }
-    }, [_vm._v("ندارد")])]), _vm._v(" "), _c("div", {
+    }, [_vm._v("have not")])]), _vm._v(" "), _c("div", {
       staticClass: "inline"
     }, [_c("input", {
       directives: [{
@@ -13026,7 +12999,7 @@ var render = function render() {
       attrs: {
         "for": "okitem"
       }
-    }, [_vm._v("دارد")])])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("تعداد داغی")]), _vm._v(" "), _c("td", [myform.worn ? _c("input", {
+    }, [_vm._v("have")])])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Obsolete Count ")]), _vm._v(" "), _c("td", [myform.worn ? _c("input", {
       directives: [{
         name: "model",
         rawName: "v-model",
@@ -13037,7 +13010,7 @@ var render = function render() {
       attrs: {
         type: "number",
         name: "counter2",
-        placeholder: "تعداد"
+        placeholder: "Count"
       },
       domProps: {
         value: myform.worn_amount
@@ -13060,10 +13033,10 @@ var render = function render() {
       attrs: {
         type: "number",
         name: "counter2",
-        placeholder: "تعداد",
+        placeholder: "Count",
         readonly: ""
       }
-    }) : _vm._e()])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("بارگذاری فایل")]), _vm._v(" "), _c("td", [_c("button", {
+    }) : _vm._e()])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Load file")]), _vm._v(" "), _c("td", [_c("button", {
       staticClass: "btn btn-primary",
       attrs: {
         type: "button",
@@ -13075,7 +13048,7 @@ var render = function render() {
           _vm.my_index = index;
         }
       }
-    }, [_vm._v("فایل پیوست\n                                    ")])])]), _vm._v(" "), _c("tr", [_c("td", [_vm._v("\n                                    توضیحات\n                                ")]), _vm._v(" "), _c("td", [_c("textarea", {
+    }, [_vm._v("Attached file\n                                    ")])])]), _vm._v(" "), _c("tr", [_c("td", [_vm._v("\n                                    Descriptions\n                                ")]), _vm._v(" "), _c("td", [_c("textarea", {
       directives: [{
         name: "model",
         rawName: "v-model",
@@ -13117,7 +13090,7 @@ var render = function render() {
     on: {
       click: _vm.checkValidation
     }
-  }, [_vm._v("ارسال")])])]) : _vm._e()])]);
+  }, [_vm._v("Send")])])]) : _vm._e()])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -13129,11 +13102,11 @@ var staticRenderFns = [function () {
     attrs: {
       id: "exampleModalLabel"
     }
-  }, [_vm._v("لیست فایل ها")])]);
+  }, [_vm._v("Files list")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        ردیف\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        نام فایل\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        توضیحات\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        پیش نمایش\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        حذف\n                                    ")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        Row\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                       File name\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Descriptions\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                       Preshow\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Delete\n                                    ")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -13145,7 +13118,7 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])]);
+  }, [_vm._v("Close")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -13156,7 +13129,7 @@ var staticRenderFns = [function () {
     attrs: {
       id: "exampleModalLabel2"
     }
-  }, [_vm._v("افزودن فایل")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Add file")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -13181,9 +13154,9 @@ var staticRenderFns = [function () {
     }
   }), _vm._v(" "), _c("p", {
     staticClass: "img_title"
-  }, [_vm._v("گروه کارخانجات شیشه اردکان")]), _vm._v(" "), _c("p", {
+  }, [_vm._v("Warehouse Software")]), _vm._v(" "), _c("p", {
     staticClass: "img_title2"
-  }, [_vm._v("ARDAKAN FLOAT GLASS CO")])]);
+  }, [_vm._v("Warehouse Software")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -13193,7 +13166,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("p", {
     staticClass: "tablesubject mx-auto"
-  }, [_vm._v("درخواست کالا از انبار")])]);
+  }, [_vm._v("Request product from warehouse")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -13201,7 +13174,7 @@ var staticRenderFns = [function () {
     staticClass: "col-3 d-flex justify-content-center"
   }, [_c("h6", {
     staticClass: "my-auto"
-  }, [_vm._v("\n                                        نام انبار:\n                                    ")])]);
+  }, [_vm._v("\n                                        Warehouse name:\n                                    ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -13209,7 +13182,7 @@ var staticRenderFns = [function () {
     staticClass: "col-3 d-flex justify-content-center"
   }, [_c("h6", {
     staticClass: "my-auto"
-  }, [_vm._v("\n                                        توضیحات:\n                                    ")])]);
+  }, [_vm._v("\n                                        Descriptions:\n                                    ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -13217,7 +13190,7 @@ var staticRenderFns = [function () {
     staticClass: "modal-header"
   }, [_c("h5", {
     staticClass: "modal-title"
-  }, [_vm._v("مشخصات فنی")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Technical specifications")]), _vm._v(" "), _c("button", {
     staticClass: "btn-close",
     attrs: {
       type: "button",
@@ -13236,12 +13209,12 @@ var staticRenderFns = [function () {
       type: "button",
       "data-bs-dismiss": "modal"
     }
-  }, [_vm._v("\n                                                    لغو\n                                                ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n                                                    Cancel\n                                                ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary",
     attrs: {
       type: "button"
     }
-  }, [_vm._v("تائید")])]);
+  }, [_vm._v("approved")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -13249,7 +13222,7 @@ var staticRenderFns = [function () {
     attrs: {
       colspan: "3"
     }
-  }, [_vm._v("درخواست کالا از انبار")])]);
+  }, [_vm._v("Request product from warehouse")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -13257,7 +13230,7 @@ var staticRenderFns = [function () {
     staticClass: "col-3 d-flex justify-content-center"
   }, [_c("h6", {
     staticClass: "my-auto"
-  }, [_vm._v("\n                                            انبار:\n                                        ")])]);
+  }, [_vm._v("\n                                            Warehouse:\n                                        ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -13265,7 +13238,7 @@ var staticRenderFns = [function () {
     staticClass: "col-3 d-flex justify-content-center"
   }, [_c("h6", {
     staticClass: "my-auto"
-  }, [_vm._v("\n                                            توضیحات:\n                                        ")])]);
+  }, [_vm._v("\n                                            Descriptions:\n                                        ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -13273,7 +13246,7 @@ var staticRenderFns = [function () {
     staticClass: "col-6 d-flex justify-content-center"
   }, [_c("h6", {
     staticClass: "my-auto"
-  }, [_vm._v("\n                                            افزودن سطر جدید:\n                                        ")])]);
+  }, [_vm._v("\n                                            Add new row:\n                                        ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -13332,21 +13305,21 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("درخواست کالا")])]), _vm._v(" "), _c("router-link", {
+  }), _vm._v(" "), _c("span", [_vm._v("Request goods")])]), _vm._v(" "), _c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     attrs: {
       to: "/status"
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("درخواست های انتظار تائید")])]), _vm._v(" "), _c("router-link", {
+  }), _vm._v(" "), _c("span", [_vm._v("Awaiting confirmation requests")])]), _vm._v(" "), _c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     attrs: {
       to: "/myrequest"
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("درخواست های من")])])], 1)]), _vm._v(" "), _c("li", {
+  }), _vm._v(" "), _c("span", [_vm._v("My requests")])])], 1)]), _vm._v(" "), _c("li", {
     staticClass: "my-0"
   }, [_vm._m(2), _vm._v(" "), _c("div", {
     staticClass: "collapse mt-2",
@@ -13360,21 +13333,21 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("مشاهده درخواست خرید")])]), _vm._v(" "), _c("router-link", {
+  }), _vm._v(" "), _c("span", [_vm._v("View purchase request")])]), _vm._v(" "), _c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     attrs: {
       to: "/status"
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("آرشیو درخواست ها")])])], 1)]), _vm._v(" "), _c("li", {
+  }), _vm._v(" "), _c("span", [_vm._v("Archive of requests")])])], 1)]), _vm._v(" "), _c("li", {
     staticClass: "my-0 py-2"
   }, [_c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     attrs: {
       to: "/store"
     }
-  }, [_c("span", [_vm._v("کارتابل انبار")])])], 1), _vm._v(" "), _c("li", {
+  }, [_c("span", [_vm._v("Cartable warehouse")])])], 1), _vm._v(" "), _c("li", {
     staticClass: "my-0"
   }, [_vm._m(3), _vm._v(" "), _c("div", {
     staticClass: "collapse mt-2",
@@ -13388,28 +13361,28 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("معرفی پیک")])]), _vm._v(" "), _c("router-link", {
+  }), _vm._v(" "), _c("span", [_vm._v("Introducing the courier")])]), _vm._v(" "), _c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     attrs: {
       to: "/vehicle"
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("معرفی وسیله")])]), _vm._v(" "), _c("router-link", {
+  }), _vm._v(" "), _c("span", [_vm._v("Introducing the vehicle")])]), _vm._v(" "), _c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     attrs: {
       to: "/receive_request_peyk"
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("درخواست های در انتظار تحویل")])]), _vm._v(" "), _c("router-link", {
+  }), _vm._v(" "), _c("span", [_vm._v("Requests pending delivery")])]), _vm._v(" "), _c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     attrs: {
       to: "/Archive"
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("آرشیو")])])], 1)]), _vm._v(" "), _c("li", {
+  }), _vm._v(" "), _c("span", [_vm._v("Archive")])])], 1)]), _vm._v(" "), _c("li", {
     staticClass: "my-0"
   }, [_vm._m(4), _vm._v(" "), _c("div", {
     staticClass: "collapse mt-2",
@@ -13423,42 +13396,42 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("تائیدیه های جدید")])]), _vm._v(" "), _c("router-link", {
+  }), _vm._v(" "), _c("span", [_vm._v("New confirmations")])]), _vm._v(" "), _c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     attrs: {
       to: "/confirm_user"
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("اختصاص تائیدیه به کاربران")])]), _vm._v(" "), _c("router-link", {
+  }), _vm._v(" "), _c("span", [_vm._v("Assign confirmation to users")])]), _vm._v(" "), _c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     attrs: {
       to: "/dgdgrgr"
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("تائیدیه محصولات")])]), _vm._v(" "), _c("router-link", {
+  }), _vm._v(" "), _c("span", [_vm._v("Products confirmation")])]), _vm._v(" "), _c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     attrs: {
       to: "/sdf"
     }
   }, [_c("i", {
     staticClass: "fa fa-circle"
-  }), _vm._v(" "), _c("span", [_vm._v("تائیدیه دسته بندی ها")])])], 1)]), _vm._v(" "), _c("li", {
+  }), _vm._v(" "), _c("span", [_vm._v("Confirmation of categoryies")])])], 1)]), _vm._v(" "), _c("li", {
     staticClass: "my-0 py-2"
   }, [_c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     attrs: {
       to: "/user"
     }
-  }, [_c("span", [_vm._v("مدیریت کاربران")])])], 1), _vm._v(" "), _c("li", {
+  }, [_c("span", [_vm._v("User management")])])], 1), _vm._v(" "), _c("li", {
     staticClass: "my-0 py-2"
   }, [_c("router-link", {
     staticClass: "mb-1 pr-2 py-1 d-block",
     attrs: {
       to: "/permission"
     }
-  }, [_c("span", [_vm._v("دسترسی ها")])])], 1), _vm._v(" "), _c("a", {
+  }, [_c("span", [_vm._v("Permissions")])])], 1), _vm._v(" "), _c("a", {
     staticClass: "fas fa-door-open",
     attrs: {
       id: "exit",
@@ -13467,7 +13440,7 @@ var render = function render() {
     on: {
       click: _vm.logout
     }
-  }, [_c("span", [_vm._v("خروج")])])])])]);
+  }, [_c("span", [_vm._v("Exit")])])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -13492,7 +13465,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("div", [_c("i", {
     staticClass: "fas fa-edit pl-2"
-  }), _vm._v(" "), _c("span", [_vm._v("عملیات درخواست ها")]), _vm._v(" "), _c("i", {
+  }), _vm._v(" "), _c("span", [_vm._v("Requests actions")]), _vm._v(" "), _c("i", {
     staticClass: "fa fa-angle-left float-left mt-1 pr-4"
   })])]);
 }, function () {
@@ -13506,7 +13479,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("div", [_c("i", {
     staticClass: "fas fa-chart-bar pl-2"
-  }), _vm._v(" "), _c("span", [_vm._v("عملیات بازرگانی")]), _vm._v(" "), _c("i", {
+  }), _vm._v(" "), _c("span", [_vm._v("Business operations")]), _vm._v(" "), _c("i", {
     staticClass: "fa fa-angle-left float-left mt-1 pr-4"
   })])]);
 }, function () {
@@ -13520,7 +13493,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("div", [_c("i", {
     staticClass: "fas fa-chart-bar pl-2"
-  }), _vm._v(" "), _c("span", [_vm._v("عملیات پیک")]), _vm._v(" "), _c("i", {
+  }), _vm._v(" "), _c("span", [_vm._v("Courier actions")]), _vm._v(" "), _c("i", {
     staticClass: "fa fa-angle-left float-left mt-1 pr-4"
   })])]);
 }, function () {
@@ -13534,7 +13507,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("div", [_c("i", {
     staticClass: "fas fa-chart-bar pl-2"
-  }), _vm._v(" "), _c("span", [_vm._v("تائیدیه ها")]), _vm._v(" "), _c("i", {
+  }), _vm._v(" "), _c("span", [_vm._v("Confirmations")]), _vm._v(" "), _c("i", {
     staticClass: "fa fa-angle-left float-left mt-1 pr-4"
   })])]);
 }];
@@ -13570,7 +13543,7 @@ var render = function render() {
       expression: "searchQuery"
     }],
     attrs: {
-      label: "در انتظار تائید",
+      label: "Awaiting confirmation",
       type: "radio",
       name: "filter",
       value: "null",
@@ -13592,7 +13565,7 @@ var render = function render() {
       expression: "searchQuery"
     }],
     attrs: {
-      label: "آرشیو",
+      label: "Archive",
       type: "radio",
       id: "send",
       name: "filter",
@@ -13608,7 +13581,7 @@ var render = function render() {
     }
   })]), _vm._v(" "), _c("h4", {
     staticClass: "mb-4 my-font-size"
-  }, [_vm._v("وضعیت درخواست")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Request Status")]), _vm._v(" "), _c("div", {
     staticClass: "text-center scroll"
   }, [_c("table", {
     staticClass: "table table-bordered style_table",
@@ -13624,33 +13597,33 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v(_vm._s(request.unit.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "شماره درخواست"
+        label: "Request number"
       }
     }, [_c("label", [_vm._v(_vm._s(request.request_number))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تاریخ"
+        label: "Date"
       }
     }, [_vm._v(_vm._s(_vm.convertDate(request.created_at)))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت درخواست"
+        label: "Request Status"
       }
     }, [request.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار تائید")]) : _vm._e(), _vm._v(" "), request.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), request.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), request.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), request.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -13659,7 +13632,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(request.description))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مشاهده جزئیات"
+        label: "Show details"
       }
     }, [_c("button", {
       staticClass: "btn btn-primary",
@@ -13673,7 +13646,7 @@ var render = function render() {
           return _vm.request_info2(request.id);
         }
       }
-    }, [_vm._v(" نمایش جزئیات\n                        ")])])]) : _vm._e();
+    }, [_vm._v(" Show details\n                    ")])])]) : _vm._e();
   }), 0)])]), _vm._v(" "), _c("div", {
     staticClass: "modal",
     attrs: {
@@ -13696,10 +13669,10 @@ var render = function render() {
     }
   }, [_c("thead", {
     staticClass: "text-center"
-  }, [_vm._m(2), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ردیف")]), _vm._v(" "), _c("th", [_vm._v("نام کالا")]), _vm._v(" "), _c("th", [_vm._v("تعداد")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("مرکز هزینه")]), _vm._v(" "), _c("th", [_vm._v("انبار")]), _vm._v(" "), _c("th", [_vm._v("وضعیت درخواست")]), _vm._v(" "), _c("th", [_vm._v("نمایش تائیدیه ها")]), _vm._v(" "), _vm._l(_vm.user_confirm, function (confirm, index) {
+  }, [_vm._m(2), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Row")]), _vm._v(" "), _c("th", [_vm._v("Products name")]), _vm._v(" "), _c("th", [_vm._v("Count")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Cost center")]), _vm._v(" "), _c("th", [_vm._v("Warehouse")]), _vm._v(" "), _c("th", [_vm._v("Request Status")]), _vm._v(" "), _c("th", [_vm._v("Show confirmations")]), _vm._v(" "), _vm._l(_vm.user_confirm, function (confirm, index) {
     return [_c("th", {
       staticClass: "text-nowrap"
-    }, [_vm._v("\n                                        " + _vm._s(confirm.confirm.name) + "\n                                        "), _c("br"), _vm._v(" "), _c("label", {
+    }, [_vm._v("\n                                    " + _vm._s(confirm.confirm.name) + "\n                                    "), _c("br"), _vm._v(" "), _c("label", {
       staticClass: "contract_toggle"
     }, [_c("input", {
       directives: [{
@@ -13738,48 +13711,48 @@ var render = function render() {
     }), _vm._v(" "), _vm._m(3, true)])])];
   }), _vm._v(" "), _c("th", {
     attrs: {
-      "data-label": "ارجاع"
+      "data-label": "referral"
     }
-  }, [_vm._v("\n                                    ارجاع\n                                ")])], 2)]), _vm._v(" "), _c("tbody", [_vm.request_all != "" ? _vm._l(_vm.request_all[_vm.request_id].request_detail, function (details, index) {
+  }, [_vm._v("\n                                referral\n                            ")])], 2)]), _vm._v(" "), _c("tbody", [_vm.request_all != "" ? _vm._l(_vm.request_all[_vm.request_id].request_detail, function (details, index) {
     return _vm.request_all[_vm.request_id].request_detail != "" ? _c("tr", {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام کالا"
+        label: "Products name"
       }
     }, [_vm._v(_vm._s(details.product.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تعداد"
+        label: "Count"
       }
     }, [_vm._v(_vm._s(details.amount))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v(_vm._s(_vm.request_all[_vm.request_id].unit.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مرکز هزینه"
+        label: "Cost center"
       }
     }, [details.center ? _c("label", [_vm._v(_vm._s(details.center.name))]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "انبار"
+        label: "Warehouse"
       }
     }, [_vm._v(_vm._s(details.warehouse.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت درخواست"
+        label: "Request Status"
       }
     }, [details.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار\n                                        تائید")]) : _vm._e(), _vm._v(" "), details.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), details.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), details.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), details.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نمایش تائیدیه ها"
+        label: "Show confirmations"
       }
     }, [_c("i", {
       staticClass: "fa fa-info-circle fa-2x",
@@ -13826,7 +13799,7 @@ var render = function render() {
             _vm.$set(_vm.confirm_temp[_vm.findModel(details, confirm.confirm.id)], "confirmed", 0);
           }
         }
-      }), _vm._v(" "), _c("b"), _vm._v(" "), _c("small", [_vm._v("عدم تائید")])]) : _vm._e()]) : _vm._e(), _vm._v(" "), _vm.findInRequestDetails(details, confirm.confirm.id) ? _c("div", {
+      }), _vm._v(" "), _c("b"), _vm._v(" "), _c("small", [_vm._v("Not approved")])]) : _vm._e()]) : _vm._e(), _vm._v(" "), _vm.findInRequestDetails(details, confirm.confirm.id) ? _c("div", {
         staticClass: "checkbox-custom"
       }, [_vm.confirm_temp != "" ? _c("label", {
         staticClass: "d-flex justify-content-start align-items-center"
@@ -13851,10 +13824,10 @@ var render = function render() {
             _vm.$set(_vm.confirm_temp[_vm.findModel(details, confirm.confirm.id)], "confirmed", 1);
           }
         }
-      }), _vm._v(" "), _c("b"), _vm._v(" "), _c("small", [_vm._v("تائید")])]) : _vm._e()]) : _vm._e()])])];
+      }), _vm._v(" "), _c("b"), _vm._v(" "), _c("small", [_vm._v("approved")])]) : _vm._e()]) : _vm._e()])])];
     }), _vm._v(" "), _c("td", {
       attrs: {
-        label: "ارجاع"
+        label: "referral"
       }
     }, [_c("button", {
       staticClass: "btn btn-primary",
@@ -13879,7 +13852,7 @@ var render = function render() {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("\n                            بستن\n                        ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n                        Close\n                    ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-success",
     attrs: {
       type: "button"
@@ -13887,7 +13860,7 @@ var render = function render() {
     on: {
       click: _vm.saveConfirme
     }
-  }, [_vm._v("\n                            ثبت تائید\n                        ")])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                        Submit confirmation\n                    ")])])])])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
       id: "show_confirm",
@@ -13912,33 +13885,33 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
-    }, [_vm._v("\n                                            " + _vm._s(index + 1) + "\n                                        ")]), _vm._v(" "), confirm.user != null ? _c("td", {
+    }, [_vm._v("\n                                        " + _vm._s(index + 1) + "\n                                    ")]), _vm._v(" "), confirm.user != null ? _c("td", {
       attrs: {
-        label: "نام تائید کننده"
+        label: "Name of the approver"
       }
-    }, [_vm._v("\n                                            " + _vm._s(confirm.user.first_name) + " " + _vm._s(confirm.user.last_name) + "\n                                        ")]) : _vm._e(), _vm._v(" "), confirm.user == null ? _c("td", {
+    }, [_vm._v("\n                                        " + _vm._s(confirm.user.first_name) + " " + _vm._s(confirm.user.last_name) + "\n                                    ")]) : _vm._e(), _vm._v(" "), confirm.user == null ? _c("td", {
       attrs: {
-        label: "نام تائید کننده"
+        label: "Name of the approver"
       }
-    }, [_vm._v("\n                                            نا معلوم\n                                        ")]) : _vm._e(), _vm._v(" "), confirm.confirm.name != null ? _c("td", {
+    }, [_vm._v("\n                                        Unknown\n                                    ")]) : _vm._e(), _vm._v(" "), confirm.confirm.name != null ? _c("td", {
       attrs: {
-        label: "نام تائیدیه"
+        label: "Confirmation name"
       }
-    }, [_vm._v("\n                                            " + _vm._s(confirm.confirm.name) + "\n                                        ")]) : _vm._e(), _vm._v(" "), _c("td", {
+    }, [_vm._v("\n                                        " + _vm._s(confirm.confirm.name) + "\n                                    ")]) : _vm._e(), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت تائید"
+        label: "Confirmation status"
       }
     }, [confirm.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار\n                                                تائید")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("Approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -13949,9 +13922,9 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(confirm.description))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تاریخ"
+        label: "Date"
       }
-    }, [_vm._v("\n                                            " + _vm._s(confirm.updated_at) + "\n                                        ")])]);
+    }, [_vm._v("\n                                        " + _vm._s(confirm.updated_at) + "\n                                    ")])]);
   }) : _vm._e()], 2)])])]), _vm._v(" "), _vm._m(6)])])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
@@ -13963,10 +13936,10 @@ var render = function render() {
     staticClass: "modal-content"
   }, [_vm._m(7), _vm._v(" "), _c("div", {
     staticClass: "modal-body form-group text-right"
-  }, [_c("label", [_vm._v("انتخاب نوع تائیدیه")]), _vm._v(" "), _c("multiselect", {
+  }, [_c("label", [_vm._v("Choose the type of confirmation")]), _vm._v(" "), _c("multiselect", {
     attrs: {
       "track-by": "name",
-      placeholder: "انتخاب",
+      placeholder: "Select",
       options: _vm.option_reference,
       searchable: true,
       "custom-label": _vm.nameWithLang,
@@ -13990,7 +13963,7 @@ var render = function render() {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("\n                            لغو\n                        ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n                        Cancel\n                    ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary",
     attrs: {
       type: "button"
@@ -13998,12 +13971,12 @@ var render = function render() {
     on: {
       click: _vm.sendReference
     }
-  }, [_vm._v("ارسال")])])])])])]);
+  }, [_vm._v("Send")])])])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("ردیف")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("شماره درخواست")]), _vm._v(" "), _c("th", [_vm._v("تاریخ")]), _vm._v(" "), _c("th", [_vm._v("وضعیت درخواست")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")]), _vm._v(" "), _c("th", [_vm._v("مشاهده جزئیات")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("Row")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Request number")]), _vm._v(" "), _c("th", [_vm._v("Date")]), _vm._v(" "), _c("th", [_vm._v("Request Status")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")]), _vm._v(" "), _c("th", [_vm._v("Show details")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -14011,7 +13984,7 @@ var staticRenderFns = [function () {
     staticClass: "modal-header"
   }, [_c("h5", {
     staticClass: "modal-title"
-  }, [_vm._v("نمایش جزئیات")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Show details")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -14030,7 +14003,7 @@ var staticRenderFns = [function () {
     attrs: {
       colspan: "100"
     }
-  }, [_c("h4", [_vm._v("نمایش جزئیات")])])]);
+  }, [_c("h4", [_vm._v("Show details")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -14049,7 +14022,7 @@ var staticRenderFns = [function () {
     attrs: {
       id: "exampleModalLongTitle"
     }
-  }, [_vm._v("نمایش تائیدیه ها")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Show confirmations")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -14064,7 +14037,7 @@ var staticRenderFns = [function () {
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        ردیف\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        نام تائید کننده\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        نام تائیدیه\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        وضعیت تائید\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        توضیحات\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        تاریخ\n                                    ")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                    Row\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Name of the approver\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Confirmation name\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Confirmation status\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Descriptions\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Date\n                                ")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -14076,7 +14049,7 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])]);
+  }, [_vm._v("Close")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -14084,7 +14057,7 @@ var staticRenderFns = [function () {
     staticClass: "modal-header"
   }, [_c("h5", {
     staticClass: "modal-title"
-  }, [_vm._v("ارجاع درخواست")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Referring the request")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -14144,7 +14117,7 @@ var render = function render() {
     staticClass: "col-4 text-center"
   }, [_c("h5", {
     staticClass: "inline"
-  }, [_vm._v("تاریخ:")]), _vm._v(" "), _vm.request_all != "" ? _c("h5", {
+  }, [_vm._v("Date:")]), _vm._v(" "), _vm.request_all != "" ? _c("h5", {
     staticClass: "inline"
   }, [_vm._v("\n                                        " + _vm._s(_vm.convertDate(_vm.request_all[_vm.request_id].created_at)))]) : _vm._e(), _vm._v(" "), _vm.request_all != "" ? _c("h5", {
     staticClass: "d-block"
@@ -14166,31 +14139,31 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v("\n                                                " + _vm._s(index + 1) + "\n                                            ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام کالا"
+        label: "Products name"
       }
     }, [_vm._v("\n                                                " + _vm._s(print.product.name) + "\n                                            ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تعداد"
+        label: "Count"
       }
     }, [_vm._v("\n                                                " + _vm._s(print.amount) + "\n                                            ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v("\n                                                " + _vm._s(_vm.request_all[_vm.request_id].unit.name) + "\n                                            ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مرکز هزینه"
+        label: "Cost center"
       }
     }, [print.center ? _c("label", [_vm._v(" " + _vm._s(print.center.name))]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت تائید"
+        label: "Confirmation status"
       }
-    }, [print.confirmed == null ? _c("i", [_vm._v("در انتظار تائید")]) : _vm._e(), _vm._v(" "), print.confirmed == 0 ? _c("i", [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), print.confirmed == 1 ? _c("i", [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [print.confirmed == null ? _c("i", [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), print.confirmed == 0 ? _c("i", [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), print.confirmed == 1 ? _c("i", [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_vm._v("\n                                                " + _vm._s(print.descriptions) + "\n                                            ")])]);
   }) : _vm._e()], 2)])]), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4)]), _vm._v(" "), _c("div", {
@@ -14207,13 +14180,13 @@ var render = function render() {
       type: "button",
       id: "btnPrint"
     }
-  }, [_vm._v("چاپ\n                            ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Print\n                            ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-secondary",
     attrs: {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Close")])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "modal",
     attrs: {
       tabindex: "-1",
@@ -14235,41 +14208,41 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام کالا"
+        label: "Products name"
       }
     }, [_vm._v(_vm._s(details.product.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تعداد"
+        label: "Count"
       }
     }, [_vm._v(_vm._s(details.amount))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v(_vm._s(_vm.request_all[_vm.request_id].unit.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مرکز هزینه"
+        label: "Cost center"
       }
     }, [details.center ? _c("label", [_vm._v("\n                                            " + _vm._s(details.center.name) + "\n                                        ")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "انبار"
+        label: "Warehouse"
       }
     }, [_vm._v(_vm._s(details.warehouse.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت درخواست"
+        label: "Request Status"
       }
     }, [details.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار\n                                        تائید")]) : _vm._e(), _vm._v(" "), details.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), details.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), details.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), details.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نمایش تائیدیه ها"
+        label: "Show confirmations"
       }
     }, [_c("i", {
       staticClass: "fa fa-info-circle fa-2x",
@@ -14284,7 +14257,7 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -14295,7 +14268,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(details.descriptions))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "فایل"
+        label: "File"
       }
     }, [_c("button", {
       staticClass: "btn btn-sm btn-primary",
@@ -14310,7 +14283,7 @@ var render = function render() {
           return _vm.showFile(details);
         }
       }
-    }, [_vm._v("نمایش\n                                        ")])])]) : _vm._e();
+    }, [_vm._v("show\n                                        ")])])]) : _vm._e();
   }) : _vm._e()], 2)])]), _vm._v(" "), _vm._m(7)])])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
@@ -14336,33 +14309,33 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v("\n                                            " + _vm._s(index + 1) + "\n                                        ")]), _vm._v(" "), confirm.user != null ? _c("td", {
       attrs: {
-        label: "نام تائید کننده"
+        label: "Name of the approver"
       }
     }, [_vm._v("\n                                            " + _vm._s(confirm.user.first_name) + " " + _vm._s(confirm.user.last_name) + "\n                                        ")]) : _vm._e(), _vm._v(" "), confirm.user == null ? _c("td", {
       attrs: {
-        label: "نام تائید کننده"
+        label: "Name of the approver"
       }
-    }, [_vm._v("\n                                            نا معلوم\n                                        ")]) : _vm._e(), _vm._v(" "), confirm.confirm.name != null ? _c("td", {
+    }, [_vm._v("\n                                            Unknown\n                                        ")]) : _vm._e(), _vm._v(" "), confirm.confirm.name != null ? _c("td", {
       attrs: {
-        label: "نام تائیدیه"
+        label: "Confirmation name"
       }
     }, [_vm._v("\n                                            " + _vm._s(confirm.confirm.name) + "\n                                        ")]) : _vm._e(), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت تائید"
+        label: "Confirmation status"
       }
     }, [confirm.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار\n                                                تائید")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -14373,7 +14346,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(confirm.description))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تاریخ"
+        label: "Date"
       }
     }, [_vm._v("\n                                            " + _vm._s(confirm.updated_at) + "\n                                        ")])]);
   }) : _vm._e()], 2)])])]), _vm._v(" "), _vm._m(10)])])]), _vm._v(" "), _c("div", {
@@ -14404,19 +14377,19 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v("\n                                        " + _vm._s(index + 1) + "\n                                    ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام فایل"
+        label: "File name"
       }
     }, [_vm._v("\n                                        " + _vm._s(file.file.name) + "\n                                    ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_vm._v("\n                                        " + _vm._s(file.file.description) + "\n                                    ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "پیش نمایش"
+        label: "Preshow"
       }
     }, [_c("div", {
       staticClass: "preview"
@@ -14429,21 +14402,21 @@ var render = function render() {
       staticClass: "size_img",
       attrs: {
         src: "/file-show?fileId=" + file.file_id,
-        alt: "باز کردن"
+        alt: "Open"
       }
     })])])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "دانلود"
+        label: "Download"
       }
     }, [_c("a", {
       staticClass: "btn btn-sm btn-primary",
       attrs: {
         href: "/file-download?fileId=" + file.file_id
       }
-    }, [_vm._v("دانلود")])])]) : _vm._e();
+    }, [_vm._v("Download")])])]) : _vm._e();
   }), 0)])])]), _vm._v(" "), _vm._m(13)])])]), _vm._v(" "), _c("h4", {
     staticClass: "mb-4"
-  }, [_vm._v("آرشیو")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Archive")]), _vm._v(" "), _c("div", {
     staticClass: "text-center scroll"
   }, [_c("table", {
     staticClass: "table table-bordered text-center style_table",
@@ -14459,33 +14432,33 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v(_vm._s(request.unit.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "شماره درخواست"
+        label: "Request number"
       }
     }, [_vm._v(_vm._s(request.request_number))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تاریخ"
+        label: "Date"
       }
     }, [_vm._v(_vm._s(_vm.convertDate(request.created_at)))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت درخواست"
+        label: "Request Status"
       }
     }, [request.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار تائید")]) : _vm._e(), _vm._v(" "), request.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), request.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), request.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), request.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -14494,11 +14467,11 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(request.descriptions))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام تحویل دهنده"
+        label: "Name of the deliverer"
       }
     }, [request.request_detail[0].delivery != "" ? _c("label", [_vm._v(_vm._s(request.request_detail[0].delivery[0].user.first_name) + " " + _vm._s(request.request_detail[0].delivery[0].user.last_name))]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "پرینت رسید تحویل"
+        label: "Delivery receipt print"
       }
     }, [_c("button", {
       staticClass: "btn btn-primary btn-table",
@@ -14516,7 +14489,7 @@ var render = function render() {
       staticClass: "fas fa-print"
     })])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مشاهده جزئیات"
+        label: "Show details"
       }
     }, [_c("button", {
       staticClass: "btn btn-primary",
@@ -14532,9 +14505,9 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fas fa-info-circle"
-    }), _vm._v(" نمایش جزئیات\n                        ")])]), _vm._v(" "), _c("td", {
+    }), _vm._v(" Show details\n                        ")])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "صدور حواله رایورزی"
+        label: "Issuance of Rayvarz remittance"
       }
     }, [_c("button", {
       staticClass: "btn btn-success",
@@ -14547,7 +14520,7 @@ var render = function render() {
           return _vm.beforeCreateHavale(request);
         }
       }
-    }, [_vm._v("حواله\n                        ")])])]);
+    }, [_vm._v("Remittance\n                        ")])])]);
   }), 0)])])]);
 };
 var staticRenderFns = [function () {
@@ -14563,9 +14536,9 @@ var staticRenderFns = [function () {
     }
   })]), _vm._v(" "), _c("span", {
     staticClass: "img-font"
-  }, [_vm._v("\n                                                    \t\t\t\t\t\tگروه کارخانجات شیشه اردکان\n                                                    \t\t\t\t\t")]), _vm._v(" "), _c("span", {
+  }, [_vm._v("\n                                                    \t\t\t\t\t\tWarehouse Software\n                                                    \t\t\t\t\t")]), _vm._v(" "), _c("span", {
     staticClass: "img-font"
-  }, [_vm._v("ARDAKAN FLOAT GLASS CO")])])]);
+  }, [_vm._v("Warehouse Software")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -14573,11 +14546,11 @@ var staticRenderFns = [function () {
     staticClass: "col-4"
   }, [_c("h2", {
     staticClass: "print-head"
-  }, [_vm._v("رسید تحویل")])]);
+  }, [_vm._v("Delivery receipt")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                            ردیف\n                                        ")]), _vm._v(" "), _c("th", [_vm._v("نام کالا")]), _vm._v(" "), _c("th", [_vm._v("تعداد")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("مرکز هزینه")]), _vm._v(" "), _c("th", [_vm._v("وضعیت تائید")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                            Row\n                                        ")]), _vm._v(" "), _c("th", [_vm._v("Products name")]), _vm._v(" "), _c("th", [_vm._v("Count")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Cost center")]), _vm._v(" "), _c("th", [_vm._v("Confirmation status")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -14585,7 +14558,7 @@ var staticRenderFns = [function () {
     staticClass: "row text-right p-3"
   }, [_c("p", {
     staticClass: "inline"
-  }, [_vm._v("آدرس تحویل:")]), _vm._v(" "), _c("p", {
+  }, [_vm._v("Delivery address:")]), _vm._v(" "), _c("p", {
     staticClass: "inline"
   })]);
 }, function () {
@@ -14597,15 +14570,15 @@ var staticRenderFns = [function () {
     staticClass: "col-4 border"
   }, [_c("div", {
     staticClass: "signature"
-  }, [_c("p", [_vm._v("مسئول انبار")])])]), _vm._v(" "), _c("div", {
+  }, [_c("p", [_vm._v("Warehouse manager")])])]), _vm._v(" "), _c("div", {
     staticClass: "col-4 border"
   }, [_c("div", {
     staticClass: "signature"
-  }, [_c("p", [_vm._v("مسئول پیک")])])]), _vm._v(" "), _c("div", {
+  }, [_c("p", [_vm._v("Courier in charge")])])]), _vm._v(" "), _c("div", {
     staticClass: "col-4 border"
   }, [_c("div", {
     staticClass: "signature"
-  }, [_c("p", [_vm._v("دریافت کننده")])])])]);
+  }, [_c("p", [_vm._v("Receiver")])])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -14630,7 +14603,7 @@ var staticRenderFns = [function () {
     attrs: {
       colspan: "10"
     }
-  }, [_c("h4", [_vm._v("نمایش جزئیات")])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ردیف")]), _vm._v(" "), _c("th", [_vm._v("نام کالا")]), _vm._v(" "), _c("th", [_vm._v("تعداد")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("مرکز هزینه")]), _vm._v(" "), _c("th", [_vm._v("انبار")]), _vm._v(" "), _c("th", [_vm._v("وضعیت درخواست")]), _vm._v(" "), _c("th", [_vm._v("نمایش تائیدیه ها")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")]), _vm._v(" "), _c("th", [_vm._v("فایل")])])]);
+  }, [_c("h4", [_vm._v("Show details")])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Row")]), _vm._v(" "), _c("th", [_vm._v("Products name")]), _vm._v(" "), _c("th", [_vm._v("Count")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Cost center")]), _vm._v(" "), _c("th", [_vm._v("Warehouse")]), _vm._v(" "), _c("th", [_vm._v("Request Status")]), _vm._v(" "), _c("th", [_vm._v("Show confirmations")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")]), _vm._v(" "), _c("th", [_vm._v("File")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -14642,7 +14615,7 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("\n                            بستن\n                        ")])]);
+  }, [_vm._v("\n                            Close\n                        ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -14653,7 +14626,7 @@ var staticRenderFns = [function () {
     attrs: {
       id: "exampleModalLongTitle"
     }
-  }, [_vm._v("نمایش تائیدیه ها")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Show confirmations")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -14668,7 +14641,7 @@ var staticRenderFns = [function () {
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        ردیف\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        نام تائید کننده\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        نام تائیدیه\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        وضعیت تائید\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        توضیحات\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        تاریخ\n                                    ")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        Row\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Name of the approver\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Confirmation name\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Confirmation status\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Descriptions\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Date\n                                    ")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -14680,7 +14653,7 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])]);
+  }, [_vm._v("Close")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -14691,11 +14664,11 @@ var staticRenderFns = [function () {
     attrs: {
       id: "exampleModalLabel"
     }
-  }, [_vm._v("لیست فایل ها")])]);
+  }, [_vm._v("Files list")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        ردیف\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        نام فایل\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        توضیحات\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        پیش نمایش\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        دانلود\n                                    ")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        Row\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                       File name\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Descriptions\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                       Preshow\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("\n                                        Download\n                                    ")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -14707,11 +14680,11 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])]);
+  }, [_vm._v("Close")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("ردیف")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("شماره درخواست")]), _vm._v(" "), _c("th", [_vm._v("تاریخ")]), _vm._v(" "), _c("th", [_vm._v("وضعیت درخواست")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")]), _vm._v(" "), _c("th", [_vm._v("نام تحویل دهنده")]), _vm._v(" "), _c("th", [_vm._v("پرینت رسید تحویل")]), _vm._v(" "), _c("th", [_vm._v("مشاهده جزئیات")]), _vm._v(" "), _c("th", [_vm._v("صدور حواله رایورزی")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("Row")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Request number")]), _vm._v(" "), _c("th", [_vm._v("Date")]), _vm._v(" "), _c("th", [_vm._v("Request Status")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")]), _vm._v(" "), _c("th", [_vm._v("Name of the deliverer")]), _vm._v(" "), _c("th", [_vm._v("Delivery receipt print")]), _vm._v(" "), _c("th", [_vm._v("Show details")]), _vm._v(" "), _c("th", [_vm._v("Issuance of Rayvarz remittance")])])]);
 }];
 render._withStripped = true;
 
@@ -14758,7 +14731,7 @@ var render = function render() {
     staticClass: "form-group"
   }, [_c("label", {
     staticClass: "control-label"
-  }, [_vm._v("نام")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Name")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -14788,7 +14761,7 @@ var render = function render() {
     staticClass: "form-group"
   }, [_c("label", {
     staticClass: "control-label"
-  }, [_vm._v("فامیل")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Last name")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -14818,7 +14791,7 @@ var render = function render() {
     staticClass: "form-group"
   }, [_c("label", {
     staticClass: "control-label"
-  }, [_vm._v("کد پرسنلی")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Personnel code")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -14849,11 +14822,11 @@ var render = function render() {
     staticClass: "form-group"
   }, [_c("label", {
     staticClass: "control-label"
-  }, [_vm._v("واحد")]), _vm._v(" "), _c("multiselect", {
+  }, [_vm._v("Unit")]), _vm._v(" "), _c("multiselect", {
     attrs: {
       "track-by": "name",
       label: "name",
-      placeholder: "انتخاب",
+      placeholder: "Select",
       options: _vm.units,
       searchable: true,
       "allow-empty": false,
@@ -14870,7 +14843,7 @@ var render = function render() {
     staticClass: "form-group"
   }, [_c("label", {
     staticClass: "control-label"
-  }, [_vm._v("نوع کاربر")]), _vm._v(" "), _c("select", {
+  }, [_vm._v("Type of user")]), _vm._v(" "), _c("select", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -14905,7 +14878,7 @@ var render = function render() {
     staticClass: "form-group"
   }, [_c("label", {
     staticClass: "control-label"
-  }, [_vm._v("گذرواژه")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Password")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -14935,7 +14908,7 @@ var render = function render() {
     staticClass: "form-group"
   }, [_c("label", {
     staticClass: "control-label"
-  }, [_vm._v("تکرار رمز عبور")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Repeat the password")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -14970,13 +14943,13 @@ var render = function render() {
         return _vm.createNewUser();
       }
     }
-  }, [_vm._v("ایجاد کاربر")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Add user")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-secondary",
     attrs: {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("لغو")])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Cancel")])])])])]), _vm._v(" "), _c("div", {
     staticClass: "text-right"
   }, [_c("button", {
     staticClass: "btn cyan_color",
@@ -14984,14 +14957,14 @@ var render = function render() {
       "data-toggle": "modal",
       "data-target": "#user"
     }
-  }, [_vm._v("افرودن کاربر جدید\n                    ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Add new user\n                    ")]), _vm._v(" "), _c("div", {
     staticClass: "search-box mr-5"
   }, [_c("h5", {
     staticClass: "d-inline-flex",
     attrs: {
       id: "text_search"
     }
-  }, [_vm._v("جستجو:")]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("input", {
+  }, [_vm._v("Search:")]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -15001,7 +14974,7 @@ var render = function render() {
     staticClass: "input-search",
     attrs: {
       type: "text",
-      placeholder: "جستجو..."
+      placeholder: "Search..."
     },
     domProps: {
       value: _vm.searchQuery
@@ -15130,10 +15103,10 @@ var render = function render() {
           return _vm.editUser(user);
         }
       }
-    }, [_vm._v("ویرایش")]), _vm._v(" "), user.active == 1 ? _c("button", {
+    }, [_vm._v("Edit")]), _vm._v(" "), user.active == 1 ? _c("button", {
       staticClass: "badge badge-danger",
       attrs: {
-        value: "غیرفعال",
+        value: "Inactivate",
         type: "button"
       },
       on: {
@@ -15141,10 +15114,10 @@ var render = function render() {
           return _vm.userStatus(0, user.personnel_code, $event);
         }
       }
-    }, [_vm._v("غیرفعال کردن")]) : _vm._e(), _vm._v(" "), user.active != 1 ? _c("button", {
+    }, [_vm._v("To deactivate")]) : _vm._e(), _vm._v(" "), user.active != 1 ? _c("button", {
       staticClass: "badge badge-success",
       attrs: {
-        value: "فعال",
+        value: "Activate",
         type: "button"
       },
       on: {
@@ -15152,7 +15125,7 @@ var render = function render() {
           return _vm.userStatus(1, user.personnel_code, $event);
         }
       }
-    }, [_vm._v("فعال کردن")]) : _vm._e()]), _vm._v(" "), _c("div", {
+    }, [_vm._v("To activate")]) : _vm._e()]), _vm._v(" "), _c("div", {
       staticClass: "edit"
     }, [_c("span", {
       staticClass: "badge badge-warning even-larger-badge",
@@ -15161,7 +15134,7 @@ var render = function render() {
           return _vm.updateUser(user);
         }
       }
-    }, [_vm._v("بروزرسانی")])])])]);
+    }, [_vm._v("Update")])])])]);
   })], 2)])])]);
 };
 var staticRenderFns = [function () {
@@ -15171,7 +15144,7 @@ var staticRenderFns = [function () {
     staticClass: "modal-header"
   }, [_c("h5", {
     staticClass: "modal-title"
-  }, [_vm._v("افزودن کاربر جدید")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Add new user")]), _vm._v(" "), _c("button", {
     staticClass: "close",
     attrs: {
       type: "button",
@@ -15192,7 +15165,7 @@ var staticRenderFns = [function () {
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("#")]), _vm._v(" "), _c("th", [_vm._v("نام")]), _vm._v(" "), _c("th", [_vm._v("نام خانوادگی")]), _vm._v(" "), _c("th", [_vm._v("کد پرسنلی")]), _vm._v(" "), _c("th", [_vm._v("نام واحد")]), _vm._v(" "), _c("th", [_vm._v("نوع کاربر")]), _vm._v(" "), _c("th", [_vm._v("عملیات")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("#")]), _vm._v(" "), _c("th", [_vm._v("Name")]), _vm._v(" "), _c("th", [_vm._v("Last name")]), _vm._v(" "), _c("th", [_vm._v("Personnel code")]), _vm._v(" "), _c("th", [_vm._v("Unit name")]), _vm._v(" "), _c("th", [_vm._v("Type of user")]), _vm._v(" "), _c("th", [_vm._v("Actions")])])]);
 }];
 render._withStripped = true;
 
@@ -15233,13 +15206,13 @@ var render = function render() {
     on: {
       click: _vm.cleanForm
     }
-  }, [_vm._v("افزودن وسیله نقلیه")])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Add new vehicle")])]), _vm._v(" "), _c("div", {
     staticClass: "col-6 pl-0 text-left"
   }, [_c("div", {
     staticClass: "search-box mr-5"
   }, [_c("h5", {
     staticClass: "d-inline-flex"
-  }, [_vm._v("جستجو:")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("input", {
+  }, [_vm._v("Search:")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -15249,7 +15222,7 @@ var render = function render() {
     staticClass: "input-search",
     attrs: {
       type: "text",
-      placeholder: "جستجو..."
+      placeholder: "Search..."
     },
     domProps: {
       value: _vm.searchQuery
@@ -15274,7 +15247,7 @@ var render = function render() {
     staticClass: "modal-body form-group text-right"
   }, [_c("div", [_c("div", [_c("label", {
     staticClass: "typo__label"
-  }, [_vm._v("نام وسیله")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Vehicle name")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -15298,7 +15271,7 @@ var render = function render() {
     staticClass: "mt-2"
   }, [_c("label", {
     staticClass: "typo__label"
-  }, [_vm._v("شماره وسیله")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Vehicle number plate")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -15322,7 +15295,7 @@ var render = function render() {
     staticClass: "mt-2"
   }, [_c("label", {
     staticClass: "typo__label"
-  }, [_vm._v("توضیحات")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Descriptions")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -15350,7 +15323,7 @@ var render = function render() {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("\n                                لغو\n                            ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n                                Cancel\n                            ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary",
     attrs: {
       type: "button"
@@ -15360,7 +15333,7 @@ var render = function render() {
         return _vm.save(_vm.vehicle);
       }
     }
-  }, [_vm._v("ثبت\n                            ")])])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Submit\n                            ")])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "table-responsive table-bordered",
     attrs: {
       id: "table-vehicle"
@@ -15381,7 +15354,7 @@ var render = function render() {
       staticClass: "form-control d-inline w-100",
       attrs: {
         type: "text",
-        placeholder: "نام وسیله",
+        placeholder: "Vehicle name",
         readonly: ""
       },
       domProps: {
@@ -15399,7 +15372,7 @@ var render = function render() {
       staticClass: "form-control d-inline w-100",
       attrs: {
         type: "text",
-        placeholder: "نام وسیله"
+        placeholder: "Vehicle name"
       },
       domProps: {
         value: vehicle.name
@@ -15417,7 +15390,7 @@ var render = function render() {
       attrs: {
         id: "input_cost1",
         type: "text",
-        placeholder: "شماره وسیله",
+        placeholder: "Vehicle number plate",
         readonly: ""
       },
       domProps: {
@@ -15435,7 +15408,7 @@ var render = function render() {
       staticClass: "form-control w-100",
       attrs: {
         type: "text",
-        placeholder: "شماره وسیله"
+        placeholder: "Vehicle number plate"
       },
       domProps: {
         value: vehicle.number
@@ -15496,14 +15469,14 @@ var render = function render() {
           return _vm.editedVehicleList(vehicle);
         }
       }
-    }, [_vm._v("ویرایش")]), _vm._v(" "), _c("i", {
+    }, [_vm._v("Edit")]), _vm._v(" "), _c("i", {
       staticClass: "badge badge-danger",
       on: {
         click: function click($event) {
           return _vm.deleteVehicle(vehicle);
         }
       }
-    }, [_vm._v("حذف")])]), _vm._v(" "), _c("div", {
+    }, [_vm._v("Delete")])]), _vm._v(" "), _c("div", {
       staticClass: "edit"
     }, [_c("i", {
       staticClass: "badge badge-success",
@@ -15512,14 +15485,14 @@ var render = function render() {
           return _vm.update(vehicle);
         }
       }
-    }, [_vm._v("ذخیره")]), _vm._v(" "), _c("i", {
+    }, [_vm._v("Password")]), _vm._v(" "), _c("i", {
       staticClass: "badge badge-secondary p-1 mx-2",
       on: {
         click: function click($event) {
           return _vm.cancel(vehicle);
         }
       }
-    }, [_vm._v("لغو")])])])]);
+    }, [_vm._v("Cancel")])])])]);
   }), 0)])])]);
 };
 var staticRenderFns = [function () {
@@ -15537,7 +15510,7 @@ var staticRenderFns = [function () {
     staticClass: "modal-header"
   }, [_c("h5", {
     staticClass: "modal-title"
-  }, [_vm._v("افزودن وسیله نقلیه")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Add new vehicle")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -15552,7 +15525,7 @@ var staticRenderFns = [function () {
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("ردیف")]), _vm._v(" "), _c("th", [_vm._v("نام وسیله")]), _vm._v(" "), _c("th", [_vm._v("شماره وسیله")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")]), _vm._v(" "), _c("th", [_vm._v("عملیات")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("Row")]), _vm._v(" "), _c("th", [_vm._v("Vehicle name")]), _vm._v(" "), _c("th", [_vm._v("Vehicle number plate")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")]), _vm._v(" "), _c("th", [_vm._v("Actions")])])]);
 }];
 render._withStripped = true;
 
@@ -15615,7 +15588,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("label", {
     staticClass: "my-auto"
-  }, [_vm._v(" انتخاب دستی ")])]), _vm._v(" "), _c("div", {
+  }, [_vm._v(" Manual selection ")])]), _vm._v(" "), _c("div", {
     staticClass: "col-6 d-flex align-items-center"
   }, [_c("input", {
     directives: [{
@@ -15640,7 +15613,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("label", {
     staticClass: "my-auto"
-  }, [_vm._v(" انتخاب اتوماتیک ")])]), _vm._v(" "), _vm.peyk_temp.type_send == "manual" ? _c("div", {
+  }, [_vm._v(" Automatic selection ")])]), _vm._v(" "), _vm.peyk_temp.type_send == "manual" ? _c("div", {
     staticClass: "col-10 mt-3"
   }, [_c("multiselect", {
     attrs: {
@@ -15657,7 +15630,7 @@ var render = function render() {
         }).personnel_code;
       },
       showLabels: false,
-      placeholder: "نام پیک"
+      placeholder: "Courier name"
     },
     on: {
       input: _vm.SetObj
@@ -15677,7 +15650,7 @@ var render = function render() {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("\n                        لغو\n                    ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n                        Cancel\n                    ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary",
     attrs: {
       type: "button"
@@ -15685,7 +15658,7 @@ var render = function render() {
     on: {
       click: _vm.sendPeyk
     }
-  }, [_vm._v("ارسال")])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Send")])])])])]), _vm._v(" "), _c("div", {
     attrs: {
       id: "printMe",
       dir: "rtl"
@@ -15711,7 +15684,7 @@ var render = function render() {
     staticClass: "col-4 text-center"
   }, [_c("h5", {
     staticClass: "inline"
-  }, [_vm._v("تاریخ:")]), _vm._v(" "), _vm.request_all != "" ? _c("h5", {
+  }, [_vm._v("Date:")]), _vm._v(" "), _vm.request_all != "" ? _c("h5", {
     staticClass: "inline"
   }, [_vm._v("\n                                    " + _vm._s(_vm.convertDate(_vm.request_all[_vm.request_id].created_at)))]) : _vm._e(), _vm._v(" "), _vm.request_all != "" ? _c("h5", {
     staticClass: "d-block"
@@ -15733,31 +15706,31 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v("\n                                            " + _vm._s(index + 1) + "\n                                        ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام کالا"
+        label: "Products name"
       }
     }, [_vm._v("\n                                            " + _vm._s(print.product.name) + "\n                                        ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تعداد"
+        label: "Count"
       }
     }, [_vm._v("\n                                            " + _vm._s(print.amount) + "\n                                        ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v("\n                                            " + _vm._s(_vm.request_all[_vm.request_id].unit.name) + "\n                                        ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مرکز هزینه"
+        label: "Cost center"
       }
     }, [print.center ? _c("label", [_vm._v(" " + _vm._s(print.center.name))]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت تائید"
+        label: "Confirmation status"
       }
-    }, [print.confirmed == null ? _c("i", [_vm._v("در انتظار تائید")]) : _vm._e(), _vm._v(" "), print.confirmed == 0 ? _c("i", [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), print.confirmed == 1 ? _c("i", [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [print.confirmed == null ? _c("i", [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), print.confirmed == 0 ? _c("i", [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), print.confirmed == 1 ? _c("i", [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_vm._v("\n                                            " + _vm._s(print.descriptions) + "\n                                        ")])]);
   }) : _vm._e()], 2)])]), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5)]), _vm._v(" "), _c("div", {
@@ -15774,13 +15747,13 @@ var render = function render() {
       type: "button",
       id: "btnPrint"
     }
-  }, [_vm._v("چاپ\n                        ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Print\n                        ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-secondary",
     attrs: {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Close")])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "modal",
     attrs: {
       tabindex: "-1",
@@ -15802,41 +15775,41 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام کالا"
+        label: "Products name"
       }
     }, [_vm._v(_vm._s(details.product.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تعداد"
+        label: "Count"
       }
     }, [_vm._v(_vm._s(details.amount))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v(_vm._s(_vm.request_all[_vm.request_id].unit.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مرکز هزینه"
+        label: "Cost center"
       }
     }, [details.center ? _c("label", [_vm._v("\n                                        " + _vm._s(details.center.name) + "\n                                    ")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "انبار"
+        label: "Warehouse"
       }
     }, [_vm._v(_vm._s(details.warehouse.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت درخواست"
+        label: "Request Status"
       }
     }, [details.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار\n                                    تائید")]) : _vm._e(), _vm._v(" "), details.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), details.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), details.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), details.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("Approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نمایش تائیدیه ها"
+        label: "Show confirmations"
       }
     }, [_c("i", {
       staticClass: "fa fa-info-circle fa-2x",
@@ -15851,7 +15824,7 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -15862,7 +15835,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(details.descriptions))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "فایل"
+        label: "File"
       }
     }, [_c("button", {
       staticClass: "btn btn-sm btn-primary",
@@ -15877,7 +15850,7 @@ var render = function render() {
           return _vm.showFile(details);
         }
       }
-    }, [_vm._v("نمایش\n                                    ")])])]) : _vm._e();
+    }, [_vm._v("show\n                                    ")])])]) : _vm._e();
   }) : _vm._e()], 2)])]), _vm._v(" "), _vm._m(8)])])]), _vm._v(" "), _c("div", {
     staticClass: "modal",
     attrs: {
@@ -15890,10 +15863,10 @@ var render = function render() {
     staticClass: "modal-content"
   }, [_vm._m(9), _vm._v(" "), _c("div", {
     staticClass: "modal-body form-group text-right"
-  }, [_c("label", [_vm._v("انتخاب نوع تائیدیه")]), _vm._v(" "), _c("multiselect", {
+  }, [_c("label", [_vm._v("Choose the type of confirmation")]), _vm._v(" "), _c("multiselect", {
     attrs: {
       "track-by": "name",
-      placeholder: "انتخاب",
+      placeholder: "Select",
       options: _vm.option_reference,
       searchable: true,
       "custom-label": _vm.nameWithLang,
@@ -15917,7 +15890,7 @@ var render = function render() {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("\n                        لغو\n                    ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n                        Cancel\n                    ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary",
     attrs: {
       type: "button"
@@ -15925,7 +15898,7 @@ var render = function render() {
     on: {
       click: _vm.sendReference
     }
-  }, [_vm._v("ارسال")])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Send")])])])])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
       id: "modal_file",
@@ -15953,19 +15926,19 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v("\n                                    " + _vm._s(index + 1) + "\n                                ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "نام فایل"
+        label: "File name"
       }
     }, [_vm._v("\n                                    " + _vm._s(file.file.name) + "\n                                ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_vm._v("\n                                    " + _vm._s(file.file.description) + "\n                                ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "پیش نمایش"
+        label: "Preshow"
       }
     }, [_c("div", {
       staticClass: "preview"
@@ -15978,18 +15951,18 @@ var render = function render() {
       staticClass: "size_img",
       attrs: {
         src: "/file-show?fileId=" + file.file_id,
-        alt: "باز کردن"
+        alt: "Open"
       }
     })])])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "دانلود"
+        label: "Download"
       }
     }, [_c("a", {
       staticClass: "btn btn-sm btn-primary",
       attrs: {
         href: "/file-download?fileId=" + file.file_id
       }
-    }, [_vm._v("دانلود")])])]) : _vm._e();
+    }, [_vm._v("Download")])])]) : _vm._e();
   }), 0)])])]), _vm._v(" "), _vm._m(12)])])]), _vm._v(" "), _c("div", {
     staticClass: "modal fade",
     attrs: {
@@ -16015,33 +15988,33 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v("\n                                        " + _vm._s(index + 1) + "\n                                    ")]), _vm._v(" "), confirm.user != null ? _c("td", {
       attrs: {
-        label: "نام تائید کننده"
+        label: "Name of the approver"
       }
     }, [_vm._v("\n                                        " + _vm._s(confirm.user.first_name) + " " + _vm._s(confirm.user.last_name) + "\n                                    ")]) : _vm._e(), _vm._v(" "), confirm.user == null ? _c("td", {
       attrs: {
-        label: "نام تائید کننده"
+        label: "Name of the approver"
       }
-    }, [_vm._v("\n                                        نا معلوم\n                                    ")]) : _vm._e(), _vm._v(" "), confirm.confirm.name != null ? _c("td", {
+    }, [_vm._v("\n                                        Unknown\n                                    ")]) : _vm._e(), _vm._v(" "), confirm.confirm.name != null ? _c("td", {
       attrs: {
-        label: "نام تائیدیه"
+        label: "Confirmation name"
       }
     }, [_vm._v("\n                                        " + _vm._s(confirm.confirm.name) + "\n                                    ")]) : _vm._e(), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت تائید"
+        label: "Confirmation status"
       }
     }, [confirm.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار\n                                            تائید")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), confirm.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -16052,7 +16025,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(confirm.description))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تاریخ"
+        label: "Date"
       }
     }, [_vm._v("\n                                        " + _vm._s(confirm.updated_at) + "\n                                    ")])]);
   }) : _vm._e()], 2)])])]), _vm._v(" "), _vm._m(15)])])]), _vm._v(" "), _c("div", [_c("div", {
@@ -16065,7 +16038,7 @@ var render = function render() {
       expression: "searchQuery"
     }],
     attrs: {
-      label: "کارتابل انبار",
+      label: "Cartable warehouse",
       type: "radio",
       name: "filter",
       value: "1",
@@ -16087,7 +16060,7 @@ var render = function render() {
       expression: "searchQuery"
     }],
     attrs: {
-      label: "کارتابل پیک",
+      label: "Cartable Courier",
       type: "radio",
       name: "filter",
       value: "3"
@@ -16108,7 +16081,7 @@ var render = function render() {
       expression: "searchQuery"
     }],
     attrs: {
-      label: "تحویل مامور پیک",
+      label: "Courier delivery",
       type: "radio",
       name: "filter",
       value: "4"
@@ -16129,7 +16102,7 @@ var render = function render() {
       expression: "searchQuery"
     }],
     attrs: {
-      label: "همه",
+      label: "All",
       type: "radio",
       name: "filter",
       value: ""
@@ -16144,11 +16117,11 @@ var render = function render() {
     }
   })]), _vm._v(" "), _c("div", [_c("h4", {
     staticClass: "mb-4 my-font-size"
-  }, [_vm._v("کارتابل انبار")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Cartable warehouse")]), _vm._v(" "), _c("div", {
     staticClass: "search-box mr-5"
   }, [_c("h5", {
     staticClass: "d-inline-flex"
-  }, [_vm._v("جستجو:")]), _vm._v(" "), _vm._m(16), _vm._v(" "), _c("input", {
+  }, [_vm._v("Search:")]), _vm._v(" "), _vm._m(16), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -16158,7 +16131,7 @@ var render = function render() {
     staticClass: "input-search",
     attrs: {
       type: "text",
-      placeholder: "جستجو..."
+      placeholder: "Search..."
     },
     domProps: {
       value: _vm.searchQuery2
@@ -16176,7 +16149,7 @@ var render = function render() {
     attrs: {
       id: "table_status"
     }
-  }, [_c("thead", [_c("tr", [_c("th", [_vm._v("ردیف")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("شماره درخواست")]), _vm._v(" "), _c("th", [_vm._v("تاریخ")]), _vm._v(" "), _c("th", [_vm._v("وضعیت تائید")]), _vm._v(" "), _c("th", [_vm._v("مرحله درخواست")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")]), _vm._v(" "), _c("th", [_vm._v("ارجاع")]), _vm._v(" "), _c("th", [_vm._v("ارسال به پیک")]), _vm._v(" "), _c("th", [_vm._v("پرینت رسید تحویل")]), _vm._v(" "), _c("th", [_vm._v("مشاهده جزئیات")]), _vm._v(" "), _vm.searchQuery == 1 || _vm.searchQuery == 2 ? _c("th", [_vm._v("عملیات")]) : _vm._e()])]), _vm._v(" "), _c("tbody", {
+  }, [_c("thead", [_c("tr", [_c("th", [_vm._v("Row")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Request number")]), _vm._v(" "), _c("th", [_vm._v("Date")]), _vm._v(" "), _c("th", [_vm._v("Confirmation status")]), _vm._v(" "), _c("th", [_vm._v("Request stage")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")]), _vm._v(" "), _c("th", [_vm._v("referral")]), _vm._v(" "), _c("th", [_vm._v("Send by courier")]), _vm._v(" "), _c("th", [_vm._v("Delivery receipt print")]), _vm._v(" "), _c("th", [_vm._v("Show details")]), _vm._v(" "), _vm.searchQuery == 1 || _vm.searchQuery == 2 ? _c("th", [_vm._v("Actions")]) : _vm._e()])]), _vm._v(" "), _c("tbody", {
     attrs: {
       id: "tbody_status"
     }
@@ -16185,33 +16158,33 @@ var render = function render() {
       key: index
     }, [_c("td", {
       attrs: {
-        label: "ردیف"
+        label: "Row"
       }
     }, [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "واحد درخواست کننده"
+        label: "Requested unit"
       }
     }, [_vm._v(_vm._s(request.unit.name))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "شماره درخواست"
+        label: "Request number"
       }
     }, [_vm._v(_vm._s(request.request_number))]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "تاریخ"
+        label: "Date"
       }
     }, [_vm._v("\n                    " + _vm._s(_vm.convertDate(request.created_at)) + "\n                ")]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "وضعیت تائید"
+        label: "Confirmation status"
       }
     }, [request.confirmed == null ? _c("i", {
       staticClass: "badge badge-warning"
-    }, [_vm._v("در انتظار تائید")]) : _vm._e(), _vm._v(" "), request.confirmed == 0 ? _c("i", {
+    }, [_vm._v("Awaiting confirmation")]) : _vm._e(), _vm._v(" "), request.confirmed == 0 ? _c("i", {
       staticClass: "badge badge-danger"
-    }, [_vm._v("عدم تائید")]) : _vm._e(), _vm._v(" "), request.confirmed == 1 ? _c("i", {
+    }, [_vm._v("Not approved")]) : _vm._e(), _vm._v(" "), request.confirmed == 1 ? _c("i", {
       staticClass: "badge badge-success"
-    }, [_vm._v("تائید")]) : _vm._e()]), _vm._v(" "), _c("td", {
+    }, [_vm._v("approved")]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مرحله درخواست"
+        label: "Request stage"
       }
     }, [_c("i", {
       staticClass: "badge badge-info",
@@ -16221,7 +16194,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(request.status.name))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "توضیحات"
+        label: "Descriptions"
       }
     }, [_c("textarea", {
       staticClass: "form-control",
@@ -16230,7 +16203,7 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(request.descriptions))])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "ارجاع"
+        label: "referral"
       }
     }, [_c("button", {
       staticClass: "btn btn-primary btn-table",
@@ -16249,7 +16222,7 @@ var render = function render() {
       staticClass: "fas fa-share-square"
     })])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "ارسال به پیک"
+        label: "Send by courier"
       }
     }, [request.request_detail[0].delivery == "" ? _c("button", {
       staticClass: "btn btn-primary btn-table",
@@ -16268,7 +16241,7 @@ var render = function render() {
       staticClass: "badge badge-info"
     }, [_vm._v(_vm._s(request.request_detail[0].delivery[0].user.first_name + " " + request.request_detail[0].delivery[0].user.last_name))]) : _vm._e()]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "پرینت رسید تحویل"
+        label: "Delivery receipt print"
       }
     }, [_c("button", {
       staticClass: "btn btn-primary btn-table",
@@ -16286,7 +16259,7 @@ var render = function render() {
       staticClass: "fas fa-print"
     })])]), _vm._v(" "), _c("td", {
       attrs: {
-        label: "مشاهده جزئیات"
+        label: "Show details"
       }
     }, [_c("button", {
       staticClass: "btn btn-primary",
@@ -16300,9 +16273,9 @@ var render = function render() {
           return _vm.request_info(request.id);
         }
       }
-    }, [_vm._v(" نمایش جزئیات\n                    ")])]), _vm._v(" "), _vm.searchQuery == 1 || _vm.searchQuery == 2 ? _c("td", {
+    }, [_vm._v(" Show details\n                    ")])]), _vm._v(" "), _vm.searchQuery == 1 || _vm.searchQuery == 2 ? _c("td", {
       attrs: {
-        label: "عملیات"
+        label: "Actions"
       }
     }, [_c("div", [_c("button", {
       staticClass: "btn btn-sm btn-danger inline-block",
@@ -16314,7 +16287,7 @@ var render = function render() {
           return _vm.cancel(request.id);
         }
       }
-    }, [_vm._v(" لغو\n                        ")]), _vm._v(" "), _c("router-link", {
+    }, [_vm._v(" Cancel\n                        ")]), _vm._v(" "), _c("router-link", {
       staticClass: "btn btn-sm btn-warning inline-block mb-1 pr-2 py-1",
       attrs: {
         to: {
@@ -16324,7 +16297,7 @@ var render = function render() {
           }
         }
       }
-    }, [_c("span", [_vm._v("ویرایش")])])], 1)]) : _vm._e()]) : _vm._e();
+    }, [_c("span", [_vm._v("Edit")])])], 1)]) : _vm._e()]) : _vm._e();
   }), 0)])])]);
 };
 var staticRenderFns = [function () {
@@ -16334,7 +16307,7 @@ var staticRenderFns = [function () {
     staticClass: "modal-header"
   }, [_c("h5", {
     staticClass: "modal-title"
-  }, [_vm._v("ارسال به پیک")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Send by courier")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -16359,9 +16332,9 @@ var staticRenderFns = [function () {
     }
   })]), _vm._v(" "), _c("span", {
     staticClass: "img-font"
-  }, [_vm._v("\n                                                \t\t\t\t\t\tگروه کارخانجات شیشه اردکان\n                                                \t\t\t\t\t")]), _vm._v(" "), _c("span", {
+  }, [_vm._v("\n                                                \t\t\t\t\t\tWarehouse Software\n                                                \t\t\t\t\t")]), _vm._v(" "), _c("span", {
     staticClass: "img-font"
-  }, [_vm._v("ARDAKAN FLOAT GLASS CO")])])]);
+  }, [_vm._v("Warehouse Software")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -16369,11 +16342,11 @@ var staticRenderFns = [function () {
     staticClass: "col-4"
   }, [_c("h2", {
     staticClass: "print-head"
-  }, [_vm._v("رسید تحویل")])]);
+  }, [_vm._v("Delivery receipt")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        ردیف\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("نام کالا")]), _vm._v(" "), _c("th", [_vm._v("تعداد")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("مرکز هزینه")]), _vm._v(" "), _c("th", [_vm._v("وضعیت تائید")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                        Row\n                                    ")]), _vm._v(" "), _c("th", [_vm._v("Products name")]), _vm._v(" "), _c("th", [_vm._v("Count")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Cost center")]), _vm._v(" "), _c("th", [_vm._v("Confirmation status")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -16381,7 +16354,7 @@ var staticRenderFns = [function () {
     staticClass: "row text-right p-3"
   }, [_c("p", {
     staticClass: "inline"
-  }, [_vm._v("آدرس تحویل:")]), _vm._v(" "), _c("p", {
+  }, [_vm._v("Delivery address:")]), _vm._v(" "), _c("p", {
     staticClass: "inline"
   })]);
 }, function () {
@@ -16393,15 +16366,15 @@ var staticRenderFns = [function () {
     staticClass: "col-4 border"
   }, [_c("div", {
     staticClass: "signature"
-  }, [_c("p", [_vm._v("مسئول انبار")])])]), _vm._v(" "), _c("div", {
+  }, [_c("p", [_vm._v("Warehouse manager")])])]), _vm._v(" "), _c("div", {
     staticClass: "col-4 border"
   }, [_c("div", {
     staticClass: "signature"
-  }, [_c("p", [_vm._v("مسئول پیک")])])]), _vm._v(" "), _c("div", {
+  }, [_c("p", [_vm._v("Courier in charge")])])]), _vm._v(" "), _c("div", {
     staticClass: "col-4 border"
   }, [_c("div", {
     staticClass: "signature"
-  }, [_c("p", [_vm._v("دریافت کننده")])])])]);
+  }, [_c("p", [_vm._v("Receiver")])])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -16426,7 +16399,7 @@ var staticRenderFns = [function () {
     attrs: {
       colspan: "10"
     }
-  }, [_c("h4", [_vm._v("نمایش جزئیات")])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ردیف")]), _vm._v(" "), _c("th", [_vm._v("نام کالا")]), _vm._v(" "), _c("th", [_vm._v("تعداد")]), _vm._v(" "), _c("th", [_vm._v("واحد درخواست کننده")]), _vm._v(" "), _c("th", [_vm._v("مرکز هزینه")]), _vm._v(" "), _c("th", [_vm._v("انبار")]), _vm._v(" "), _c("th", [_vm._v("وضعیت درخواست")]), _vm._v(" "), _c("th", [_vm._v("نمایش تائیدیه ها")]), _vm._v(" "), _c("th", [_vm._v("توضیحات")]), _vm._v(" "), _c("th", [_vm._v("فایل")])])]);
+  }, [_c("h4", [_vm._v("Show details")])])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("Row")]), _vm._v(" "), _c("th", [_vm._v("Products name")]), _vm._v(" "), _c("th", [_vm._v("Count")]), _vm._v(" "), _c("th", [_vm._v("Requested unit")]), _vm._v(" "), _c("th", [_vm._v("Cost center")]), _vm._v(" "), _c("th", [_vm._v("Warehouse")]), _vm._v(" "), _c("th", [_vm._v("Request Status")]), _vm._v(" "), _c("th", [_vm._v("Show confirmations")]), _vm._v(" "), _c("th", [_vm._v("Descriptions")]), _vm._v(" "), _c("th", [_vm._v("File")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -16438,7 +16411,7 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("\n                        بستن\n                    ")])]);
+  }, [_vm._v("\n                        Close\n                    ")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -16446,7 +16419,7 @@ var staticRenderFns = [function () {
     staticClass: "modal-header"
   }, [_c("h5", {
     staticClass: "modal-title"
-  }, [_vm._v("ارجاع درخواست")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Referring the request")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -16468,11 +16441,11 @@ var staticRenderFns = [function () {
     attrs: {
       id: "exampleModalLabel"
     }
-  }, [_vm._v("لیست فایل ها")])]);
+  }, [_vm._v("Files list")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                    ردیف\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    نام فایل\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    توضیحات\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    پیش نمایش\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    دانلود\n                                ")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                    Row\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                   File name\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Descriptions\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                   Preshow\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Download\n                                ")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -16484,7 +16457,7 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])]);
+  }, [_vm._v("Close")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -16495,7 +16468,7 @@ var staticRenderFns = [function () {
     attrs: {
       id: "exampleModalLongTitle"
     }
-  }, [_vm._v("نمایش تائیدیه ها")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Show confirmations")]), _vm._v(" "), _c("button", {
     staticClass: "close ml-0",
     attrs: {
       type: "button",
@@ -16510,7 +16483,7 @@ var staticRenderFns = [function () {
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                    ردیف\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    نام تائید کننده\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    نام تائیدیه\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    وضعیت تائید\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    توضیحات\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    تاریخ\n                                ")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("\n                                    Row\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Name of the approver\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Confirmation name\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Confirmation status\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Descriptions\n                                ")]), _vm._v(" "), _c("th", [_vm._v("\n                                    Date\n                                ")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -16522,7 +16495,7 @@ var staticRenderFns = [function () {
       type: "button",
       "data-dismiss": "modal"
     }
-  }, [_vm._v("بستن")])]);
+  }, [_vm._v("Close")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -17272,7 +17245,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#confirm_content[data-v-16519410] {\r\n    text-align: center;\r\n    margin: 2%;\r\n    padding: 1%;\r\n    overflow-y: clip;\n}\n.box[data-v-16519410] {\r\n    position: relative;\r\n    border-radius: 3px;\r\n    background: #f7f7f7;\r\n    border-top: 3px solid #d2d6de;\r\n    margin-bottom: 20px;\r\n    width: 100%;\r\n    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);\r\n    height: 100vh;\r\n    overflow-y: auto;\n}\n.box-title[data-v-16519410] {\r\n    display: inline-block;\r\n    font-size: 18px;\r\n    margin: 0;\r\n    line-height: 1;\n}\n.box-header[data-v-16519410] {\r\n    color: #444;\r\n    display: block;\r\n    padding: 10px;\r\n    position: relative;\r\n    text-align: right;\n}\n@media only screen\r\nand (max-width: 760px), (min-device-width: 768px)\r\nand (max-device-width: 1024px) {\n.containe h4[data-v-16519410]{\r\n        margin-top: 5%;\n}\ntable td[data-v-16519410], tr[data-v-16519410] {\r\n        display: block;\n}\ntable thead tr[data-v-16519410] {\r\n        display: none;\r\n        /*position: absolute;*/\r\n        /*top: -9999px;*/\r\n        /*right: -9999px;*/\n}\ntable tr[data-v-16519410] {\r\n        margin: 0 0 1rem 0;\r\n        border-radius: 10px;\r\n        border: 1px solid gray;\n}\ntable tr[data-v-16519410]:nth-child(odd) {\r\n        background: #bab8b8;\n}\ntable td[data-v-16519410] {\r\n        border: none;\r\n        border-bottom: 1px solid #eee;\r\n        position: relative;\r\n        padding-right: 58%;\n}\ntable td[data-v-16519410]:before {\r\n        position: absolute;\r\n        right: 0px;\r\n        width: 50%;\r\n        padding-right: 10px;\r\n        white-space: nowrap;\n}\n#user_confirm td[data-v-16519410]:nth-of-type(1):before {\r\n        content: \"ردیف\";\n}\n#user_confirm td[data-v-16519410]:nth-of-type(2):before {\r\n        content: \"نام\";\n}\n#user_confirm td[data-v-16519410]:nth-of-type(3):before {\r\n        content: \"نام خانوادگی\";\n}\n#user_confirm td[data-v-16519410]:nth-of-type(4):before {\r\n        content: \"نام تائید\";\n}\n#user_confirm td[data-v-16519410]:nth-of-type(5):before {\r\n        content: \"عملیات\";\n}\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#confirm_content[data-v-16519410] {\r\n    text-align: center;\r\n    margin: 2%;\r\n    padding: 1%;\r\n    overflow-y: clip;\n}\n.box[data-v-16519410] {\r\n    position: relative;\r\n    border-radius: 3px;\r\n    background: #f7f7f7;\r\n    border-top: 3px solid #d2d6de;\r\n    margin-bottom: 20px;\r\n    width: 100%;\r\n    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);\r\n    height: 100vh;\r\n    overflow-y: auto;\n}\n.box-title[data-v-16519410] {\r\n    display: inline-block;\r\n    font-size: 18px;\r\n    margin: 0;\r\n    line-height: 1;\n}\n.box-header[data-v-16519410] {\r\n    color: #444;\r\n    display: block;\r\n    padding: 10px;\r\n    position: relative;\r\n    text-align: right;\n}\n@media only screen\r\nand (max-width: 760px), (min-device-width: 768px)\r\nand (max-device-width: 1024px) {\n.containe h4[data-v-16519410]{\r\n        margin-top: 5%;\n}\ntable td[data-v-16519410], tr[data-v-16519410] {\r\n        display: block;\n}\ntable thead tr[data-v-16519410] {\r\n        display: none;\r\n        /*position: absolute;*/\r\n        /*top: -9999px;*/\r\n        /*right: -9999px;*/\n}\ntable tr[data-v-16519410] {\r\n        margin: 0 0 1rem 0;\r\n        border-radius: 10px;\r\n        border: 1px solid gray;\n}\ntable tr[data-v-16519410]:nth-child(odd) {\r\n        background: #bab8b8;\n}\ntable td[data-v-16519410] {\r\n        border: none;\r\n        border-bottom: 1px solid #eee;\r\n        position: relative;\r\n        padding-right: 58%;\n}\ntable td[data-v-16519410]:before {\r\n        position: absolute;\r\n        right: 0px;\r\n        width: 50%;\r\n        padding-right: 10px;\r\n        white-space: nowrap;\n}\n#user_confirm td[data-v-16519410]:nth-of-type(1):before {\r\n        content: \"Row\";\n}\n#user_confirm td[data-v-16519410]:nth-of-type(2):before {\r\n        content: \"Name\";\n}\n#user_confirm td[data-v-16519410]:nth-of-type(3):before {\r\n        content: \"Last name\";\n}\n#user_confirm td[data-v-16519410]:nth-of-type(4):before {\r\n        content: \"Confirmation name\";\n}\n#user_confirm td[data-v-16519410]:nth-of-type(5):before {\r\n        content: \"Actions\";\n}\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17368,7 +17341,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#confirm_content[data-v-83b624aa] {\r\n    text-align: center;\r\n    /*width: 100%;*/\r\n    margin: 2%;\r\n    padding: 1%;\r\n    overflow-y: clip;\n}\n.my_scroll[data-v-83b624aa]{\r\n    overflow-y: auto;\r\n    max-height: 90vh;\n}\n.box[data-v-83b624aa] {\r\n    position: relative;\r\n    border-radius: 3px;\r\n    background: #f7f7f7;\r\n    border-top: 3px solid #d2d6de;\r\n    margin-bottom: 20px;\r\n    width: 100%;\r\n    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);\r\n    /*height: 100vh;*/\r\n    overflow-y: auto;\r\n    border-bottom: 1px solid black;\n}\n.box-title[data-v-83b624aa] {\r\n    display: inline-block;\r\n    font-size: 18px;\r\n    margin: 0;\r\n    line-height: 1;\n}\n.box-header[data-v-83b624aa] {\r\n    color: #444;\r\n    display: block;\r\n    padding: 10px;\r\n    position: relative;\r\n    text-align: right;\n}\n@media only screen\r\nand (max-width: 760px), (min-device-width: 768px)\r\nand (max-device-width: 1024px) {\n.containe h4[data-v-83b624aa]{\r\n        margin-top: 5%;\n}\ntable td[data-v-83b624aa], tr[data-v-83b624aa] {\r\n        display: block;\n}\ntable thead tr[data-v-83b624aa] {\r\n        position: absolute;\r\n        top: -9999px;\r\n        right: -9999px;\n}\ntable tr[data-v-83b624aa] {\r\n        margin: 0 0 1rem 0;\r\n        border-radius: 10px;\r\n        border: 1px solid gray;\n}\ntable tr[data-v-83b624aa]:nth-child(odd) {\r\n        background: #bab8b8;\n}\ntable td[data-v-83b624aa] {\r\n        border: none;\r\n        border-bottom: 1px solid #eee;\r\n        position: relative;\r\n        padding-right: 58%;\n}\ntable td[data-v-83b624aa]:before {\r\n        position: absolute;\r\n        right: 0px;\r\n        width: 50%;\r\n        padding-right: 10px;\r\n        white-space: nowrap;\n}\n#confirm td[data-v-83b624aa]:nth-of-type(1):before {\r\n        content: \"ردیف\";\n}\n#confirm td[data-v-83b624aa]:nth-of-type(2):before {\r\n        content: \"نام تائید\";\n}\n#confirm td[data-v-83b624aa]:nth-of-type(3):before {\r\n        content: \"عملیات\";\n}\n#products td[data-v-83b624aa]:nth-of-type(1):before {\r\n        content: \"ردیف\";\n}\n#products td[data-v-83b624aa]:nth-of-type(2):before {\r\n        content: \"نام محصول\";\n}\n#products td[data-v-83b624aa]:nth-of-type(3):before {\r\n        content: \"نام تائید\";\n}\n#products td[data-v-83b624aa]:nth-of-type(4):before {\r\n        content: \"عملیات\";\n}\n#categoris td[data-v-83b624aa]:nth-of-type(1):before {\r\n        content: \"ردیف\";\n}\n#categoris td[data-v-83b624aa]:nth-of-type(2):before {\r\n        content: \"نام دسته بندی\";\n}\n#categoris td[data-v-83b624aa]:nth-of-type(3):before {\r\n        content: \"نام تائید\";\n}\n#categoris td[data-v-83b624aa]:nth-of-type(4):before {\r\n        content: \"عملیات\";\n}\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#confirm_content[data-v-83b624aa] {\r\n    text-align: center;\r\n    /*width: 100%;*/\r\n    margin: 2%;\r\n    padding: 1%;\r\n    overflow-y: clip;\n}\n.my_scroll[data-v-83b624aa]{\r\n    overflow-y: auto;\r\n    max-height: 90vh;\n}\n.box[data-v-83b624aa] {\r\n    position: relative;\r\n    border-radius: 3px;\r\n    background: #f7f7f7;\r\n    border-top: 3px solid #d2d6de;\r\n    margin-bottom: 20px;\r\n    width: 100%;\r\n    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);\r\n    /*height: 100vh;*/\r\n    overflow-y: auto;\r\n    border-bottom: 1px solid black;\n}\n.box-title[data-v-83b624aa] {\r\n    display: inline-block;\r\n    font-size: 18px;\r\n    margin: 0;\r\n    line-height: 1;\n}\n.box-header[data-v-83b624aa] {\r\n    color: #444;\r\n    display: block;\r\n    padding: 10px;\r\n    position: relative;\r\n    text-align: right;\n}\n@media only screen\r\nand (max-width: 760px), (min-device-width: 768px)\r\nand (max-device-width: 1024px) {\n.containe h4[data-v-83b624aa]{\r\n        margin-top: 5%;\n}\ntable td[data-v-83b624aa], tr[data-v-83b624aa] {\r\n        display: block;\n}\ntable thead tr[data-v-83b624aa] {\r\n        position: absolute;\r\n        top: -9999px;\r\n        right: -9999px;\n}\ntable tr[data-v-83b624aa] {\r\n        margin: 0 0 1rem 0;\r\n        border-radius: 10px;\r\n        border: 1px solid gray;\n}\ntable tr[data-v-83b624aa]:nth-child(odd) {\r\n        background: #bab8b8;\n}\ntable td[data-v-83b624aa] {\r\n        border: none;\r\n        border-bottom: 1px solid #eee;\r\n        position: relative;\r\n        padding-right: 58%;\n}\ntable td[data-v-83b624aa]:before {\r\n        position: absolute;\r\n        right: 0px;\r\n        width: 50%;\r\n        padding-right: 10px;\r\n        white-space: nowrap;\n}\n#confirm td[data-v-83b624aa]:nth-of-type(1):before {\r\n        content: \"Row\";\n}\n#confirm td[data-v-83b624aa]:nth-of-type(2):before {\r\n        content: \"Confirmation name\";\n}\n#confirm td[data-v-83b624aa]:nth-of-type(3):before {\r\n        content: \"Actions\";\n}\n#products td[data-v-83b624aa]:nth-of-type(1):before {\r\n        content: \"Row\";\n}\n#products td[data-v-83b624aa]:nth-of-type(2):before {\r\n        content: \"Product name\";\n}\n#products td[data-v-83b624aa]:nth-of-type(3):before {\r\n        content: \"Confirmation name\";\n}\n#products td[data-v-83b624aa]:nth-of-type(4):before {\r\n        content: \"Actions\";\n}\n#categoris td[data-v-83b624aa]:nth-of-type(1):before {\r\n        content: \"Row\";\n}\n#categoris td[data-v-83b624aa]:nth-of-type(2):before {\r\n        content: \"Category name\";\n}\n#categoris td[data-v-83b624aa]:nth-of-type(3):before {\r\n        content: \"Confirmation name\";\n}\n#categoris td[data-v-83b624aa]:nth-of-type(4):before {\r\n        content: \"Actions\";\n}\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17392,7 +17365,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#permission_content[data-v-35e9f2fa] {\r\n    text-align: center;\r\n    margin: 2%;\r\n    padding: 1%;\r\n    overflow-y: auto;\r\n    height: 80%;\n}\n.badge[data-v-35e9f2fa] {\r\n    font-size: 14px;\r\n    margin-top: 5px;\n}\n@media only screen and (max-width: 600px) {\ntable[data-v-35e9f2fa] {\r\n        font-size: 18px;\n}\ntd[data-v-35e9f2fa], tr[data-v-35e9f2fa] {\r\n        display: block;\n}\nthead tr[data-v-35e9f2fa] {\r\n        position: absolute;\r\n        /*top: -9999px;*/\r\n        right: -9999px;\n}\ntr[data-v-35e9f2fa] {\r\n        margin: 0 0 1rem 0;\r\n        border-radius: 10px;\r\n        border: 1px solid gray;\n}\ntr[data-v-35e9f2fa]:nth-child(odd) {\r\n        background: #bab8b8;\n}\ntd[data-v-35e9f2fa] {\r\n        border: none;\r\n        border-bottom: 1px solid #eee;\r\n        position: relative;\r\n        padding-right: 50%;\n}\ntd[data-v-35e9f2fa]:before {\r\n        position: absolute;\r\n        right: 6px;\r\n        width: 45%;\r\n        padding-right: 10px;\r\n        white-space: nowrap;\n}\ntable td[data-v-35e9f2fa]:nth-of-type(1):before {\r\n        content: \"نوع کاربر\";\n}\ntable td[data-v-35e9f2fa]:nth-of-type(2):before {\r\n        content: \"دسترسی ها\";\n}\n}\n.my_size[data-v-35e9f2fa] {\r\n    overflow-y: auto;\r\n    height: 90%;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#permission_content[data-v-35e9f2fa] {\r\n    text-align: center;\r\n    margin: 2%;\r\n    padding: 1%;\r\n    overflow-y: auto;\r\n    height: 80%;\n}\n.badge[data-v-35e9f2fa] {\r\n    font-size: 14px;\r\n    margin-top: 5px;\n}\n@media only screen and (max-width: 600px) {\ntable[data-v-35e9f2fa] {\r\n        font-size: 18px;\n}\ntd[data-v-35e9f2fa], tr[data-v-35e9f2fa] {\r\n        display: block;\n}\nthead tr[data-v-35e9f2fa] {\r\n        position: absolute;\r\n        /*top: -9999px;*/\r\n        right: -9999px;\n}\ntr[data-v-35e9f2fa] {\r\n        margin: 0 0 1rem 0;\r\n        border-radius: 10px;\r\n        border: 1px solid gray;\n}\ntr[data-v-35e9f2fa]:nth-child(odd) {\r\n        background: #bab8b8;\n}\ntd[data-v-35e9f2fa] {\r\n        border: none;\r\n        border-bottom: 1px solid #eee;\r\n        position: relative;\r\n        padding-right: 50%;\n}\ntd[data-v-35e9f2fa]:before {\r\n        position: absolute;\r\n        right: 6px;\r\n        width: 45%;\r\n        padding-right: 10px;\r\n        white-space: nowrap;\n}\ntable td[data-v-35e9f2fa]:nth-of-type(1):before {\r\n        content: \"Type of user\";\n}\ntable td[data-v-35e9f2fa]:nth-of-type(2):before {\r\n        content: \"Permissions\";\n}\n}\n.my_size[data-v-35e9f2fa] {\r\n    overflow-y: auto;\r\n    height: 90%;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17560,7 +17533,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#user_content[data-v-d884f594] {\r\n    text-align: center;\r\n    margin: 2% ;\r\n    padding: 1%;\r\n    overflow-y: auto;\r\n    height: 80%;\n}\nth[data-v-d884f594] {color: #0a0c0d}\n.even-larger-badge[data-v-d884f594] {\r\n    font-size: 13px;\n}\n.custom-table[data-v-d884f594] {background: rgb(50 50 93 / 3%);}\n[v-cloak][data-v-d884f594] {\r\n    display: none;\n}\n.edit[data-v-d884f594] {\r\n    display: none;\n}\n.editing .edit[data-v-d884f594] {\r\n    display: block\n}\n.editing .view[data-v-d884f594] {\r\n    display: none;\n}\nspan[data-v-d884f594] {\r\n    cursor: pointer;\n}\n@media only screen and (max-width: 600px) {\n#table_personels[data-v-d884f594] {\r\n        font-size: 18px;\n}\ntd[data-v-d884f594], tr[data-v-d884f594] {\r\n        display: block;\n}\n.search-box[data-v-d884f594]{\r\n    margin-right: 5px!important;\n}\n#text_search[data-v-d884f594]{\r\n    display: none!important;\n}\nthead tr[data-v-d884f594] {\r\n        position: absolute;\r\n        /*top: -9999px;*/\r\n        right: -9999px;\n}\ntr[data-v-d884f594] {\r\n        margin: 0 0 1rem 0;\r\n        border-radius: 10px;\r\n        border: 1px solid gray;\n}\ntr[data-v-d884f594]:nth-child(odd) {\r\n        background: #bab8b8;\n}\ntd[data-v-d884f594] {\r\n        border: none;\r\n        border-bottom: 1px solid #eee;\r\n        position: relative;\r\n        padding-right: 50%;\n}\ntd[data-v-d884f594]:before {\r\n        position: absolute;\r\n        right: 6px;\r\n        width: 45%;\r\n        padding-right: 10px;\r\n        white-space: nowrap;\n}\n#table_personels td[data-v-d884f594]:nth-of-type(1):before {\r\n        content: \"ردیف\";\n}\n#table_personels td[data-v-d884f594]:nth-of-type(2):before {\r\n        content: \"نام\";\n}\n#table_personels td[data-v-d884f594]:nth-of-type(3):before {\r\n        content: \"نام خانوادگی\";\n}\n#table_personels td[data-v-d884f594]:nth-of-type(4):before {\r\n        content: \"کد پرسنلی\";\n}\n#table_personels td[data-v-d884f594]:nth-of-type(5):before {\r\n        content: \"نوع کاربر\";\n}\n#table_personels td[data-v-d884f594]:nth-of-type(6):before {\r\n        content: \"عملیات\";\n}\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#user_content[data-v-d884f594] {\r\n    text-align: center;\r\n    margin: 2% ;\r\n    padding: 1%;\r\n    overflow-y: auto;\r\n    height: 80%;\n}\nth[data-v-d884f594] {color: #0a0c0d}\n.even-larger-badge[data-v-d884f594] {\r\n    font-size: 13px;\n}\n.custom-table[data-v-d884f594] {background: rgb(50 50 93 / 3%);}\n[v-cloak][data-v-d884f594] {\r\n    display: none;\n}\n.edit[data-v-d884f594] {\r\n    display: none;\n}\n.editing .edit[data-v-d884f594] {\r\n    display: block\n}\n.editing .view[data-v-d884f594] {\r\n    display: none;\n}\nspan[data-v-d884f594] {\r\n    cursor: pointer;\n}\n@media only screen and (max-width: 600px) {\n#table_personels[data-v-d884f594] {\r\n        font-size: 18px;\n}\ntd[data-v-d884f594], tr[data-v-d884f594] {\r\n        display: block;\n}\n.search-box[data-v-d884f594]{\r\n    margin-right: 5px!important;\n}\n#text_search[data-v-d884f594]{\r\n    display: none!important;\n}\nthead tr[data-v-d884f594] {\r\n        position: absolute;\r\n        /*top: -9999px;*/\r\n        right: -9999px;\n}\ntr[data-v-d884f594] {\r\n        margin: 0 0 1rem 0;\r\n        border-radius: 10px;\r\n        border: 1px solid gray;\n}\ntr[data-v-d884f594]:nth-child(odd) {\r\n        background: #bab8b8;\n}\ntd[data-v-d884f594] {\r\n        border: none;\r\n        border-bottom: 1px solid #eee;\r\n        position: relative;\r\n        padding-right: 50%;\n}\ntd[data-v-d884f594]:before {\r\n        position: absolute;\r\n        right: 6px;\r\n        width: 45%;\r\n        padding-right: 10px;\r\n        white-space: nowrap;\n}\n#table_personels td[data-v-d884f594]:nth-of-type(1):before {\r\n        content: \"Row\";\n}\n#table_personels td[data-v-d884f594]:nth-of-type(2):before {\r\n        content: \"Name\";\n}\n#table_personels td[data-v-d884f594]:nth-of-type(3):before {\r\n        content: \"Last name\";\n}\n#table_personels td[data-v-d884f594]:nth-of-type(4):before {\r\n        content: \"Personnel code\";\n}\n#table_personels td[data-v-d884f594]:nth-of-type(5):before {\r\n        content: \"Type of user\";\n}\n#table_personels td[data-v-d884f594]:nth-of-type(6):before {\r\n        content: \"Actions\";\n}\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17584,7 +17557,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.containe[data-v-37d57ade]{\r\n    overflow-y: auto;\n}\n.tbody-units[data-v-37d57ade] {\r\n    text-align: center;\n}\na[data-v-37d57ade] {\r\n    font-size: 12px;\n}\n.text_area[data-v-37d57ade] {\r\n    height: 38px;\n}\n.height[data-v-37d57ade]{\r\n    height: 75%;\n}\n@media only screen\r\nand (max-width: 760px), (min-device-width: 768px)\r\nand (max-device-width: 1024px) {\n.height[data-v-37d57ade]{\r\n        height: 95%;\n}\ntable[data-v-37d57ade],table td h4[data-v-37d57ade],#btn_modal_peyk[data-v-37d57ade],.search-box h5[data-v-37d57ade],.badge[data-v-37d57ade]{\r\n        font-size: 14px!important;\n}\n.containe .my_margin[data-v-37d57ade]{\r\n        margin-top: 10%;\n}\n.search-box[data-v-37d57ade] {\r\n        display: flex;\r\n        margin-top: 5px;\r\n        margin-right: 0 !important;\n}\ntable td[data-v-37d57ade], tr[data-v-37d57ade] {\r\n        display: block;\n}\ntable thead tr[data-v-37d57ade] {\r\n        display: none;\r\n        position: absolute;\r\n        /*top: -9999px;*/\r\n        /*right: -9999px;*/\n}\ntable tr[data-v-37d57ade] {\r\n        margin: 0 0 1rem 0;\r\n        border-radius: 10px;\r\n        border: 1px solid gray;\n}\ntable tr[data-v-37d57ade]:nth-child(odd) {\r\n        background: #bab8b8;\n}\ntable td[data-v-37d57ade] {\r\n        border: none;\r\n        border-bottom: 1px solid #eee;\r\n        position: relative;\r\n        padding-right: 58%;\n}\ntable td[data-v-37d57ade]:before {\r\n        position: absolute;\r\n        right: 0px;\r\n        width: 50%;\r\n        padding-right: 10px;\r\n        white-space: nowrap;\n}\n#table-vehicle td[data-v-37d57ade]:nth-of-type(1):before {\r\n        content: \"ردیف\";\n}\n#table-vehicle td[data-v-37d57ade]:nth-of-type(2):before {\r\n        content: \"نام وسیله\";\n}\n#table-vehicle td[data-v-37d57ade]:nth-of-type(3):before {\r\n        content: \"شماره وسیله\";\n}\n#table-vehicle td[data-v-37d57ade]:nth-of-type(4):before {\r\n        content: \"توضیحات\";\n}\n#table-vehicle td[data-v-37d57ade]:nth-of-type(5):before {\r\n        content: \"عملیات\";\n}\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.containe[data-v-37d57ade]{\r\n    overflow-y: auto;\n}\n.tbody-units[data-v-37d57ade] {\r\n    text-align: center;\n}\na[data-v-37d57ade] {\r\n    font-size: 12px;\n}\n.text_area[data-v-37d57ade] {\r\n    height: 38px;\n}\n.height[data-v-37d57ade]{\r\n    height: 75%;\n}\n@media only screen\r\nand (max-width: 760px), (min-device-width: 768px)\r\nand (max-device-width: 1024px) {\n.height[data-v-37d57ade]{\r\n        height: 95%;\n}\ntable[data-v-37d57ade],table td h4[data-v-37d57ade],#btn_modal_peyk[data-v-37d57ade],.search-box h5[data-v-37d57ade],.badge[data-v-37d57ade]{\r\n        font-size: 14px!important;\n}\n.containe .my_margin[data-v-37d57ade]{\r\n        margin-top: 10%;\n}\n.search-box[data-v-37d57ade] {\r\n        display: flex;\r\n        margin-top: 5px;\r\n        margin-right: 0 !important;\n}\ntable td[data-v-37d57ade], tr[data-v-37d57ade] {\r\n        display: block;\n}\ntable thead tr[data-v-37d57ade] {\r\n        display: none;\r\n        position: absolute;\r\n        /*top: -9999px;*/\r\n        /*right: -9999px;*/\n}\ntable tr[data-v-37d57ade] {\r\n        margin: 0 0 1rem 0;\r\n        border-radius: 10px;\r\n        border: 1px solid gray;\n}\ntable tr[data-v-37d57ade]:nth-child(odd) {\r\n        background: #bab8b8;\n}\ntable td[data-v-37d57ade] {\r\n        border: none;\r\n        border-bottom: 1px solid #eee;\r\n        position: relative;\r\n        padding-right: 58%;\n}\ntable td[data-v-37d57ade]:before {\r\n        position: absolute;\r\n        right: 0px;\r\n        width: 50%;\r\n        padding-right: 10px;\r\n        white-space: nowrap;\n}\n#table-vehicle td[data-v-37d57ade]:nth-of-type(1):before {\r\n        content: \"Row\";\n}\n#table-vehicle td[data-v-37d57ade]:nth-of-type(2):before {\r\n        content: \"Vehicle name\";\n}\n#table-vehicle td[data-v-37d57ade]:nth-of-type(3):before {\r\n        content: \"Vehicle number plate\";\n}\n#table-vehicle td[data-v-37d57ade]:nth-of-type(4):before {\r\n        content: \"Descriptions\";\n}\n#table-vehicle td[data-v-37d57ade]:nth-of-type(5):before {\r\n        content: \"Actions\";\n}\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

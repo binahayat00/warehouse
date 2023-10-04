@@ -35,13 +35,6 @@
                 <div class="my-bg">
                 </div>
                 <div class="fore-ground">
-                    <!--        <div class="my-position">-->
-                    <!--            <span><img src="/img/ardakan.png"></span>-->
-                    <!--            <span class="details-font">-->
-                    <!--            						گروه کارخانجات شیشه اردکان-->
-                    <!--            					</span>-->
-                    <!--            <span class="details-font">ARDAKAN FLOAT GLASS CO</span>-->
-                    <!--        </div>-->
 
                     <div class="limiter">
                         <div class="container-login100">
@@ -49,7 +42,7 @@
                                 <div class="login100-form-title">
                                     <span><img src="/images/ardakan.png"></span>
                                     <span class="login100-form-title-1">
-    						سامانه جامع شیشه اردکان
+    						Warehouse Software
     					</span>
                                 </div>
 
@@ -57,25 +50,25 @@
                                     @csrf
                                     <div class="wrap-input100 validate-input m-b-26 mb-3"
                                          data-validate="Username is required">
-                                        <label class="label-input100 text-right mb-0">نام کاربری:</label>
+                                        <label class="label-input100 text-right mb-0">Username:</label>
                                         <input id="username" class="input100" type="text" name="username"
-                                               placeholder="نام کاربری خود را وارد کنید">
+                                               placeholder="Enter your username">
                                     </div>
 
                                     <div class="wrap-input100 validate-input m-b-18 mb-3"
                                          data-validate="Password is required">
-                                        <label class="label-input100 text-right mb-0">رمز عبور:</label>
+                                        <label class="label-input100 text-right mb-0">Password:</label>
                                         <input id="password" class="input100" type="password" name="pass"
-                                               placeholder="رمز عبور خود را وارد کنید">
+                                               placeholder="Enter your password">
                                     </div>
 
                                     <div class="container-login100-form-btn mt-4">
                                         <button id="submit" class="login100-form-btn">
-                                            ورود
+                                            Enter
                                         </button>
                                     </div>
                                     <a href="https://salary.afgc.ir:2061/forget" class="text-primary pt-3">
-                                        فراموشی رمز عبور</a>
+                                        Forget the password</a>
 
                                 </form>
                             </div>
