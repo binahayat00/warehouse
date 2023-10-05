@@ -24,7 +24,7 @@ class ConfirmService
 
     public function store(array $data)
     {
-        return ($this->confirmRepository->checkIsNotRepetitious($data)) ? ResponsesService::error(null, 'تاییدیه قبلا ثبت شده است!') : ResponsesService::success($this->confirmRepository->store($data));
+        return ($this->confirmRepository->checkIsNotRepetitious($data)) ? ResponsesService::error(null, 'Confirmation has already been registered!') : ResponsesService::success($this->confirmRepository->store($data));
     }
 
     public function dalate(int $id)

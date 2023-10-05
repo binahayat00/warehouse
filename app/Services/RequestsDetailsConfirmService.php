@@ -43,13 +43,13 @@ class RequestsDetailsConfirmService
     public function store(array $data)
     {
         if ($this->checkConfirmsIsUnique($data) == false)
-            return ResponsesService::error($data, 'قبلا این تاییدیه به این درخواست یا یکی از زیردرخواست ها داده شده است!');
+            return ResponsesService::error($data, 'This confirmation has already been given to this request or one of the sub-requests! ');
         $result = [];
         foreach ($data as $datum) {
             $requestDetailData = $this->requestDetailRepository->getRequestIdByRequestDetailsId($datum['requests_detail_id']);
             $requestId = $requestDetailData->request_id;
             if ($this->checkStatusBeInThem($requestId, [GlobalVariablesInterface::CONFIRMING_STEP, GlobalVariablesInterface::FIRST_STEP]) == false) {
-                return ResponsesService::error($requestId, 'در این وضعیت امکان ارجاع و ثبت تاییدیه نمیباشد!');
+                return ResponsesService::error($requestId, 'In this situation, it is not possible to refer and register confirmation!');
             }
             StatusEvent::dispatch(
                 $requestId,

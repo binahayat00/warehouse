@@ -79,4 +79,9 @@ class UserRepository
         $user->save();
         return $user;
     }
+
+    public function getLoginUserPermissions()
+    {
+        return true;
+    }
 }

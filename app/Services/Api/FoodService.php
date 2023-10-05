@@ -22,7 +22,7 @@ class FoodService
         if ($response->getStatusCode() == 200) {
             $response = json_decode($response->getBody());
             if ($response->status == 0) {
-                return 'ASDASDASDA';//redirect()->back()->withErrors(['error'=>'کاربری با این کد پرسنلی در بانک اطلاعاتی یافت نشد']);
+                return 'ASDASDASDA';//redirect()->back()->withErrors(['error'=>'User did not found!']);
             }
             return ResponsesService::success($response);
         }
@@ -35,7 +35,7 @@ class FoodService
         if ($response->getStatusCode() == 200) {
             $response = json_decode($response->getBody());
             if ($response->status == 0) {
-                return 'ASDASDASDA';//redirect()->back()->withErrors(['error'=>'کاربری با این کد پرسنلی در بانک اطلاعاتی یافت نشد']);
+                return 'ASDASDASDA';//redirect()->back()->withErrors(['error'=>'User did not found!']);
             }
             return ResponsesService::success($response);
         }

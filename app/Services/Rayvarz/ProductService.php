@@ -84,7 +84,7 @@ class ProductService
         $products = $response["data"];
         if ($products == null) {
             $this->settingRepository->decrementLastRayvarzProductIndex();
-            return ResponsesService::success(null, ' در شماره صفحه' . $lastIndex . ' محصولی موجود نیست!');
+            return ResponsesService::success(null, ' In the page of ' . $lastIndex . ' there is no any product ');
         }
 
         return ResponsesService::success($products);
@@ -138,16 +138,16 @@ class ProductService
     {
 
         if (!isset($rayvarzProduct['itemDataId']) || $rayvarzProduct['itemDataId'] == null) {
-            return ResponsesService::error(null, 'محصول یافت نشد!');
+            return ResponsesService::error(null, 'Product not found!');
         } else if ($warehouseProduct == null) {
-            return ResponsesService::success($this->productRepository->store($rayvarzProduct), 'با موفقیت اضافه شد!');
+            return ResponsesService::success($this->productRepository->store($rayvarzProduct), 'Added successfully!');
         }
         list($warehouseProductArray, $rayvarzProductArray) = $this->keepSharedFieldsFromTwoArray(
             ($warehouseProduct) ? $warehouseProduct->toArray() : [],
             $rayvarzProduct
         );
 
-        return ($rayvarzProductArray == $warehouseProductArray) ? ResponsesService::success(null) : ResponsesService::success($this->productRepository->updateProductByItemDataId($rayvarzProduct), 'با موفقیت بروزرسانی شد!');
+        return ($rayvarzProductArray == $warehouseProductArray) ? ResponsesService::success(null) : ResponsesService::success($this->productRepository->updateProductByItemDataId($rayvarzProduct), 'Updated successfully!');
     }
 
     public function getRayvarzProductWithItemDataId(int $itemDataId, $token = null): array
@@ -192,6 +192,6 @@ class ProductService
 
     public function checkAmountOfEachProductIsEnough(?int $amount)
     {
-        return ($amount > 0) ? ResponsesService::success($amount, 'موجودی برای سفارش کافی است!') : ResponsesService::error($amount, 'موجودی برای سفارش کافی نیست!');
+        return ($amount > 0) ? ResponsesService::success($amount, 'Enough stock to order!') : ResponsesService::error($amount, 'There is not enough stock for the order!');
     }
 }

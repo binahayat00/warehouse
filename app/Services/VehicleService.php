@@ -30,7 +30,7 @@ class VehicleService
 
     public function delete(int $id)
     {
-        return ($this->deliveryService->checkVehicleExist($id)) ? ResponsesService::error($id, 'وسیله نقلیه قبلا تعریف شده و قابل حذف نمیباشد!') :ResponsesService::success($this->vehicleRepository->delete($id)) ;
+        return ($this->deliveryService->checkVehicleExist($id)) ? ResponsesService::error($id, 'The vehicle is already defined and cannot be deleted!') :ResponsesService::success($this->vehicleRepository->delete($id)) ;
     }
 
     public function update(array $data)

@@ -36,7 +36,7 @@ class JwtAuthService
     {
       //  if (!$token = auth()->attempt($data)) {
         if(!$token = JWTAuth::claims(['code' => $data['personnel_code']])->attempt($data)) {
-            return ResponsesService::error(null, $message = 'اعتباری سنجی با موفقیت انجام نشد', $status = 401, $error = 'Unauthorized');
+            return ResponsesService::error(null, $message = 'Authentication was successful', $status = 401, $error = 'Unauthorized');
         }
         return ResponsesService::success($this->respondWithToken($token));
     }
@@ -44,7 +44,7 @@ class JwtAuthService
     public function logout()
     {
         auth()->logout();
-        return ResponsesService::success(null, 'کاربر با موفقیت خارج شد!');
+        return ResponsesService::success(null, 'User logged out successfully!');
     }
 
     public function getUser(array $data)
@@ -97,9 +97,6 @@ class JwtAuthService
                 </script>";
     }
 
-    // این متد برای لاگین با استفاده از روت ای پی آی استفاده میشه و نمیشه ازش برای لاگین در سیشن استفاده کرد (سامانه بن)
-    // چون زمانی که توکن ارسال میشه و دیکد میشه و گارد پیشرفض پروژه ای که از سیشن استفاده میکنه از نوع وب هست تابع LoginUsingId
-    //در روت ای پی ای کار نمیکنه
     public function redirectAndAuth($request)
     {
         $user = auth()->user();

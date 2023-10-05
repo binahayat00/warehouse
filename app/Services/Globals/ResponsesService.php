@@ -11,7 +11,7 @@ use Hekmatinasser\Verta\Verta;
 class ResponsesService
 {
     
-    public static function success($data='',$message = 'با موفقیت انجام شد',$status=200,$error=''){
+    public static function success($data='',$message = 'Done successfully',$status=200,$error=''){
         return [
                 'success' => true,
                 'status' => $status,
@@ -21,7 +21,7 @@ class ResponsesService
         ];
     }
 
-    public static function error($data='',$message = 'با موفقیت انجام نشد',$status=400,$error=''){
+    public static function error($data='',$message = 'Failed to complete successfully',$status=400,$error=''){
         return [
             'success' => false,
             'status' => $status,

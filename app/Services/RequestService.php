@@ -36,7 +36,7 @@ class RequestService
         $this->usersUnitService = $usersUnitService;
         $this->fileRepository = $fileRepository;
         $this->fileService = $fileService;
-        $this->FileRequestDetailRepository = $fileRequestDetailRepository;
+        $this->fileRequestDetailRepository = $fileRequestDetailRepository;
         $this->fileRequestDetailService = $fileRequestDetailService;
         $this->requestsDetailsConfirmService = $requestsDetailsConfirmService;
         $this->usersConfirmRepository = $usersConfirmRepository;
@@ -68,7 +68,7 @@ class RequestService
     public function storeRequestAndRequestDetails(array $data)
     {
         if (!$this->checkRequestsDetailsNotBeRepetitiousData($data['requestDetails'])) {
-            return ResponsesService::error(null, 'محصول تکراری است!');
+            return ResponsesService::error(null, 'Duplicate product!');
         }
 
         $userData = $this->getParamsForRequestsTable();
@@ -197,7 +197,7 @@ class RequestService
             $this->setStatusForRequestAndItsRequestDetails($data, GlobalVariablesInterface::ARCHIVE_STEP);
             return ResponsesService::success();
         } else
-            return ResponsesService::error(null, 'کد تحویل معتبر نمیباشد!');
+            return ResponsesService::error(null, 'The delivery code is not valid!');
     }
 
     public function setStatusForRequestAndItsRequestDetails(array $data, int $statusId)
@@ -217,11 +217,11 @@ class RequestService
         switch ($statusId) {
             case GlobalVariablesInterface::DELIVERY_STEP:
                 $result['success'] = $this->requestsDetailsConfirmService->requestIsConfirmed($requestId);
-                $result['message'] = ($result['success']) ? '' : 'امکان ارسال به پیک فقط برای درخواست های تایید شده ممکن میباشد.';
+                $result['message'] = ($result['success']) ? '' : 'It is possible to send by courier only for confirmed requests.';
                 break;
             case GlobalVariablesInterface::CANCEL_STEP:
                 $result['success'] = $this->checkStatusIsValidForChangeToCancel($currentStatusId);
-                $result['message'] =  ($result['success']) ? '' : 'امکان لغو درخواست در این وضعیت امکان پذیر نمیباشد!';
+                $result['message'] =  ($result['success']) ? '' : 'It is not possible to cancel the request in this status!';
                 break;
             default:
                 $result['success'] = true;
@@ -332,18 +332,18 @@ class RequestService
 
     public function processOfValidCodeForReturnToDelivery(array $data)
     {
-        return ($this->checkValidatedCode($data)) ? ResponsesService::success($data) : ResponsesService::error($data, 'کد تایید نادرست میباشد');
+        return ($this->checkValidatedCode($data)) ? ResponsesService::success($data) : ResponsesService::error($data, 'The confirmation code is incorrect');
     }
 
     public function ProcessOfValidCodeForReturnToWarehouse(array $data)
     {
-        return ($this->checkValidatedCode($data)) ? ResponsesService::success($this->requestDetailService->updateForDeliveredToWarehouse($data['requestDetail'])) : ResponsesService::error($data, 'کد تایید نادرست میباشد');
+        return ($this->checkValidatedCode($data)) ? ResponsesService::success($this->requestDetailService->updateForDeliveredToWarehouse($data['requestDetail'])) : ResponsesService::error($data, 'The confirmation code is incorrect');
     }
 
     public function storeRequestAndRequestDetailsWithoutConfirms(array $data)
     {
         if (!$this->checkRequestsDetailsNotBeRepetitiousData($data['requestDetails'])) {
-            return ResponsesService::error(null, 'محصول تکراری است!');
+            return ResponsesService::error(null, 'Duplicate product!');
         }
         
         $data['request']['request_number'] = $this->buildRequestNumber();

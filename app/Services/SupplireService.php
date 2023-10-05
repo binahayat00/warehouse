@@ -10,9 +10,9 @@ use App\Repositories\SupplierRepository;
  */
 class SupplireService
 {
-    protected Php artisan make:service;
+    protected $supplierRepository;
     public function __construct(SupplierRepository $supplierRepository) {
-        $this->supplireRepository = $supplierRepository;
+        $this->supplierRepository = $supplierRepository;
     }
 
 }

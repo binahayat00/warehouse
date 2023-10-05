@@ -25,7 +25,7 @@ class UsersConfirmService
 
     public function store(array $data)
     {
-        return ($this->usersConfirmRepository->checkIsNotRepetitious($data)) ? ResponsesService::error(null, 'برای این کاربر قبلا این تاییدیه ثبت شده است!') : ResponsesService::success($this->usersConfirmRepository->store($data));
+        return ($this->usersConfirmRepository->checkIsNotRepetitious($data)) ? ResponsesService::error(null, 'The confirmation has already been registered for the user!') : ResponsesService::success($this->usersConfirmRepository->store($data));
     }
 
     public function delete(int $id)

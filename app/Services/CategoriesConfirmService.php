@@ -22,7 +22,7 @@ class CategoriesConfirmService
     }
 
     public function store(array $data){
-        return ($this->categoriesConfirmRepository->checkIsNotRepetitious($data)) ? ResponsesService::error(null , 'قبلا برای این دسته بندی این نوع تاییدیه ثبت شده است!') : ResponsesService::success($this->categoriesConfirmRepository->store($data));
+        return ($this->categoriesConfirmRepository->checkIsNotRepetitious($data)) ? ResponsesService::error(null , 'This type of confirmation has already been registered for this category!') : ResponsesService::success($this->categoriesConfirmRepository->store($data));
     }
 
     public function delete(int $id){

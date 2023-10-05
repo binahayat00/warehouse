@@ -84,7 +84,7 @@ class UserService
 
     public function changeUserStatus($request) {
         if(is_null($request->personnel_code)) {
-            return Response()->json(['message' =>  'پرسنل یافت نشد','status' => '404'],404);
+            return Response()->json(['message' =>  'The personnel not found','status' => '404'],404);
         }
         return ResponsesService::success($this->userRepository->changeUserStatus($request));
 

@@ -24,7 +24,7 @@ class ProductsConfirmService
 
     public function store(array $data)
     {
-        return ($this->productsConfirmRepository->checkIsNotRepetitious($data)) ? ResponsesService::error(null, 'تاییدیه قبلا به محصول داده شده است') : ResponsesService::success($this->productsConfirmRepository->store($data));
+        return ($this->productsConfirmRepository->checkIsNotRepetitious($data)) ? ResponsesService::error(null, 'The confirmation has already been given to the product') : ResponsesService::success($this->productsConfirmRepository->store($data));
     }
 
     public function getByProductId(array $data)

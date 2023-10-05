@@ -28,12 +28,12 @@ class RemittanceService
     {
         try {
             if (($this->requestDetailService->hasRemittanceIsZeroForRequestId($data) && $this->requestService->hasRemittanceIsZeroForRequestId($data)) == false) {
-                return ResponsesService::error($data, 'قبلا برای این درخواست حواله ثبت شده است!');
+                return ResponsesService::error($data, 'Already registered for this remittance request!');
             }
 
             $lastDocumentNumber = $this->documentService->getLastDocumentNumber($data['fiscalYear'], $data['warehouseId']);
             if ($lastDocumentNumber['success'] == false) {
-                return ResponsesService::error($lastDocumentNumber, 'گرفتن شماره سند با خطا روبرو شد!');
+                return ResponsesService::error($lastDocumentNumber, 'There was an error getting the document number!');
             }
 
             $inventoryJournalItems = [];

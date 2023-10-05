@@ -35,7 +35,7 @@ class FileService
 
     public function delete(int $id)
     {
-        return ($this->fileIsInFileResquestDetailsTable($id)) ? ResponsesService::error(null, "امکان حذف فایل تا قبل از ثبت امکان پذیر است!") : ResponsesService::success($this->fileRepository->delete($id));
+        return ($this->fileIsInFileResquestDetailsTable($id)) ? ResponsesService::error(null, "It is possible to delete the file before registration!") : ResponsesService::success($this->fileRepository->delete($id));
     }
 
     public function update(array $data)
