@@ -5,7 +5,6 @@
 /vendor
 .env
 .env.testing
-.env.testing.example
 .env.backup
 .phpunit.result.cache
 docker-compose.override.yml
